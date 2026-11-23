@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>탱크어붐 데이터 도감</title>
 <meta name="description" content="Tank-a-Boom 탱크·부품·칩·스킨·모드 데이터">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e2f3d'/%3E%3Crect x='5' y='16' width='22' height='8' rx='2' fill='%23ffb43a'/%3E%3Crect x='10' y='10' width='11' height='7' rx='2' fill='%23ffb43a'/%3E%3Crect x='20' y='12' width='9' height='2.5' fill='%23ffb43a'/%3E%3C/svg%3E">
@@ -12,9 +12,9 @@
 <style>
 :root{
   --steel:#1e2f3d; --steel-2:#253a4b; --steel-3:#2f485c; --line:#3b566c;
-  --ink:#e9eef2; --ink-2:#a9b9c6; --ink-3:#7890a3;
-  --hazard:#f2c230; --hazard-ink:#1c1a12; --danger:#ff6b5b; --ok:#5fd39a;
-  --r1:#9fb0bf; --r2:#4fa8ff; --r3:#bb83ff; --r4:#ffb43a;
+  --ink:#e9eef2; --ink-2:#a9b9c6; --ink-3:#93a8b9;
+  --hazard:#f2c230; --hazard-ink:#1c1a12; --danger:#ff7a6b; --ok:#5fd39a;
+  --r1:#9fb0bf; --r2:#4fa8ff; --r3:#c391ff; --r4:#ffb43a;
   --display:"Black Han Sans","Apple SD Gothic Neo",sans-serif;
   --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
 }
@@ -135,7 +135,7 @@ abbr.term{text-decoration:underline dotted;text-underline-offset:3px;cursor:help
 .tbl tr:hover td{background:rgba(255,255,255,.02)}
 .scroll{overflow:auto;max-width:100%}
 .tbl.nw th,.tbl.nw td{white-space:nowrap}
-.unused{opacity:.3}
+.unused{opacity:.55}
 .tbl td.nw,.tbl th.nw,.tbl td.n{white-space:nowrap}
 .best{color:var(--ok);font-weight:700}
 details summary{cursor:pointer;color:var(--ink-2)}
@@ -179,7 +179,7 @@ code,.mono{font:13px/1.5 ui-monospace,Menlo,monospace;color:var(--ink-2);word-br
 .thumbs{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px}
 .thumb{background:var(--steel-2);border:1px solid var(--line);border-radius:8px;padding:6px;cursor:zoom-in;font:inherit;color:inherit;text-align:left}
 .thumb img{width:100%;aspect-ratio:1;object-fit:contain;display:block;background:var(--steel);border-radius:5px}
-.thumb span{display:block;font-size:11.5px;line-height:1.3;margin-top:4px;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.thumb span{display:block;font-size:12px;line-height:1.3;margin-top:4px;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mapcard{background:var(--steel-2);border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .mapcard img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--steel)}
 .mapcard .in{padding:10px 12px}
@@ -191,7 +191,7 @@ dialog.lb p{margin:10px 0 0;text-align:center}
 dialog.lb button{position:absolute;top:8px;right:10px;background:var(--steel-3);border:0;border-radius:6px;padding:4px 10px;cursor:pointer}
 b.val{color:var(--ok);font-weight:700}
 .bgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:14px;align-items:start}
-.bgrid .panel{min-width:0}
+.bgrid>*,.bgrid .panel{min-width:0}
 .ctl{margin-bottom:12px}
 .ctl>label,.ctl>.lab{display:block;font-size:13px;color:var(--ink-2);margin-bottom:4px}
 .ctl select{width:100%;background:var(--steel);border:1px solid var(--line);border-radius:8px;padding:7px 8px}
@@ -216,7 +216,7 @@ details.vals summary{cursor:pointer;color:var(--ink-3);font-size:13px}
 details.vals table{margin-top:6px;border-collapse:collapse}
 details.vals.sub{margin-top:8px}
 details.vals td{font-size:13px;padding:3px 12px 3px 0;vertical-align:top}
-details.vals td code{color:var(--ink-3);font-size:11.5px}
+details.vals td code{color:var(--ink-3);font-size:12px}
 /* 통합 검색 */
 .findbtn{color:var(--ink-2);text-decoration:none;font-size:13px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;white-space:nowrap}
 .findbtn:hover{color:var(--ink);border-color:var(--hazard)}
@@ -230,18 +230,18 @@ details.vals td code{color:var(--ink-3);font-size:11.5px}
   .bar .ver{display:none}
   .brand{display:flex;flex-direction:column;justify-content:center;gap:3px}
   .brand .bt{overflow:hidden;text-overflow:ellipsis}
-  .brand .bver:not([hidden]){display:block;font:600 10.5px/1 var(--body);letter-spacing:.02em;color:var(--ink-3)}
+  .brand .bver:not([hidden]){display:block;font:600 12px/1 var(--body);letter-spacing:.02em;color:var(--ink-3)}
   .g-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .g-cards .tcard{padding:8px}
   .g-cards .tcard .stage{height:86px;margin:-2px -2px 6px}
   .g-cards .tcard .stage img{padding:4px}
   .g-cards .tcard .nm{font-size:15.5px}
-  .g-cards .tcard .md{font-size:11px}
-  .g-cards .tcard .badges{display:none}
+  .g-cards .tcard .md{font-size:12px}
+  .g-cards .tcard .badges{margin-top:6px;gap:4px}
+  .g-cards .tcard .badges .opt-m{display:none}
   .g-cards .tcard .stats{gap:2px;margin-top:6px;padding-top:6px}
   .g-cards .tcard .stats b{font-size:13px}
-  .g-cards .tcard .stats span{font-size:10.5px}
-  .findbtn{padding:3px 8px;font-size:12px}
+  .g-cards .tcard .stats span{font-size:12px}
 }
 td img.cell{width:44px;height:44px;object-fit:contain;vertical-align:middle;background:var(--steel);border-radius:4px}
 
@@ -253,9 +253,9 @@ td img.cell{width:44px;height:44px;object-fit:contain;vertical-align:middle;back
   .stat{grid-template-columns:96px 1fr 58px}
   .bar{gap:7px}
   .brand{font-size:16px;letter-spacing:0}
-  .maker{padding:4px 8px 4px 7px;font-size:11px;gap:4px}
+  .maker{padding:4px 8px 4px 7px;font-size:12px;gap:4px}
   .maker svg{width:14px;height:14px}
-  .maker b{font-size:11px;letter-spacing:.08em}
+  .maker b{font-size:12px;letter-spacing:.08em}
   .lang button{padding:4px 6px;font-size:12.5px}
   .lfull{display:none} .lshort{display:inline}
   .brand{min-width:0;overflow:hidden;text-overflow:ellipsis}
@@ -264,6 +264,158 @@ td img.cell{width:44px;height:44px;object-fit:contain;vertical-align:middle;back
   .lineup span{animation:roll .7s cubic-bezier(.2,.8,.2,1) both}
 }
 @keyframes roll{from{transform:translateX(-40px);opacity:0}}
+
+/* ===== 초보·폰 개편(2026-11): 하단 탭, 용어 풀이 창, 접는 구역, 누르는 영역 ===== */
+.wrap{padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+.gl{text-decoration:underline dotted;text-underline-offset:3px;cursor:help}
+.pill .gl{text-decoration-color:currentColor}
+abbr.term,.ph,.gl{-webkit-tap-highlight-color:rgba(242,194,48,.25)}
+.note-top{color:var(--ink-2);max-width:68ch;margin:8px 0 0}
+.kv small{font-size:12px}
+.mcell{display:flex;align-items:center;gap:8px;min-width:104px}
+.mcell img{flex:none}
+.kv{grid-template-columns:minmax(0,1fr) minmax(0,auto)}
+.kv dt,.kv dd{overflow-wrap:anywhere}
+.chk,.ctl>label.chk{display:flex;align-items:center;gap:8px;cursor:pointer}
+.ctl>label.chk{color:var(--ink);font-size:14px;margin-bottom:0}
+.chk input{accent-color:var(--hazard);flex:none;margin:0}
+.linkbtn{background:none;border:0;padding:0;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer;text-align:left}
+.morebtn{display:block;margin:12px auto 0;min-height:44px;padding:8px 18px}
+.utabs a{text-decoration:none;padding:4px 12px}
+.utabs a[aria-current]{background:var(--hazard);color:var(--hazard-ink);border-color:var(--hazard)}
+.utabs a[aria-current] .muted,.utabs a[aria-current] .unew{color:inherit}
+.toc a{font-size:13px;color:var(--ink-2);background:var(--steel-2);border:1px solid var(--line);border-radius:999px;padding:5px 12px;text-decoration:none;display:inline-flex;align-items:center}
+.toc a:hover{color:var(--ink);border-color:var(--hazard)}
+dialog.lb .cap{margin:10px 0 0;text-align:center}
+dialog.lb .cap details{text-align:left}
+
+/* 하단 탭(폭 760 이하에서만 보임) */
+.btabs{display:none}
+
+/* 용어 풀이 창: 화면 아래에 뜬다 */
+.gsheet{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;justify-content:center;padding:0 12px 14px;pointer-events:none}
+.gsheet[hidden]{display:none}
+.gsheet .in{pointer-events:auto;width:min(560px,100%);background:var(--steel-3);border:1px solid var(--hazard);border-radius:12px;padding:12px 14px 10px 16px;box-shadow:0 10px 34px rgba(0,0,0,.55)}
+.gsheet .hd{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.gsheet h3{font-size:17px;margin:0}
+.gsheet p{margin:2px 0 6px;font-size:15px;line-height:1.55}
+.gsheet .x{flex:none;min-width:44px;min-height:44px;background:var(--steel-2);border:1px solid var(--line);border-radius:8px;cursor:pointer;padding:0 12px}
+.gsheet a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;color:var(--ink-2)}
+
+/* 홈 */
+.home-hero h1{max-width:16em}
+.cta3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:20px}
+.cta{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:60px;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px;line-height:1.3;border:1px solid var(--line);background:var(--steel-2)}
+.cta:hover{border-color:var(--hazard)}
+.cta.pri{background:var(--hazard);color:var(--hazard-ink);border-color:var(--hazard)}
+.cta i{font-style:normal;flex:none}
+.hsearch{display:flex;gap:8px;margin-top:14px;max-width:560px}
+.hsearch input{flex:1;min-width:0;min-height:44px;background:var(--steel-2);border:1px solid var(--line);border-radius:8px;padding:8px 12px}
+.hsearch button{min-height:44px;flex:none}
+.firstlink{display:inline-flex;align-items:center;min-height:44px;color:var(--ink-2);margin-top:4px}
+.home-hero+.lineup{margin-top:10px}
+
+/* 더보기 */
+.mgroup h2{font-size:21px;margin:26px 0 8px}
+.mlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:8px}
+.mlist a,.mlist .mrow{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:56px;padding:8px 14px;background:var(--steel-2);border:1px solid var(--line);border-radius:10px;text-decoration:none;font-weight:500}
+.mlist a:hover{border-color:var(--hazard)}
+.mlist small{display:block;color:var(--ink-3);font-weight:400;font-size:12.5px;line-height:1.4}
+.mlist i{font-style:normal;color:var(--ink-3);flex:none}
+.mrow .lang button{min-height:44px;padding:0 14px}
+
+/* 탱크 목록: 역할 칩 한 줄 */
+.rolechips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:2px 16px}
+.rolechips::-webkit-scrollbar{display:none}
+.rolechips button{flex:none;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--steel-2);color:var(--ink-2);cursor:pointer;font-weight:500;white-space:nowrap}
+.rolechips button[aria-pressed=true]{background:var(--hazard);color:var(--hazard-ink);border-color:var(--hazard)}
+details.mf{margin-top:8px}
+details.mf>summary{display:inline-block;padding:11px 0;font-size:14px}
+details.mf .filters{margin:0 0 6px}
+@media (min-width:761px){details.mf>summary{display:none} details.mf .filters{margin:4px 0 6px}}
+
+/* 접는 구역 */
+.secs{margin-top:20px}
+details.sec{border-top:1px solid var(--line);scroll-margin-top:120px}
+.secs>details.sec:last-child,details.sec.last{border-bottom:1px solid var(--line)}
+details.sec>summary{display:flex;align-items:center;gap:10px;min-height:56px;list-style:none;color:var(--ink);font:22px/1.2 var(--display);margin:0}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary::after{content:"";flex:none;margin:0 8px 4px auto;width:9px;height:9px;border-right:2px solid var(--ink-2);border-bottom:2px solid var(--ink-2);transform:rotate(45deg)}
+details.sec[open]>summary::after{transform:rotate(-135deg);margin-bottom:-4px}
+details.sec>summary small{font:400 13px/1.2 var(--body);color:var(--ink-3)}
+details.sec>summary:hover{color:var(--hazard)}
+details.sec>.body{padding:4px 0 22px}
+details.sec.grp>summary{font-size:19px;min-height:52px}
+details.sec .body h3{margin-top:14px}
+
+/* 탱크 상세: 한눈에 카드 */
+.glance .one{font-weight:500;margin:2px 0 8px}
+.gstat{display:grid;grid-template-columns:minmax(96px,150px) 1fr auto;gap:0 10px;align-items:center;padding:7px 0;border-top:1px dashed var(--line)}
+.gstat .lab{color:var(--ink-2);font-size:14px}
+.gstat .v{font-weight:700;font-size:17px;text-align:right;min-width:56px}
+.gstat .rk{grid-column:1/-1;font-size:12.5px;color:var(--ink-3)}
+.gstat .rk b{color:var(--ink)}
+.sw{display:grid;gap:4px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);font-size:14px}
+.sw .g{color:var(--ok)} .sw .b{color:var(--danger)}
+.acts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0 0;max-width:560px}
+.acts a{display:flex;align-items:center;justify-content:center;min-height:48px;text-align:center;text-decoration:none;padding:8px 10px;line-height:1.3}
+
+/* 비교: 항목 이름 칸 고정 */
+.cmp td:first-child,.cmp th:first-child{position:sticky;left:0;z-index:1;background:var(--steel-2)}
+.cmp th:first-child{z-index:2}
+.cmpimg{width:110px;height:110px}
+
+/* 조합 계산기 */
+.bsum{display:none}
+#bbestbox{scroll-margin-top:120px}
+#bstats .pc{white-space:nowrap}
+#bstats td:first-child{min-width:104px}
+
+@media (max-width:760px){
+  nav.tabs{display:none}
+  header.top .lang{display:none}
+  .brand{display:flex;flex-direction:column;justify-content:center;min-height:44px}
+  .cmp th a{display:inline-block;padding:12px 0}
+  .btabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(22,36,48,.98);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+  .btabs a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:56px;font-size:12px;font-weight:500;line-height:1.2;color:var(--ink-2);text-decoration:none;white-space:nowrap}
+  .btabs a svg{width:22px;height:22px}
+  .btabs a[aria-current]{color:var(--hazard)}
+  main,main.wrap{padding-top:20px;padding-bottom:calc(56px + 64px + env(safe-area-inset-bottom))}
+  .gsheet{bottom:calc(57px + env(safe-area-inset-bottom));padding-bottom:10px}
+  .findbtn{min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:0 12px;font-size:13px}
+  .filters select,.filters input[type=search],.ctl select,#bobj{min-height:44px}
+  .toc{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:14px -16px 4px;padding:0 16px}
+  .toc::-webkit-scrollbar{display:none}
+  .toc button,.toc a{flex:none;min-height:44px;padding:0 14px}
+  details.vals summary{padding:12px 0}
+  details:not(.sec):not(.vals):not(.mf)>summary{padding:11px 0}
+  .chk{min-height:44px}
+  .chk input{width:20px;height:20px}
+  .chiplist label{min-height:44px;align-items:center}
+  .chiplist input{width:20px;height:20px;flex:none;margin-top:0}
+  .utabs a{min-height:44px;padding:0 14px;display:inline-flex;align-items:center}
+  .chippool a.pill{min-height:44px;padding-right:12px}
+  button.pill{min-height:44px;padding:0 14px}
+  .linkbtn{min-height:44px}
+  .btn{min-height:44px}
+  #bstats .pc{display:block}
+  dialog.lb button{min-width:44px;min-height:44px}
+  .dhead{gap:12px}
+  .dhead .stage{width:100%;aspect-ratio:auto;height:160px}
+  .dhead .stage img{padding:8px}
+  .cta3{grid-template-columns:1fr;margin-top:16px}
+  .lineup{height:72px}
+  .lineup img{width:60px;height:60px}
+  .home-links{display:none}
+  .cmpimg{width:64px;height:64px}
+  main h2,details.sec,#sec-top,#bbestbox{scroll-margin-top:68px}
+  .gstat{grid-template-columns:104px 1fr auto}
+  .bsum{display:flex;position:fixed;left:0;right:0;bottom:calc(57px + env(safe-area-inset-bottom));z-index:29;justify-content:space-around;gap:10px;padding:8px 12px;background:var(--steel-3);border-top:1px solid var(--line);font-size:13px;white-space:nowrap}
+  .bsum b{font-size:15px}
+}
+@media (max-width:600px){
+  .g-cards .tcard .badges .pill{padding:0 7px}
+}
 </style>
 </head>
 <body>
@@ -282,23 +434,38 @@ td img.cell{width:44px;height:44px;object-fit:contain;vertical-align:middle;back
     </div>
     <nav class="tabs" aria-label="메뉴">
       <a href="#tanks">탱크</a>
-      <a href="#build">빌드 시뮬레이터</a>
+      <a href="#build">부품 조합 계산기</a>
       <a href="#compare">비교</a>
-      <a href="#skills">스킬·특성</a>
+      <a href="#skills">파워 무브·특성</a>
       <a href="#parts">부품</a>
       <a href="#chips">칩</a>
       <a href="#operators">오퍼레이터</a>
       <a href="#skins">스킨</a>
       <a href="#modes">모드·맵</a>
-      <a href="#growth">성장·보상</a>
+      <a href="#growth">제조사·보상</a>
       <a href="#score">점수·MVP</a>
       <a href="#hidden" class="warn">미공개·출시 예정</a>
       <a href="#gallery">이미지</a>
+      <a href="#glossary">용어 풀이</a>
     </nav>
   </div>
 </header>
 <main class="wrap" id="app" tabindex="-1"></main>
-<dialog class="lb" id="lb"><button type="button" id="lbx">닫기</button><img id="lbimg" alt=""><p id="lbcap"></p></dialog>
+<nav class="btabs" id="btabs" aria-label="주 메뉴">
+  <a href="#" data-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9h-6v-6H9v6H3z"/></svg>홈</a>
+  <a href="#tanks" data-tab="tanks"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="13" width="18" height="6" rx="3"/><rect x="7" y="8" width="8" height="6" rx="1.5"/><rect x="14" y="9.5" width="8" height="2" rx="1"/></svg>탱크</a>
+  <a href="#build" data-tab="build"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h8M18 7h2M4 17h2M12 17h8"/><circle cx="15" cy="7" r="2.5"/><circle cx="9" cy="17" r="2.5"/></svg>조합</a>
+  <a href="#hidden" data-tab="hidden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>출시 예정</a>
+  <a href="#more" data-tab="more"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>더보기</a>
+</nav>
+<div class="gsheet" id="gs" role="dialog" aria-labelledby="gst" hidden>
+  <div class="in">
+    <div class="hd"><h3 id="gst"></h3><button type="button" class="x" id="gsx">닫기</button></div>
+    <p id="gsd"></p>
+    <a href="#glossary" id="gsl">용어 풀이 전체 보기</a>
+  </div>
+</div>
+<dialog class="lb" id="lb"><button type="button" id="lbx">닫기</button><img id="lbimg" alt=""><div id="lbcap" class="cap"></div></dialog>
 <script src="data.js"></script>
 <script>
 "use strict";
@@ -325,7 +492,12 @@ const rname = r => L(D.rarity[r]) || "–";
 const rolename = r => r ? L(D.roles[r]) : "역할 없음";
 const typename = t => L(D.types[t]) || t;
 const manuname = m => D.manu[m] ? L(D.manu[m].name) : m;
-const curname = id => D.currency[id] ? L(D.currency[id]) : "#" + id;
+const curname = id => {
+  if (D.currency[id]) return L(D.currency[id]);
+  const tk = D.tanks.find(t => t.id == id); if (tk) return "탱크 " + tname(tk);
+  const gd = (D.goods || []).find(g => g.id == id); if (gd && L(gd.name)) return L(gd.name);
+  return "#" + id;
+};
 const costs = c => !c ? "–" : (Array.isArray(c) ? c : [c]).map(x => `${num(x.n)} ${curname(x.id)}`).join(", ") || "–";
 const STATUS = {released:null, new:"신규·최근", upcoming:"출시 예정", tutorial:"튜토리얼 전용"};
 const stPill = t => STATUS[t.status] ? `<span class="pill st-${t.status}">${STATUS[t.status]}</span>` : "";
@@ -368,15 +540,79 @@ const IMG = (n, alt="", cls="ico", size="") => n ? `<img class="${cls}" src="img
 function tankShot(t, w=200) {
   return t.img ? `<div class="stage" style="--rc:${RC[t.rarity]}">${IMG(t.img, tname(t), "shot")}</div>` : tankSvg(t, w);
 }
-// 클릭하면 크게 보기: data-zoom="이미지이름" data-cap="설명"
+// 클릭하면 크게 보기: data-zoom="이미지이름" data-cap="설명". 파일 이름은 '개발 데이터' 접기 안에만 보인다
+const DEVNOTE = "게임 파일 안의 이름입니다. 플레이에는 몰라도 됩니다.";
 document.addEventListener("click", e => {
   const z = e.target.closest("[data-zoom]"); if (!z) return;
   $("#lbimg").src = "img/" + encodeURIComponent(z.dataset.zoom) + ".webp"; $("#lbimg").alt = z.dataset.cap || "";
-  $("#lbcap").innerHTML = (z.dataset.cap ? esc(z.dataset.cap) + "<br>" : "") + `<span class="muted small">${esc(z.dataset.zoom)}</span>`;
+  $("#lbcap").innerHTML = (z.dataset.cap ? esc(z.dataset.cap) : "") + `<details class="vals"><summary>개발 데이터</summary><span class="small muted">${DEVNOTE}<br>${esc(z.dataset.zoom)}</span></details>`;
   $("#lb").showModal();
 });
 $("#lbx").addEventListener("click", () => $("#lb").close());
 $("#lb").addEventListener("click", e => { if (e.target === $("#lb")) $("#lb").close(); });
+
+// 좁은 화면(폰)인지. 하단 탭이 보이는 폭과 같다
+const NARROW = () => matchMedia("(max-width:760px)").matches;
+// 이름이 실제로 번역돼 있는지: 한국어 표기에서는 한글이 있어야 하고, 한자(중국어 원문)면 번역 안 된 것으로 본다
+const HANGUL = /[가-힣]/, HANZI = /[㐀-鿿]/;
+const named = o => { const s = strip(L(o)); return !!s && !HANZI.test(s) && (LANG !== "ko" || HANGUL.test(s)); };
+// 부품 칸 이름(내부 이름 → 우리말)
+const SLOTKO = {TacticalGear: "전술 부품", Manufacturer: "제조사 부품", TankAbility: "탱크 전용 부품"};
+const slotLabel = (i, gloss) => { const ko = SLOTKO[D.slotDef[i]?.type]; return `${i + 1}번 칸${ko ? " · " + (gloss && ko === "전술 부품" ? G(ko) : ko) : ""}`; };
+const ELTERM = {Fire: "FireElement", Electric: "ElectricElement", Frost: "FrostElement", Plasma: "PlasmaElement"};
+
+// ---------- 용어 풀이 ----------
+// [낱말, 쉬운 말 풀이, 게임 용어집(D.terms) id]. 게임 용어집에 같은 낱말이 있으면 게임 문구를 먼저 쓴다.
+const GLOSS = [
+  ["내구도", "탱크의 체력입니다."],
+  ["장갑", "내구도보다 먼저 깎이는 보호 수치입니다. 임시 장갑 → 장갑 → 내구도 순서로 줄어듭니다."],
+  ["임시 장갑", "장갑과 내구도 대신 피해를 먼저 흡수합니다. 4초 유지된 뒤 매초 처음 양의 최대 5%씩 줄어듭니다.", "TemporaryArmor"],
+  ["치명타", "150% 피해를 입힙니다. 탱크 뒤쪽의 노란 약점을 맞히면 발생합니다.", "CriticalHit"],
+  ["약점", "탱크 뒤쪽의 노란 부분. 맞히면 치명타가 됩니다."],
+  ["에너지", "상대를 맞힐 때마다, 그리고 시간이 지나면 충전됩니다. 가득 차면 파워 무브를 씁니다."],
+  ["파워 무브", "에너지가 가득 차면 쓰는 탱크 고유 기술입니다."],
+  ["고유 특성", "탱크마다 하나씩 가진 고유 효과입니다(게임 화면 이름은 \"능력\")."],
+  ["부품", "탱크 레벨을 올려 해제하고 장착하는 강화 아이템입니다."],
+  ["전술 부품", "1번 칸. 전투 중 눌러서 잠깐 효과를 냅니다."],
+  ["제조사", "탱크를 만든 회사 4곳. 제조사마다 공통 부품과 기술이 있습니다."],
+  ["강화 레벨", "같은 탱크를 또 얻으면 오르는 단계입니다."],
+  ["오퍼레이터", "경기 중 음성 안내를 하는 동료. 각자 스킬과 특전이 있습니다."],
+  ["칩", "탱크에 끼워 추가 효과를 얻는 아이템입니다."],
+  ["원소 누적", "화염·냉기·전기·플라스마 수치가 100 쌓이면 초기화되고 상태 이상이 발동합니다."],
+  ["화재", "3초 동안 0.5초마다 최대 내구도의 3% 피해를 입습니다.", "Burn"],
+  ["동결", "내구도 5% 피해 + 8초 동안 이동·포탑 회전 40% 감소.", "Freeze"],
+  ["플라스마 폭발", "최대 내구도의 15% 피해.", "PlasmaExplosion"],
+  ["교란", "파워 무브를 쓸 수 없습니다.", "Jammed"],
+  ["분산", "조준이 퍼지는 정도. 움직이거나 포탑을 돌리면 커집니다. 작을수록 정확합니다."],
+  ["초당 피해(추정)", "이 사이트가 계산한 값. 피해 × 탄창 ÷ 재장전 시간(탄창이 여러 발이면 발 사이 장전 시간 포함)이며 파워 무브·특성·치명타는 뺐습니다."],
+  ["유효 체력", "이 사이트가 계산한 값. (내구도 + 장갑) ÷ (1 − 받는 피해 감소)입니다. 받는 피해 감소는 최대 90%까지만 반영합니다."],
+];
+const TERMBY = Object.fromEntries((D.terms || []).map(x => [x.id, x]));
+const glossText = k => { const g = GLOSS.find(x => x[0] === k); if (!g) return ""; const tm = g[2] && TERMBY[g[2]]; return (tm && strip(L(tm.desc))) || g[1]; };
+// 점선 밑줄 낱말: 누르면 화면 아래에 풀이 창이 뜬다
+const G = (k, lab) => `<span class="gl" data-g="${esc(k)}">${lab ?? esc(k)}</span>`;
+const gsEl = $("#gs");
+function glossOpen(title, text) { $("#gst").textContent = title; $("#gsd").textContent = text; gsEl.hidden = false; }
+function glossClose() { gsEl.hidden = true; }
+document.addEventListener("click", e => {
+  if (e.target.closest("#gsx, #gsl")) { glossClose(); return; }
+  const el = e.target.closest("abbr.term, .ph, [data-g]");
+  if (el) {
+    if (el.closest("a[href], label")) e.preventDefault();   // 링크·체크 칸 안의 낱말은 풀이만 띄운다
+    if (el.matches(".ph")) glossOpen("? 표시", "게임 데이터에서 값을 찾지 못한 자리입니다.");
+    else if (el.dataset.g) glossOpen(el.dataset.g, glossText(el.dataset.g));
+    else glossOpen(el.textContent.trim(), el.getAttribute("title") || "");
+    return;
+  }
+  if (!gsEl.hidden && !e.target.closest("#gs .in")) glossClose();
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape" && !gsEl.hidden) { glossClose(); return; }
+  if ((e.key === "Enter" || e.key === " ") && e.target.matches && e.target.matches("abbr.term, .ph, [data-g]")) { e.preventDefault(); e.target.click(); }
+});
+// 풀이가 붙은 낱말을 키보드로도 고를 수 있게(화면이 다시 그려질 때마다)
+new MutationObserver(() => app.querySelectorAll("abbr.term:not([tabindex]), .ph:not([tabindex]), [data-g]:not([tabindex])").forEach(el => { el.tabIndex = 0; el.setAttribute("role", "button"); }))
+  .observe(app, {childList: true, subtree: true});
 function skinCard(s) {
   const cap = strip(L(s.name) || String(s.id));
   const pic = s.big || s.small;
@@ -395,49 +631,58 @@ function spark(pts, w=260, h=64) {
 }
 
 // ---------- 라우터 ----------
-const ROUTES = {"": home, tanks, t: tankDetail, build, compare, skills, parts, chips, operators, skins, modes, growth, hidden, gallery, score, find};
+const ROUTES = {"": home, tanks, t: tankDetail, build, compare, skills, parts, chips, operators, skins, modes, growth, hidden, gallery, score, find, more, glossary};
+const BTAB = {"": "home", tanks: "tanks", t: "tanks", build: "build", hidden: "hidden"};   // 하단 탭: 나머지 화면은 전부 '더보기'
 let lastRoute = null;
 function render() {
   const h = decodeURIComponent(location.hash.slice(1));
   const [r, ...args] = h.split("/");
-  (ROUTES[r] || home)(...args);
+  const known = Object.prototype.hasOwnProperty.call(ROUTES, r);
+  glossClose();
+  (known ? ROUTES[r] : home)(...args);
   document.querySelectorAll("nav.tabs a").forEach(a => a.toggleAttribute("aria-current", a.getAttribute("href") === "#" + (r === "t" ? "tanks" : r)));
   document.querySelectorAll("nav.tabs a[aria-current]").forEach(a => a.setAttribute("aria-current", "page"));
-  // 모바일에서 메뉴가 옆으로 밀려 있으면, 지금 메뉴가 보이게 당겨 온다
+  const bt = known ? (BTAB[r] || "more") : "home";
+  document.querySelectorAll("#btabs a").forEach(a => a.dataset.tab === bt ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
+  // 위쪽 메뉴가 옆으로 밀려 있으면, 지금 메뉴가 보이게 당겨 온다
   { const nv = document.querySelector("nav.tabs"), on = nv.querySelector("a[aria-current]");
     if (on && (on.offsetLeft < nv.scrollLeft || on.offsetLeft + on.offsetWidth > nv.scrollLeft + nv.clientWidth)) nv.scrollLeft = Math.max(0, on.offsetLeft - 16); }
+  syncLang();
   if (lastRoute !== h) { if (!h.includes("?")) window.scrollTo(0, 0); lastRoute = h; }
 }
 window.addEventListener("hashchange", render);
+// 폰 폭과 넓은 폭을 오갈 때(회전·창 크기 변경) 접기 기본값이 달라지므로 다시 그린다
+matchMedia("(max-width:760px)").addEventListener("change", () => render());
 // 메뉴가 화면보다 길면 오른쪽 끝을 흐리게(더 있다는 표시). 끝까지 밀면 지운다.
 { const nv = document.querySelector("nav.tabs");
   const fade = () => nv.classList.toggle("more", nv.scrollLeft + nv.clientWidth < nv.scrollWidth - 4);
   nv.addEventListener("scroll", fade, {passive: true}); window.addEventListener("resize", fade); fade(); }
-document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => {
-  LANG = b.dataset.lang; try { localStorage.setItem("tab-lang", LANG); } catch (e) {}
-  document.querySelectorAll(".lang button").forEach(x => x.setAttribute("aria-pressed", x === b));
+// 언어 전환: 머리글과 '더보기' 화면 두 곳에 버튼이 있어 문서에서 한 번에 받는다
+function syncLang() { document.querySelectorAll("[data-lang]").forEach(x => x.setAttribute("aria-pressed", x.dataset.lang === LANG)); }
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-lang]"); if (!b) return;
+  LANG = b.dataset.lang; try { localStorage.setItem("tab-lang", LANG); } catch (err) {}
   render();
-}));
-document.querySelectorAll(".lang button").forEach(x => x.setAttribute("aria-pressed", x.dataset.lang === LANG));
+});
 
 // ---------- 홈 ----------
 function home() {
-  const up = D.tanks.filter(t => t.status !== "released");
+  const up = D.tanks.filter(t => t.status !== "released" && t.status !== "tutorial");
   const lineup = [...D.tanks].filter(t => t.imgQ).sort((a,b) => b.rarity - a.rarity);
-  const H = D.hidden;
-  const untr = Object.values(H.untranslated).reduce((a, b) => a + b.length, 0);
+  const umodes = D.hidden.unreleasedModes.map(id => D.modes.find(m => m.id === id)).filter(Boolean);
   app.innerHTML = `
-  <section>
-    <div class="lineup" aria-hidden="true">${lineup.map((t,i) => `<span style="animation-delay:${i*40}ms;display:inline-block;flex:none">${IMG(t.imgQ, "", "ico", 'width="96" height="96"')}</span>`).join("")}</div>
+  <section class="home-hero">
+    <h1>게임에 안 나오는 숫자까지, 탱크어붐 도감</h1>
+    <p class="lead">탱크 ${D.tanks.length}대의 숨은 능력치, 부품·칩 효과, 곧 나올 탱크를 한곳에서 봅니다. 비공식 팬 사이트입니다.</p>
+    <div class="cta3">
+      <a class="cta pri" href="#tanks">내 탱크 찾기<i aria-hidden="true">→</i></a>
+      <a class="cta" href="#build">부품 조합 계산해 보기<i aria-hidden="true">→</i></a>
+      <a class="cta" href="#hidden">곧 나올 탱크·모드 보기<i aria-hidden="true">→</i></a>
+    </div>
+    <form class="hsearch" id="hsearch" role="search"><input type="search" id="hq" placeholder="탱크·부품·칩 이름으로 찾기" aria-label="통합 검색" enterkeyhint="search"><button type="submit" class="btn ghost">찾기</button></form>
+    <a class="firstlink" href="#glossary">처음이신가요? 용어 풀이 보기</a>
   </section>
-  <div class="facts">
-    <a href="#tanks"><b>${D.tanks.length}</b><span>탱크</span></a>
-    <a href="#parts"><b>${Object.keys(D.parts).length}</b><span>부품</span></a>
-    <a href="#chips"><b>${Object.keys(D.chips).length}</b><span>칩</span></a>
-    <a href="#skins"><b>${Object.keys(D.skins).length}</b><span>스킨</span></a>
-    <a href="#modes"><b>${D.modes.length}</b><span>모드 설정</span></a>
-    <a href="#gallery"><b>${D.gallery.reduce((a, g) => a + g[2], 0).toLocaleString("ko-KR")}</b><span>게임 이미지</span></a>
-  </div>
+  <div class="lineup" aria-hidden="true">${lineup.map((t,i) => `<span style="animation-delay:${i*40}ms;display:inline-block;flex:none">${IMG(t.imgQ, "", "ico", 'width="96" height="96"')}</span>`).join("")}</div>
 
   <h2>출시 예정</h2>
   <div class="hazard-box"><div class="tape"></div><div class="in">
@@ -446,46 +691,108 @@ function home() {
         <div style="font:22px/1.2 var(--display);margin-top:6px">${tname(t)}</div>
         <div class="small muted">${esc(t.model)} · ${typename(t.type)} · ${manuname(t.manu)}</div>
         <div class="small" style="margin-top:4px">${t.why.map(esc).join(", ")}</div></a>`).join("")}
-      <a href="#hidden"><div class="row"><span class="pill st-upcoming">모드</span></div>
-        <div style="font:22px/1.2 var(--display);margin-top:6px">미공개 모드 ${H.unreleasedModes.length}개</div>
-        <div class="small muted">${H.unreleasedModes.map(id => esc(D.modes.find(m => m.id === id).type)).join(", ")}</div></a>
-      <a href="#hidden"><div class="row"><span class="pill st-new">텍스트</span></div>
-        <div style="font:22px/1.2 var(--display);margin-top:6px">미번역 문구 ${untr}개</div>
-</a>
+      ${umodes.length ? `<a href="#hidden/modes"><div class="row"><span class="pill st-upcoming">모드</span></div>
+        <div style="font:22px/1.2 var(--display);margin-top:6px">미공개 모드 ${umodes.length}개</div>
+        <div class="small muted">${umodes.map(m => esc(strip(L(m.name)) || m.type)).join(", ")}</div></a>` : ""}
     </div>
   </div></div>
 
-  <h2>바로가기</h2>
+  <div class="home-links"><h2>바로가기</h2>
   <div class="grid g-3">
-    ${[["#build","빌드 시뮬레이터"],["#compare","탱크 비교"],["#skills","스킬·특성"],["#chips","칩"],["#growth","성장·보상"]].map(([h,a]) => `<a class="panel" style="text-decoration:none" href="${h}"><h3 style="margin:0">${a}</h3></a>`).join("")}
+    ${[["#build","부품 조합 계산기"],["#compare","탱크 비교"],["#skills","파워 무브·특성"],["#chips","칩"],["#growth","제조사·보상"],["#glossary","용어 풀이"]].map(([h,a]) => `<a class="panel" style="text-decoration:none" href="${h}"><h3 style="margin:0">${a}</h3></a>`).join("")}
+  </div></div>
+
+  <div class="facts">
+    <a href="#tanks"><b>${D.tanks.length}</b><span>탱크</span></a>
+    <a href="#parts"><b>${Object.keys(D.parts).length}</b><span>부품</span></a>
+    <a href="#chips"><b>${Object.keys(D.chips).length}</b><span>칩</span></a>
+    <a href="#skins"><b>${Object.keys(D.skins).length}</b><span>스킨</span></a>
+    <a href="#modes"><b>${D.modes.length}</b><span>모드 설정</span></a>
+    <a href="#gallery"><b>${D.gallery.reduce((a, g) => a + g[2], 0).toLocaleString("ko-KR")}</b><span>게임 이미지</span></a>
   </div>`;
+  $("#hsearch").addEventListener("submit", e => { e.preventDefault(); const q = $("#hq").value.trim(); location.hash = q ? "#find/" + encodeURIComponent(q) : "#find"; });
+}
+
+// ---------- 더보기(폰 하단 탭의 다섯째 칸) ----------
+function more() {
+  const item = (h, n, d) => `<a href="${h}"><span>${n}${d ? `<small>${d}</small>` : ""}</span><i aria-hidden="true">›</i></a>`;
+  const cnt = o => Object.keys(o).length.toLocaleString("ko-KR");
+  app.innerHTML = `<h1>더보기</h1>
+  <section class="mgroup"><h2>탱크</h2><div class="mlist">
+    ${item("#compare", "비교", "탱크 여러 대를 나란히 놓고 보기")}
+    ${item("#skills", "파워 무브·특성", `탱크 ${D.tanks.length}대의 고유 기술`)}
+  </div></section>
+  <section class="mgroup"><h2>장비</h2><div class="mlist">
+    ${item("#parts", "부품", cnt(D.parts) + "개")}
+    ${item("#chips", "칩", cnt(D.chips) + "개")}
+    ${item("#operators", "오퍼레이터", D.operators.length + "명")}
+    ${item("#skins", "스킨", cnt(D.skins) + "개")}
+  </div></section>
+  <section class="mgroup"><h2>규칙</h2><div class="mlist">
+    ${item("#modes", "모드·맵", "게임 모드와 맵 그림")}
+    ${item("#score", "점수 규칙", "점수와 MVP가 정해지는 방식")}
+    ${item("#growth", "제조사·보상", "제조사 기술, 리그, 메달")}
+    ${item("#glossary", "용어 풀이", "게임에 나오는 말을 쉬운 말로")}
+  </div></section>
+  <section class="mgroup"><h2>자료</h2><div class="mlist">
+    ${item("#gallery", "이미지 모음", D.gallery.reduce((a, g) => a + g[2], 0).toLocaleString("ko-KR") + "장")}
+    ${item("#find", "검색", "탱크·부품·칩·스킨 이름으로 찾기")}
+    <div class="mrow"><span>언어 전환<small>탱크·부품 이름 표기</small></span>
+      <span class="lang" role="group" aria-label="이름 표기 언어"><button type="button" data-lang="ko">한국어</button><button type="button" data-lang="en">English</button></span></div>
+  </div></section>`;
+}
+
+// ---------- 용어 풀이 ----------
+function glossary() {
+  const card = (n, d) => `<section class="panel"><h3 style="margin:0 0 4px">${esc(n)}</h3><p class="small" style="margin:0">${esc(d) || '<span class="muted">설명 없음</span>'}</p></section>`;
+  app.innerHTML = `<h1>용어 풀이</h1>
+  <p class="note-top">게임에 나오는 말을 쉬운 말로 풀었습니다. 도감 안에서 점선 밑줄이 있는 낱말을 누르면 같은 풀이가 화면 아래에 뜹니다.</p>
+  <h2>기본 용어 <span class="small muted">${GLOSS.length}개</span></h2>
+  <div class="grid g-2">${GLOSS.map(([k]) => card(k, glossText(k))).join("")}</div>
+  <h2>게임 용어집 <span class="small muted">${(D.terms || []).length}개 · 게임 문구 그대로</span></h2>
+  <div class="grid g-2">${(D.terms || []).map(x => card(strip(L(x.name)), strip(L(x.desc)))).join("")}</div>
+  <p style="margin-top:16px"><a href="#skills">원소별 누적 수치 표는 ‘파워 무브·특성’ 화면 아래쪽에 있습니다</a></p>`;
 }
 
 // ---------- 탱크 목록 ----------
-const tf = {q:"", rarity:"", role:"", type:"", manu:"", status:"", sort:"rarity"};
+const tf = {q:"", rarity:"", role:"", type:"", manu:"", status:"", sort:"rarity", up:false};
+const isUpcoming = t => t.status === "upcoming" || t.status === "tutorial";
 function tanks() {
   const opts = (k, arr, lab) => `<select data-k="${k}" aria-label="${lab}"><option value="">${lab}: 전체</option>${arr.map(([v,n]) => `<option value="${v}" ${tf[k]==v?"selected":""}>${n}</option>`).join("")}</select>`;
+  const upN = D.tanks.filter(isUpcoming).length;
   app.innerHTML = `<h1>탱크</h1>
-  <div class="filters">
-    <input type="search" placeholder="이름·모델·스킬 검색" value="${esc(tf.q)}" data-k="q" aria-label="검색">
+  <div class="filters" style="margin-bottom:8px">
+    <input type="search" placeholder="이름·모델·파워 무브 검색" value="${esc(tf.q)}" data-k="q" aria-label="검색">
+    <select data-k="sort" aria-label="정렬">${[["rarity","등급순"],["hp","내구도"],["dmg","피해량"],["dps","초당 피해(추정)"],["reload","재장전 빠른순"],["id","번호순"]].map(([v,n]) => `<option value="${v}" ${tf.sort===v?"selected":""}>${n}</option>`).join("")}</select>
+    <span class="count" id="cnt"></span>
+  </div>
+  <div class="rolechips" id="roles" role="group" aria-label="역할로 거르기">
+    ${[["", "전체"], ...Object.keys(D.roles).map(r => [r, strip(rolename(r))])].map(([v, n]) => `<button type="button" data-role="${v}" aria-pressed="${tf.role === v}">${n}</button>`).join("")}
+  </div>
+  <details class="mf" ${!NARROW() || tf.rarity || tf.type || tf.manu || tf.status ? "open" : ""}><summary>거르기 더 보기</summary>
+    <div class="filters">
     ${opts("rarity",[1,2,3,4].map(r => [r, strip(rname(r))]),"등급")}
-    ${opts("role",Object.keys(D.roles).map(r => [r, strip(rolename(r))]),"역할")}
     ${opts("type",Object.keys(D.types).map(r => [r, strip(typename(r))]),"차종")}
     ${opts("manu",["ARES","BASALTIC","IMPACT","UNION"].map(m => [m, strip(manuname(m))]),"제조사")}
     ${opts("status",[["released","출시"],["new","신규·최근"],["upcoming","출시 예정"],["tutorial","튜토리얼"]],"상태")}
-    <select data-k="sort" aria-label="정렬">${[["rarity","등급순"],["hp","내구도"],["dmg","피해량"],["dps","추정 DPS"],["reload","재장전 빠른순"],["id","번호순"]].map(([v,n]) => `<option value="${v}" ${tf.sort===v?"selected":""}>${n}</option>`).join("")}</select>
-    <span class="count" id="cnt"></span>
-  </div>
-  <div class="grid g-cards" id="list"></div>`;
+    </div></details>
+  <label class="chk small"><input type="checkbox" id="tup" ${tf.up ? "checked" : ""}> 출시 예정도 보기 <span class="muted">(출시 예정·튜토리얼 ${upN}대)</span></label>
+  <div class="grid g-cards" id="list" style="margin-top:10px"></div>`;
   app.querySelectorAll("[data-k]").forEach(el => el.addEventListener("input", () => { tf[el.dataset.k] = el.value; drawTanks(); }));
+  $("#roles").addEventListener("click", e => { const b = e.target.closest("[data-role]"); if (!b) return; tf.role = b.dataset.role;
+    $("#roles").querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b)); drawTanks(); });
+  $("#tup").addEventListener("input", e => { tf.up = e.target.checked; drawTanks(); });
   drawTanks();
 }
 function drawTanks() {
   const q = tf.q.trim().toLowerCase();
-  let list = D.tanks.filter(t =>
+  const all = D.tanks.filter(t =>
     (!tf.rarity || t.rarity == tf.rarity) && (!tf.role || t.role === tf.role) && (!tf.type || t.type === tf.type) &&
     (!tf.manu || t.manu === tf.manu) && (!tf.status || t.status === tf.status) &&
     (!q || [strip(L(t.name)), t.model, strip(t.name?.en), strip(L(t.skill.name)), strip(L(t.trait.name)), String(t.id)].join(" ").toLowerCase().includes(q)));
+  // 출시 예정·튜토리얼 전용은 기본으로 숨긴다(상태를 직접 고르거나 '출시 예정도 보기'를 켜면 보임)
+  const hide = !tf.up && !tf.status;
+  const list = hide ? all.filter(t => !isUpcoming(t)) : all, hid = all.length - list.length;
   const by = {rarity:(a,b)=>b.rarity-a.rarity||a.id-b.id, hp:(a,b)=>lvRow(b,MAXLV).hp-lvRow(a,MAXLV).hp, dmg:(a,b)=>lvRow(b,MAXLV).dmg-lvRow(a,MAXLV).dmg,
     dps:(a,b)=>dps(b,MAXLV)-dps(a,MAXLV), reload:(a,b)=>a.fire.ClipReloadTime-b.fire.ClipReloadTime, id:(a,b)=>a.id-b.id};
   list.sort(by[tf.sort]);
@@ -494,14 +801,14 @@ function drawTanks() {
     <a class="tcard" href="#t/${t.id}" style="--rc:${RC[t.rarity]}">
       ${t.img ? tankShot(t) : ""}
       <div class="top">${t.img ? "" : tankSvg(t, 74)}<div><div class="nm">${tname(t)}</div><div class="md">${esc(t.model)} · ${typename(t.type)}</div></div></div>
-      <div class="row badges">${rPill(t.rarity)}<span class="pill">${rolename(t.role)}</span><span class="pill">${manuname(t.manu)}</span>${stPill(t)}</div>
+      <div class="row badges">${rPill(t.rarity)}<span class="pill">${rolename(t.role)}</span><span class="pill opt-m">${manuname(t.manu)}</span>${stPill(t)}</div>
       <div class="stats"><div><b>${num(l.hp)}</b><span>내구도</span></div><div><b>${num(l.dmg)}</b><span>피해량</span></div><div><b>${num(t.fire.ClipReloadTime)}초</b><span>재장전</span></div></div>
-    </a>`; }).join("") || `<div class="empty">결과 없음</div>`;
+    </a>`; }).join("") || `<div class="empty">결과 없음${hid ? ` · 조건에 맞는 출시 예정 탱크 ${hid}대는 숨겨져 있습니다. ‘출시 예정도 보기’를 켜 보세요.` : ""}</div>`;
 }
 
 // ---------- 탱크 상세 ----------
 const STATMAX = {};
-function statMax(key, f) { if (!(key in STATMAX)) STATMAX[key] = Math.max(...D.tanks.map(f).filter(x => x != null && isFinite(x))); return STATMAX[key]; }
+function statMax(key, f) { if (!(key in STATMAX)) STATMAX[key] = Math.max(...D.tanks.filter(t => t.status === "released" || t.status === "new").map(f).filter(x => x != null && isFinite(x))); return STATMAX[key]; }
 // 능력 데이터 세부 수치: 이름을 우리말로(전부 아는 낱말일 때만), 단위는 이름으로 짐작(거리 cm→m, 비율→%, 시간→초)
 const VW = {Damage:"피해",Increase:"증가",Decrease:"감소",Ratio:"비율",Range:"거리",Distance:"거리",Radius:"반경",Duration:"지속",Time:"시간",Delay:"지연",
   Cooldown:"재사용",Reload:"재장전",Clip:"",Element:"원소",Heal:"회복",Armor:"장갑",Energy:"에너지",Speed:"속도",Max:"최대",Min:"최소",Count:"횟수",Num:"개수",
@@ -534,14 +841,55 @@ function dispTable(list) {
   const enT = en.length ? `<details class="vals sub"><summary>번역 안 된 항목 ${en.length}개 (원래 이름)</summary><table>${en.map(e => row(`<span class="small muted">${esc(e[0].replace(/([a-z])([A-Z])/g, "$1 $2").replace(/[._]/g, " "))}</span>`, e)).join("")}</table></details>` : "";
   return `<details class="vals"><summary>세부 수치 ${list.length}개 (게임 데이터)</summary>${ko.length ? `<table>${ko.map(e => row(esc(lab(e)), e)).join("")}</table>` : ""}${enT}</details>`;
 }
-function meterRow(lab, val, max, unit="", invert=false, tip="") {
+function meterRow(lab, val, max, unit="", invert=false) {
   const pct = max ? Math.max(3, Math.min(100, (invert ? (max / (val || max)) * 40 : val / max * 100))) : 0;
-  return `<div class="stat" ${tip?`title="${esc(tip)}"`:""}><span class="lab">${lab}</span><span class="meter"><i style="width:${pct}%"></i></span><span class="v">${num(val)}${unit}</span></div>`;
+  return `<div class="stat"><span class="lab">${lab}</span><span class="meter"><i style="width:${pct}%"></i></span><span class="v">${num(val)}${unit}</span></div>`;
+}
+// '한눈에' 카드: 핵심 수치 5개와 순위. 순위는 출시된 탱크(출시·신규)끼리만 매기고, 출시 예정·튜토리얼 전용은 뺀다.
+const RANKED = D.tanks.filter(t => t.status === "released" || t.status === "new");
+// [키, 이름, 용어 풀이 낱말, 값, 방향(1=클수록 좋음, -1=작을수록 좋음), 단위]
+const GSTATS = [
+  ["hp", "내구도", "내구도", t => lvRow(t, MAXLV).hp, 1, ""],
+  ["ar", "장갑", "장갑", t => lvRow(t, MAXLV).ar, 1, ""],
+  ["dmg", "1발 피해", "", t => lvRow(t, MAXLV).dmg, 1, ""],
+  ["reload", "재장전", "", t => t.fire.ClipReloadTime, -1, "초"],
+  ["dps", "초당 피해(추정)", "초당 피해(추정)", t => { const d = dps(t, MAXLV); return d == null ? null : Math.round(d); }, 1, ""],
+];
+const RANKVALS = {};
+function rankOf(key, f, dir, v) {
+  const vs = RANKVALS[key] ||= RANKED.map(f).filter(x => x != null && isFinite(x));
+  const better = vs.filter(x => dir > 0 ? x > v : x < v).length, worse = vs.filter(x => dir > 0 ? x < v : x > v).length;
+  return {n: vs.length, rank: better + 1, better, worse, best: dir > 0 ? Math.max(...vs) : Math.min(...vs)};
+}
+function glance(t) {
+  const ranked = RANKED.includes(t);
+  const rows = GSTATS.map(([key, lab, g, f, dir, unit]) => {
+    const v = f(t); if (v == null || !isFinite(v)) return null;
+    const r = rankOf(key, f, dir, v);
+    const pct = !r.best ? 3 : Math.max(3, Math.min(100, dir > 0 ? v / r.best * 100 : (v ? r.best / v * 100 : 100)));
+    return {lab, g, v, unit, dir, r, pct};
+  }).filter(Boolean);
+  // 강점·약점은 순위로만: 위에서 8위 안이면 강점, 아래에서 8위 안이면 약점(값이 같은 탱크가 많아 둘 다 해당하면 어느 쪽도 아님)
+  const strong = rows.filter(x => x.r.better < 8 && x.r.worse >= 8), weak = rows.filter(x => x.r.worse < 8 && x.r.better >= 8);
+  const names = xs => xs.map(x => `${x.lab} ${x.r.rank}위`).join(", ");
+  const one = [[t.role ? strip(rolename(t.role)) : "", strip(typename(t.type))].filter(Boolean).join(" "), strip(L(t.skill.name)) ? `파워 무브 ‘${esc(strip(L(t.skill.name)))}’` : ""].filter(Boolean).join(" · ");
+  return `<section class="panel glance" id="sec-top" style="--rc:${RC[t.rarity]}">
+    <h3>한눈에 <span class="small muted" style="font-weight:400">레벨 ${MAXLV} 기준</span></h3>
+    <p class="one">${one}</p>
+    ${rows.map(x => `<div class="gstat"><span class="lab">${x.g ? G(x.g, x.lab) : x.lab}</span><span class="meter"><i style="width:${x.pct}%"></i></span><span class="v">${num(x.v)}${x.unit}</span>
+      ${ranked ? `<span class="rk">출시된 탱크 ${x.r.n}대 중 <b>${x.r.rank}위</b>${x.dir < 0 ? " · 짧을수록 좋음" : ""}</span>` : ""}</div>`).join("")}
+    ${ranked ? `<div class="sw"><div><b class="g">강점</b> ${strong.length ? names(strong) : '<span class="muted">상위 8위 안에 드는 수치 없음</span>'}</div><div><b class="b">약점</b> ${weak.length ? names(weak) : '<span class="muted">하위 8위 안에 드는 수치 없음</span>'}</div></div>`
+      : `<p class="small muted" style="margin:10px 0 0">${STATUS[t.status] || "출시 전"} 탱크라 순위는 매기지 않고 값만 보여 줍니다. 막대는 출시된 탱크 중 가장 좋은 값과 견준 길이입니다.</p>`}
+  </section>`;
 }
 function tankDetail(id) {
   const t = TANK[id];
   if (!t) { app.innerHTML = `<div class="empty">탱크 ${esc(id)}를 찾을 수 없습니다. <a href="#tanks">목록으로</a></div>`; return; }
   const f = t.fire, e = t.energy, b = t.body, m = t.move, p = t.proj || {}, w = t.weapon;
+  const wide = !NARROW();
+  // 접는 구역: 제목 줄에 개수를 보이고, 폰에서는 전부 접힌 채로 시작한다(넓은 화면은 부품·사격만 펼침)
+  const sec = (key, title, cnt, body, open) => `<details class="sec" id="sec-${key}" data-t="${title}"${open ? " open" : ""}><summary>${title}${cnt ? ` <small>${cnt}</small>` : ""}</summary><div class="body">${body}</div></details>`;
+  const partN = t.slots.flat().length;
   app.innerHTML = `
   <div class="crumbs"><a href="#tanks">탱크</a> / ${tname(t)}</div>
   <section class="dhead" style="--rc:${RC[t.rarity]}">
@@ -549,28 +897,33 @@ function tankDetail(id) {
     <div>
       <div class="row">${rPill(t.rarity)}<span class="pill">${rolename(t.role)}</span><span class="pill">${typename(t.type)}</span><span class="pill">${manuname(t.manu)}</span>${stPill(t)}</div>
       <div class="nm" style="margin-top:8px">${tname(t)}</div>
-      <div class="sub">${LANG==="ko" ? esc(strip(t.name?.en)) + " · " : ""}실제 모델 ${esc(t.model)} · 번호 ${t.id}</div>
+      <div class="sub">${LANG==="ko" && strip(t.name?.en) && strip(t.name?.en) !== strip(tname(t)) ? esc(strip(t.name?.en)) + " · " : ""}실제 모델 ${esc(t.model)} · 번호 ${t.id}</div>
       ${t.tags.length ? `<div class="row" style="margin-top:8px">${t.tags.map(x => `<span class="pill">${L(x)}</span>`).join("")}</div>` : ""}
       ${t.why.length ? `<p class="small" style="margin-top:8px;color:var(--hazard)">${t.why.map(esc).join(" · ")}</p>` : ""}
     </div>
   </section>
 
   <nav class="toc" id="toc" aria-label="이 페이지 바로가기"></nav>
-  <div class="grid g-2" style="margin-top:14px" id="sec-top">
+  <div class="grid g-2" style="margin-top:14px">
+    ${glance(t)}
     <section class="panel" style="--rc:${RC[t.rarity]}">
-      <div class="ability"><div class="ttl">${IMG(t.skillIcon, t.skill.name && L(t.skill.name))}<span class="pill">파워 무브</span><b>${L(t.skill.name) || "–"}</b></div><p>${L(t.skill.desc) || '<span class="muted">설명 없음</span>'}</p>${dispTable(t.skill.disp)}</div>
-      <div class="ability"><div class="ttl">${IMG(t.traitIcon, t.trait.name && L(t.trait.name))}<span class="pill">고유 특성</span><b>${L(t.trait.name) || "–"}</b></div><p>${L(t.trait.desc) || '<span class="muted">설명 없음</span>'}</p>${dispTable(t.trait.disp)}</div>
-      ${w ? `<div class="ability"><div class="ttl">${IMG(w.icon, L(w.name))}<span class="pill">주무장</span><b>${L(w.name)}</b></div><p>${L(w.desc)}</p></div>` : ""}
-    </section>
-    <section class="panel" style="--rc:${RC[t.rarity]}">
-      <h3>레벨별 능력치</h3>
-      <div class="lvl"><input type="range" min="1" max="${t.levels.length}" value="${t.levels.length}" id="lv" aria-label="레벨"><output id="lvo"></output></div>
-      <div id="lvstats"></div>
+      <div class="ability"><div class="ttl">${IMG(t.skillIcon, t.skill.name && L(t.skill.name))}<span class="pill">${G("파워 무브")}</span><b>${L(t.skill.name) || "–"}</b></div><p>${L(t.skill.desc) || '<span class="muted">설명 없음</span>'}</p>${dispTable(t.skill.disp)}</div>
+      <div class="ability"><div class="ttl">${IMG(t.traitIcon, t.trait.name && L(t.trait.name))}<span class="pill">${G("고유 특성")}</span><b>${L(t.trait.name) || "–"}</b></div><p>${L(t.trait.desc) || '<span class="muted">설명 없음</span>'}</p>${dispTable(t.trait.disp)}</div>
+      ${w ? `<div class="ability" style="margin-bottom:0"><div class="ttl">${IMG(w.icon, L(w.name))}<span class="pill">주무장</span><b>${L(w.name)}</b></div><p style="margin-bottom:0">${L(w.desc)}</p></div>` : ""}
     </section>
   </div>
+  <p class="acts"><a class="btn" href="#build/${t.id}">부품 조합 계산기</a><a class="btn ghost" href="#compare/${t.id}">다른 탱크와 비교</a></p>
 
-  <h2>사격</h2>
-  <div class="grid g-3">
+  <div class="secs">
+  ${sec("lv", "레벨별 능력치", `레벨 1~${t.levels.length}`, `<div class="panel" style="--rc:${RC[t.rarity]}">
+      <div class="lvl"><input type="range" min="1" max="${t.levels.length}" value="${t.levels.length}" id="lv" aria-label="레벨"><output id="lvo"></output></div>
+      <div id="lvstats"></div>
+    </div>`)}
+
+  ${sec("parts", "부품", partN ? partN + "개" : "", `<p class="small muted">${esc(glossText("부품"))}</p>
+  <div class="grid g-3">${t.slots.map((s, i) => `<div class="slot"><h3>${slotLabel(i, true)}</h3>${s.map(pid => { const pt = D.parts[pid]; return pt ? `<div class="opt">${IMG(pt.icon, L(pt.name), "ico", 'width="40" height="40" style="float:right;margin-left:8px"')}<b>${L(pt.name) || '<span class="muted">이름 없음(미번역)</span>'}</b><div class="small">${L(t.pdesc[pid] || pt.desc)}</div><div class="small muted">${costs(pt.cost)}</div></div>` : `<div class="opt muted">#${pid}</div>`; }).join("")}</div>`).join("") || '<p class="muted">부품 정보 없음</p>'}</div>`, wide)}
+
+  ${sec("fire", "사격 자세히", "", `<div class="grid g-3">
     <div class="panel"><dl class="kv">
       <dt>탄창</dt><dd>${num(f.MagazineCapacity)}발</dd>
       <dt>재장전(탄창)</dt><dd>${num(f.ClipReloadTime)}초</dd>
@@ -581,7 +934,7 @@ function tankDetail(id) {
       <dt>피해 0 거리</dt><dd>${num(f.ZeroDamageRange/100,0)}m</dd>
     </dl></div>
     <div class="panel"><dl class="kv">
-      <dt>기본 분산</dt><dd>${num(f.Dispersion,3)}</dd>
+      <dt>${G("분산", "기본 분산")}</dt><dd>${num(f.Dispersion,3)}</dd>
       <dt>조준 수렴 속도</dt><dd>×${num(f.AimingSpeedFactor)}</dd>
       <dt>이동 중 분산</dt><dd>×${num(f.ChassisMoveDispersionFactor)}</dd>
       <dt>차체 회전 분산</dt><dd>×${num(f.ChassisRotateDispersionFactor)}</dd>
@@ -596,24 +949,23 @@ function tankDetail(id) {
       <dt>부앙각</dt><dd>${num(f.MinGunAngle)}° ~ ${num(f.MaxGunAngle)}°</dd>
       <dt>저격 시야(FOV)</dt><dd>${num(f.SniperModeMinFOV)} ~ ${num(f.SniperModeMaxFOV)}</dd>
     </dl></div>
-    <div class="panel"><h3>포탄 <span class="small muted">${esc(p.row || "")}</span></h3><dl class="kv">
+    <div class="panel"><h3>포탄</h3><dl class="kv">
       <dt>초속</dt><dd>${num((p.InitialSpeed||0)/100,0)}m/s</dd>
       <dt>중력 계수</dt><dd>${num(p.GravityScale)}</dd>
       <dt>관통</dt><dd>${num(p.Penetration)}</dd>
       <dt>약점/일반 배율</dt><dd>×${num(p.WeakDamageMultiplier)} / ×${num(p.NormalDamageMultiplier)}</dd>
-      <dt>치명타 배율</dt><dd>×${num(p.CritDamageMultiplier)}</dd>
+      <dt>${G("치명타", "치명타 배율")}</dt><dd>×${num(p.CritDamageMultiplier)}</dd>
       <dt>초치명 배율·확률</dt><dd>×${num(p.SuperCritDamageMultiplier)} · ${num((p.SuperCritChance||0)*100)}%</dd>
-      <dt>충격 등급</dt><dd>${num(p.ImpactLevel)} ${esc(p.DamageImpactType||"")}</dd>
+      <dt>충격 등급</dt><dd>${num(p.ImpactLevel)}</dd>
       ${p.bDealAOEDamage ? `<dt>범위 피해</dt><dd>${num(p.FullDamageRadius/100)}m / ${num(p.LinearDamageRadius/100)}m</dd>` : ""}
       ${p.bIsChargeAbility ? `<dt>충전형</dt><dd>예</dd>` : ""}
     </dl></div>
-  </div>
+  </div>`, wide)}
 
-  <h2>에너지와 차체</h2>
-  <div class="grid g-3">
+  ${sec("energy", "에너지·차체", "", `<div class="grid g-3">
     <div class="panel"><dl class="kv">
-      <dt>최대 에너지</dt><dd>${num(e.EnergyMax)}</dd>
-      <dt>파워 무브 비용</dt><dd>${num(e.AbilityEnergyCost)}</dd>
+      <dt>${G("에너지", "최대 에너지")}</dt><dd>${num(e.EnergyMax)}</dd>
+      <dt>${G("파워 무브", "파워 무브 비용")}</dt><dd>${num(e.AbilityEnergyCost)}</dd>
       <dt>시작 에너지</dt><dd>${num(e.StartEnergy)}</dd>
       <dt>초당 충전</dt><dd>${num(e.EnergyPerSecond)}</dd>
       <dt>타격당 충전</dt><dd>${num(e.EnergyPerHit)}</dd>
@@ -635,47 +987,47 @@ function tankDetail(id) {
       <dt>제동력</dt><dd>${num(m.BrakeForce)}</dd>
     </dl></div>
     <div class="panel"><h3>엔진 토크 곡선</h3>${spark(t.torque) || '<p class="muted">곡선 없음</p>'}</div>
-  </div>
+  </div>`)}
 
-  <h2>부품 슬롯</h2>
-  <div class="grid g-3">${t.slots.map((s, i) => `<div class="slot"><h3>슬롯 ${i+1} <span class="small muted">${esc(D.slotDef[i]?.type || "")}</span></h3>${s.map(pid => { const pt = D.parts[pid]; return pt ? `<div class="opt">${IMG(pt.icon, L(pt.name), "ico", 'width="40" height="40" style="float:right;margin-left:8px"')}<b>${L(pt.name) || esc(pt.key)}</b><div class="small">${L(t.pdesc[pid] || pt.desc)}</div><div class="small muted">${costs(pt.cost)}</div></div>` : `<div class="opt muted">#${pid}</div>`; }).join("")}</div>`).join("") || '<p class="muted">부품 정보 없음</p>'}</div>
+  ${t.enh.length ? sec("enh", "강화", t.enh.length + "단계", `<p class="small muted">${G("강화 레벨")}: ${esc(glossText("강화 레벨"))}</p><div class="panel scroll"><table class="tbl"><tr><th>단계</th><th>효과</th></tr>${t.enh.map(x => `<tr><td>+${x.lv}</td><td>${modText(x.mod)}</td></tr>`).join("")}</table></div>`) : ""}
 
-  ${t.enh.length ? `<h2>강화 단계</h2><div class="panel scroll"><table class="tbl"><tr><th>단계</th><th>효과</th></tr>${t.enh.map(x => `<tr><td>+${x.lv}</td><td>${modText(x.mod)}</td></tr>`).join("")}</table></div>` : ""}
+  ${sec("chips", "칩", t.chips.length + "개", `<p class="small muted">${esc(glossText("칩"))} 이름을 누르면 효과를 봅니다.</p>
+  ${t.chips.length ? `<div class="row chippool">${t.chips.map(c => { const ch = D.chips[c]; return ch ? `<a href="#chips/${c}" class="pill ${chipCls(ch.rarity)}" style="text-decoration:none;padding-left:3px">${IMG(ch.icon, "", "ico", 'width="22" height="22"')}${L(ch.name) || c}</a>` : ""; }).join("")}</div>` : '<p class="muted">칩 풀이 지정되지 않았습니다.</p>'}`)}
 
-  <h2>칩 풀 <span class="small muted">${t.chips.length}개</span></h2>
-  ${t.chips.length ? `<div class="row">${t.chips.map(c => { const ch = D.chips[c]; return ch ? `<a href="#chips/${c}" class="pill ${chipCls(ch.rarity)}" style="text-decoration:none;padding-left:3px">${IMG(ch.icon, "", "ico", 'width="22" height="22"')}${L(ch.name) || c}</a>` : ""; }).join("")}</div>` : '<p class="muted">칩 풀이 지정되지 않았습니다.</p>'}
+  ${sec("skins", "스킨", t.skins.length + "개", `<p class="small muted">누르면 크게 봅니다.</p>
+  <div class="skins">${t.skins.map(sid => D.skins[sid]).filter(Boolean).sort((a,b) => a.order - b.order).map(skinCard).join("")}</div>`)}
 
-  <h2>스킨 <span class="small muted">${t.skins.length}개 · 누르면 크게 보기</span></h2>
-  <div class="skins">${t.skins.map(sid => D.skins[sid]).sort((a,b) => a.order - b.order).map(skinCard).join("")}</div>
-
-  <h2>숨은 값</h2>
+  ${sec("dev", "개발 데이터", "", `<p class="small muted">${DEVNOTE}</p>
   <div class="panel"><dl class="kv">
     ${Object.entries({CapturePriority:"점령 우선순위", CaptureSpeedFactor:"점령 속도 계수", PlayerDisconnectedBotLevel:"접속 끊김 시 대체 봇 레벨", CallingCardId:"콜링카드 ID", ProjectileRowName:"포탄 설정 행", bInDevelopment:"개발 중 플래그", FirepowerBaseScore:"화력 기본 점수", MobilityBaseScore:"기동 기본 점수", UtilityBaseScore:"유틸 기본 점수", SurvivabiltyBaseScore:"생존 기본 점수", SuitRecommend:"추천 장비 세트", MedalSysName:"메달 내부 이름"}).map(([k,lab]) => `<dt>${lab} <small>${k}</small></dt><dd>${Array.isArray(t.hidden[k]) ? t.hidden[k].map(i => L(D.suits.find(s=>s.id===i)?.name) || i).join(", ") : (typeof t.hidden[k] === "boolean" ? (t.hidden[k] ? "예" : "아니오") : esc(t.hidden[k] ?? "–"))}</dd>`).join("")}
     <dt>폰 클래스 <small>Pawn</small></dt><dd class="mono">${esc(t.pawn)}</dd>
+    <dt>충격 유형 <small>DamageImpactType</small></dt><dd>${esc(p.DamageImpactType || "–")}</dd>
+    <dt>부품 칸 내부 이름</dt><dd>${t.slots.map((s, i) => esc(D.slotDef[i]?.type || "–")).join(", ") || "–"}</dd>
     <dt>기본 스킨</dt><dd>${t.defaultSkin}</dd>
     <dt>체험 로스터 포함</dt><dd>${t.inRoster ? "예" : "아니오"}</dd>
-  </dl></div>
-  <p class="row" style="margin-top:18px;gap:16px"><a class="btn" style="text-decoration:none" href="#build/${t.id}">빌드 시뮬레이터로 열기</a><a href="#compare/${t.id}">다른 탱크와 비교하기</a></p>`;
+  </dl></div>`)}
+  </div>`;
   const lv = $("#lv"), out = $("#lvo");
   const draw = () => {
     const n = +lv.value, l = lvRow(t, n);
     out.textContent = "Lv " + n;
     const mx = k => statMax("lv_" + k, x => lvRow(x, MAXLV)[k]);
-    $("#lvstats").innerHTML = meterRow("내구도", l.hp, mx("hp")) + meterRow("장갑", l.ar, mx("ar")) + meterRow("기본 피해", l.dmg, mx("dmg")) +
-      meterRow("추정 DPS", Math.round(dps(t, n)), statMax("dps", x => dps(x, MAXLV)), "", false, "피해량 × 탄창 ÷ (재장전 + (탄창−1) × 발간 장전). 스킬·특성·치명타 제외") +
+    $("#lvstats").innerHTML = meterRow(G("내구도"), l.hp, mx("hp")) + meterRow(G("장갑"), l.ar, mx("ar")) + meterRow("1발 피해", l.dmg, mx("dmg")) +
+      meterRow(G("초당 피해(추정)"), Math.round(dps(t, n)), statMax("dps", x => dps(x, MAXLV))) +
       `<p class="small muted" style="margin-top:8px">다음 레벨 비용: ${costs((t.levels.find(x => x.lv === n + 1) || {}).cost)}</p>`;
   };
   lv.addEventListener("input", draw); draw();
-  // 바로가기: 페이지의 큰 제목(h2)마다 버튼. 주소(#)를 바꾸지 않고 스크롤만 한다
-  { const secs = [["sec-top", "스킬·능력치"], ...[...app.querySelectorAll("main h2")].map((h, i) => { h.id = "sec-" + i; return [h.id, h.childNodes[0].textContent.trim()]; })];
-    $("#toc").innerHTML = secs.map(([id, lab]) => `<button type="button" data-to="${id}">${esc(lab)}</button>`).join("");
-    $("#toc").addEventListener("click", ev => { const b = ev.target.closest("[data-to]"); if (b) document.getElementById(b.dataset.to)?.scrollIntoView({block: "start"}); }); }
+  // 바로가기: 누르면 그 구역을 펼치고 그리로 간다. 주소(#)는 바꾸지 않는다
+  { const secs = [["sec-top", "한눈에"], ...[...app.querySelectorAll("details.sec")].map(d => [d.id, d.dataset.t])];
+    $("#toc").innerHTML = secs.map(([sid, lab]) => `<button type="button" data-to="${sid}">${esc(lab)}</button>`).join("");
+    $("#toc").addEventListener("click", ev => { const bt = ev.target.closest("[data-to]"); if (!bt) return;
+      const el = document.getElementById(bt.dataset.to); if (!el) return; if (el.tagName === "DETAILS") el.open = true; el.scrollIntoView({block: "start"}); }); }
 }
 const SKINKIND = {default:"기본", silver:"실버 도색", gold:"골드 도색", camo:"위장 패턴", epic:"영웅", legendary:"전설", season:"시즌", event:"이벤트", other:"기타"};
 const chipCls = r => ({Silver:"r1", Golden:"r4", Prismatic:"r3"}[r] || "");
 const CHIPR = {Silver:"실버", Golden:"골드", Prismatic:"프리즘"};
 
-// ---------- 빌드 시뮬레이터 ----------
+// ---------- 부품 조합 계산기(빌드 시뮬레이터) ----------
 // 능력치 모델: 값 = 기본 × (1 + Σ비율) + Σ절대값. 팩터류(…Factor·치명타)는 0에서 더한다.
 const MODMAP = {HP:"hp", TankArmor:"ar", BaseDamage:"dmg", ClipReloadTime:"reload", MagazineCapacity:"mag", EnergyMax:"eMax", StartEnergy:"eStart",
   EnergyPerSecond:"epS", EnergyPerHit:"epH", CritChance:"crit", CritDamageMultiplier:"critMul", MaxSpeed:"speed", EnginePower:"accel",
@@ -683,8 +1035,8 @@ const MODMAP = {HP:"hp", TankArmor:"ar", BaseDamage:"dmg", ClipReloadTime:"reloa
   RamDamageFactor:"fRam", DamageToAIFactor:"fAI", AimingSpeedFactor:"aim", Dispersion:"disp", DamageReduction:"dr"};
 const ADDITIVE = new Set(["crit","fMain","fAbil","fSumm","fRam","fAI","dr"]);
 const STATROWS = [
-  ["hp","내구도",1,0],["ar","장갑",1,0],["ehp","유효 체력(내구도+장갑, 피해 감소 반영)",1,0],["dr","받는 피해 감소",1,"%"],["dmg","1발 피해",1,0],["fMain","주무장 피해 보정",1,"%"],
-  ["reload","재장전(초)",-1,2],["mag","탄창",1,0],["dps","DPS(치명타 제외)",1,0],["edps","기대 DPS(치명타 포함)",1,0],
+  ["hp","내구도",1,0],["ar","장갑",1,0],["ehp","유효 체력",1,0],["dr","받는 피해 감소",1,"%"],["dmg","1발 피해",1,0],["fMain","주무장 피해 보정",1,"%"],
+  ["reload","재장전(초)",-1,2],["mag","탄창",1,0],["dps","초당 피해(치명타 제외)",1,0],["edps","기대 초당 피해(치명타 포함)",1,0],
   ["crit","치명타 확률",1,"%"],["critMul","치명타 배율",1,2],["eStart","시작 에너지",1,0],["epS","초당 에너지",1,2],["epH","타격당 에너지",1,2],
   ["pm","파워 무브까지(초, 전탄 명중 가정)",-1,1],["fAbil","파워 무브 피해 보정",1,"%"],["fSumm","배치물 피해 보정",1,"%"],["fRam","충돌 피해 보정",1,"%"],
   ["speed","최고 속력",1,"%"],["accel","가속도",1,"%"],["steer","선회 속도(°/s)",1,1],["turret","포탑 회전(°/s)",1,1],["disp","기본 분산",-1,3],["aim","조준 수렴 속도",1,2]];
@@ -714,7 +1066,7 @@ function applyFx(b, fxs) {
   return s;
 }
 const BUFFMODE = {avg:"평균(지속 ÷ 쿨다운)", on:"발동 중(최대치)", off:"반영 안 함"};
-const OBJ = {edps:"화력: 기대 DPS", ehp:"생존: 유효 체력", pm:"파워 무브 회전", all:"종합(세 지표 합)"};
+const OBJ = {edps:"화력: 기대 초당 피해", ehp:"생존: 유효 체력", pm:"파워 무브 회전", all:"종합(세 지표 합)"};
 function fxOf(item, mode) {
   return (item?.fx || []).map(x => x.kind === "active" ? {...x, w: mode === "on" ? 1 : mode === "off" ? 0 : (x.cd ? Math.min(1, x.dur / x.cd) : 0)} : x);
 }
@@ -723,6 +1075,7 @@ function scoreOf(s, base, obj) {
   return s.edps / base.edps + s.ehp / base.ehp + base.pm / Math.max(0.1, s.pm);
 }
 const BS = {};   // 탱크별 선택 상태
+const BGLOSS = {hp: "내구도", ar: "장갑", ehp: "유효 체력", dps: "초당 피해(추정)", disp: "분산", crit: "치명타"};   // 능력치 표에서 풀이를 붙일 행
 // 조건부 효과(‘정지 시’, ‘명중 시마다’ 등): 설명 문장과 값으로 만든 효과. 사용자가 켠 것만 계산
 function condOf(t, kind, id) {
   if (kind === "p") return [...(D.parts[id]?.cfx || []), ...(t.pcfx[id] || [])];
@@ -735,35 +1088,39 @@ function build(id, preset) {
   const st = BS[t.id] ||= {lv: t.levels.length, enh: t.enh.length, tech: false, mode: "avg", obj: "all", slots: firstFree(), chips: [], cond: {}, condAll: false};
   if (preset) { const p = preset.split(",").map(Number); st.slots = st.slots.map((v, i) => t.slots[i].includes(p[i]) ? p[i] : v); }
   const partOpt = (i) => t.slots[i].map(pid => { const pt = D.parts[pid]; return `<option value="${pid}" ${st.slots[i] === pid ? "selected" : ""}>${strip(L(pt?.name)) || pid}${pt?.fx?.length ? " ●" : condOf(t, "p", pid).length ? " ○" : ""}</option>`; }).join("");
-  app.innerHTML = `<h1>빌드 시뮬레이터</h1>
+  app.innerHTML = `<h1>부품 조합 계산기</h1>
+  <p class="note-top">부품을 바꾸면 능력치가 어떻게 변하는지 미리 계산합니다.</p>
   <div class="filters"><select id="btank" aria-label="탱크 선택">${D.tanks.map(x => `<option value="${x.id}" ${x.id === t.id ? "selected" : ""}>${strip(tname(x))} (${esc(x.model)})${STATUS[x.status] ? " · " + STATUS[x.status] : ""}</option>`).join("")}</select>
     <a href="#t/${t.id}" class="small">탱크 상세</a><span class="small muted">● 상시 · ○ 조건부</span></div>
+  <p style="margin:-6px 0 12px"><button type="button" class="linkbtn" id="bgo">잘 모르겠으면 → 추천 조합 자동 찾기</button></p>
   <div class="bgrid">
     <section class="panel" style="--rc:${RC[t.rarity]}">
       <div class="row" style="gap:12px;margin-bottom:10px">${t.imgS ? `<div style="width:96px;height:96px">${IMG(t.imgS, tname(t), "shot")}</div>` : ""}<div><div style="font:26px var(--display)">${tname(t)}</div><div class="row">${rPill(t.rarity)}<span class="pill">${rolename(t.role)}</span><span class="pill">${manuname(t.manu)}</span></div></div></div>
       <div class="ctl"><label for="blv">레벨 <output id="blvo">${st.lv}</output></label><input type="range" id="blv" min="1" max="${t.levels.length}" value="${st.lv}" style="width:100%;accent-color:var(--hazard)"></div>
       <div class="ctl"><label for="benh">강화 단계</label><select id="benh">${[0, ...t.enh.map(e => e.lv)].map(n => `<option value="${n}" ${st.enh == n ? "selected" : ""}>+${n}${n ? " · " + strip(t.enh.filter(e => e.lv <= n).map(e => modText(e.mod)).join(", ")) : ""}</option>`).join("")}</select></div>
-      <div class="ctl"><label class="row" style="gap:6px"><input type="checkbox" id="btech" ${st.tech ? "checked" : ""} style="accent-color:var(--hazard)"> ${manuname(t.manu)} 제조사 기술 전부 최대로</label></div>
-      ${t.slots.map((s, i) => `<div class="ctl"><label for="bs${i}">슬롯 ${i + 1} <span class="muted">${esc(D.slotDef[i]?.type || "")}</span></label><select id="bs${i}" data-i="${i}">${partOpt(i)}</select><div class="note" id="bsd${i}"></div></div>`).join("")}
+      <div class="ctl"><label class="chk"><input type="checkbox" id="btech" ${st.tech ? "checked" : ""}> ${manuname(t.manu)} 제조사 기술 전부 최대로</label></div>
+      ${t.slots.map((s, i) => `<div class="ctl"><label for="bs${i}">${slotLabel(i)}</label><select id="bs${i}" data-i="${i}">${partOpt(i)}</select><div class="note" id="bsd${i}"></div></div>`).join("")}
       <div class="ctl"><label for="bmode">발동형 효과(지속시간·쿨다운이 있는 부품)</label><select id="bmode">${Object.entries(BUFFMODE).map(([k, v]) => `<option value="${k}" ${st.mode === k ? "selected" : ""}>${v}</option>`).join("")}</select></div>
       <div class="ctl"><span class="lab">칩</span>
-        <div class="chiplist" id="bchips">${t.chips.length ? t.chips.map(c => D.chips[c]).filter(Boolean).sort((a, b) => (b.fx.length > 0) - (a.fx.length > 0) || a.id - b.id).map(c => `<label><input type="checkbox" value="${c.id}" ${st.chips.includes(c.id) ? "checked" : ""}>${IMG(c.icon, "", "ico", 'width="26" height="26"')}<span><b>${L(c.name)}</b>${c.fx.length ? " ●" : c.cfx?.length ? " ○" : ""} <span class="pill ${chipCls(c.rarity)}" style="font-size:11px">${CHIPR[c.rarity] || ""}</span><br><span class="muted">${L(c.desc)}</span></span></label>`).join("") : '<p class="muted small">이 탱크는 칩 풀이 없습니다.</p>'}</div></div>
+        <div class="chiplist" id="bchips">${t.chips.length ? t.chips.map(c => D.chips[c]).filter(Boolean).sort((a, b) => (b.fx.length > 0) - (a.fx.length > 0) || a.id - b.id).map(c => `<label><input type="checkbox" value="${c.id}" ${st.chips.includes(c.id) ? "checked" : ""}>${IMG(c.icon, "", "ico", 'width="26" height="26"')}<span><b>${L(c.name)}</b>${c.fx.length ? " ●" : c.cfx?.length ? " ○" : ""} <span class="pill ${chipCls(c.rarity)}">${CHIPR[c.rarity] || ""}</span><br><span class="muted">${L(c.desc)}</span></span></label>`).join("") : '<p class="muted small">이 탱크는 칩 풀이 없습니다.</p>'}</div></div>
     </section>
     <section class="sticky">
-      <div class="panel" style="margin-bottom:12px">
+      <div class="panel" style="margin-bottom:12px" id="bbestbox">
+        <h3>추천 조합 자동 찾기</h3>
         <div class="row" style="gap:8px"><select id="bobj" aria-label="최강 조합 기준" style="flex:1;background:var(--steel);border:1px solid var(--line);border-radius:8px;padding:7px 8px">${Object.entries(OBJ).map(([k, v]) => `<option value="${k}" ${st.obj === k ? "selected" : ""}>${v}</option>`).join("")}</select><button type="button" class="btn" id="bbest">최강 조합 찾기</button></div>
-        <label class="row small" style="gap:6px;margin-top:8px"><input type="checkbox" id="bcondall" ${st.condAll ? "checked" : ""} style="accent-color:var(--hazard)"> 조건부 효과(○) 포함</label>
+        <label class="chk small" style="margin-top:8px"><input type="checkbox" id="bcondall" ${st.condAll ? "checked" : ""}> 조건부 효과(○) 포함</label>
         <div id="bbestout" class="small" style="margin-top:8px"></div>
       </div>
       <div class="panel scroll"><table class="tbl" id="bstats"></table></div>
       <div class="panel" style="margin-top:12px"><h3>조건부 효과</h3><div id="bcond" class="small chiplist" style="max-height:none"></div></div>
       <div class="panel" style="margin-top:12px"><h3>적용 효과</h3><div id="bfx" class="small"></div><h3 style="margin-top:10px">미반영 효과</h3><div id="bnofx" class="small muted"></div></div>
     </section>
-  </div>`;
+  </div>
+  <div class="bsum" id="bsum"></div>`;
   const collect = () => {
     const fx = [], applied = [], notq = [];
     t.enh.filter(e => e.lv <= st.enh).forEach(e => { fx.push(...e.mod.fx); applied.push(`강화 +${e.lv}: ${modText(e.mod)}`); });
-    if (st.tech) D.tech.filter(x => x.manu === t.manu).forEach(x => { const l = x.levels[x.levels.length - 1]; if (l?.mod?.fx?.length) { fx.push(...l.mod.fx); applied.push(`기술 ${strip(L(x.name))}: ${modText(l.mod)}`); } });
+    if (st.tech) D.tech.filter(x => x.manu === t.manu || x.manu === "NONE").forEach(x => { const l = x.levels[x.levels.length - 1]; if (l?.mod?.fx?.length) { fx.push(...l.mod.fx); applied.push(`기술 ${strip(L(x.name))}: ${x.manu === "NONE" ? strip(L(x.desc)) : modText(l.mod)}`); } });
     const cond = [];
     const addCond = (kind, id, title) => condOf(t, kind, id).forEach((x, i) => { const k = `${kind}:${id}:${i}`; cond.push({k, x, title}); if (st.cond[k]) { fx.push(x); applied.push(`${title} (조건): ${fxLabel(x)}`); } });
     st.slots.forEach(pid => { const pt = D.parts[pid]; if (!pt) return; const f = fxOf(pt, st.mode);
@@ -778,7 +1135,7 @@ function build(id, preset) {
     return {fx, applied, notq, cond};
   };
   const baseFx = () => { const fx = []; t.enh.filter(e => e.lv <= st.enh).forEach(e => fx.push(...e.mod.fx));
-    if (st.tech) D.tech.filter(x => x.manu === t.manu).forEach(x => { const l = x.levels[x.levels.length - 1]; if (l?.mod?.fx) fx.push(...l.mod.fx); }); return fx; };
+    if (st.tech) D.tech.filter(x => x.manu === t.manu || x.manu === "NONE").forEach(x => { const l = x.levels[x.levels.length - 1]; if (l?.mod?.fx) fx.push(...l.mod.fx); }); return fx; };
   const draw = () => {
     $("#blvo").textContent = st.lv;
     t.slots.forEach((s, i) => { const pt = D.parts[st.slots[i]]; $("#bsd" + i).innerHTML = pt ? L(t.pdesc[st.slots[i]] || pt.desc) : ""; });
@@ -787,13 +1144,16 @@ function build(id, preset) {
     $("#bcond").innerHTML = cond.length ? cond.map(c => `<label><input type="checkbox" data-ck="${esc(c.k)}" ${st.cond[c.k] ? "checked" : ""}><span><b>${esc(c.title)}</b> · ${fxLabel(c.x)}<br><span class="muted">${esc(c.x.label)}</span></span></label>`).join("") : '<span class="muted">없음</span>';
     const s = applyFx(baseStats(t, st.lv), fx);
     const fmt = (v, d) => d === "%" ? num(v * 100, 1) + "%" : num(v, d);
-    $("#bstats").innerHTML = `<tr><th>능력치</th><th class="n">기본</th><th class="n">빌드</th><th class="n">변화</th></tr>` + STATROWS.map(([k, lab, dir, d]) => {
+    $("#bstats").innerHTML = `<tr><th>능력치</th><th class="n">기본</th><th class="n">조합</th><th class="n">변화</th></tr>` + STATROWS.map(([k, lab, dir, d]) => {
       const a = b0[k], v = s[k]; if (a == null || v == null || (!a && !v && k.startsWith("f"))) return "";
       const diff = v - a, good = dir * diff > 1e-9, bad = dir * diff < -1e-9;
-      const pct = a ? ` (${diff > 0 ? "+" : ""}${num(diff / Math.abs(a) * 100, 1)}%)` : "";
-      return `<tr><td>${lab}</td><td class="n">${fmt(a, d)}</td><td class="n"><b>${fmt(v, d)}</b></td><td class="n ${good ? "up-g" : bad ? "dn-r" : "muted"}">${Math.abs(diff) > 1e-9 ? (diff > 0 ? "+" : "") + fmt(diff, d) + (d === "%" ? "" : pct) : "–"}</td></tr>`; }).join("");
+      const pct = a ? ` <span class="pc">(${diff > 0 ? "+" : ""}${num(diff / Math.abs(a) * 100, 1)}%)</span>` : "";
+      return `<tr><td>${BGLOSS[k] ? G(BGLOSS[k], lab) : lab}</td><td class="n">${fmt(a, d)}</td><td class="n"><b>${fmt(v, d)}</b></td><td class="n ${good ? "up-g" : bad ? "dn-r" : "muted"}">${Math.abs(diff) > 1e-9 ? (diff > 0 ? "+" : "") + fmt(diff, d) + (d === "%" ? "" : pct) : "–"}</td></tr>`; }).join("");
     $("#bfx").innerHTML = applied.length ? applied.map(x => `<div>${x}</div>`).join("") : '<span class="muted">없음</span>';
     $("#bnofx").innerHTML = notq.length ? notq.map(x => `<div style="margin-bottom:4px">${x}</div>`).join("") : "없음";
+    // 폰: 화면 아래(하단 탭 위)에 고정되는 요약 줄
+    const chg = (a, v) => a ? ` <span class="${v - a > 1e-9 ? "up-g" : v - a < -1e-9 ? "dn-r" : "muted"}">${v - a > 1e-9 ? "+" : ""}${num((v - a) / Math.abs(a) * 100, 1)}%</span>` : "";
+    $("#bsum").innerHTML = `<span>초당 피해 <b>${num(s.dps, 0)}</b>${chg(b0.dps, s.dps)}</span><span>유효 체력 <b>${num(s.ehp, 0)}</b>${chg(b0.ehp, s.ehp)}</span>`;
     history.replaceState(null, "", "#build/" + t.id + "/" + st.slots.join(","));
   };
   const best = () => {
@@ -819,7 +1179,7 @@ function build(id, preset) {
     const cur = applyFx(baseStats(t, st.lv), [...bfx, ...chipFx, ...st.slots.flatMap(pc)]);
     const chipRank = t.chips.map(c => D.chips[c]).filter(c => c && (c.fx?.length || (st.condAll && c.cfx?.length)) && !st.chips.includes(c.id)).map(c => ({c, d: scoreOf(applyFx(baseStats(t, st.lv), [...bfx, ...chipFx, ...st.slots.flatMap(pc), ...cc(c.id)]), b0, st.obj) - scoreOf(cur, b0, st.obj)})).filter(x => x.d > 1e-9).sort((a, b) => b.d - a.d).slice(0, 6);
     $("#bbestout").innerHTML = `<b>${OBJ[st.obj]}</b> · ${res.length}개 조합
-      <table class="tbl" style="margin-top:6px"><tr><th>순위</th><th>조합</th><th class="n">기대 DPS</th><th class="n">유효 체력</th><th class="n">파워 무브</th></tr>${res.filter((r, i, arr) => i === 0 || r.score !== arr[i - 1].score).slice(0, 5).map((r, i) => `<tr><td>${i + 1}</td><td class="small">${r.picked.map(p => strip(L(D.parts[p]?.name))).join(" / ")}</td><td class="n">${num(r.s.edps, 0)}</td><td class="n">${num(r.s.ehp, 0)}</td><td class="n">${num(r.s.pm, 1)}초</td></tr>`).join("")}</table>
+      <table class="tbl" style="margin-top:6px"><tr><th>순위</th><th>조합</th><th class="n">기대 초당 피해</th><th class="n">유효 체력</th><th class="n">파워 무브</th></tr>${res.filter((r, i, arr) => i === 0 || r.score !== arr[i - 1].score).slice(0, 5).map((r, i) => `<tr><td>${i + 1}</td><td class="small">${r.picked.map(p => strip(L(D.parts[p]?.name))).join(" / ")}</td><td class="n">${num(r.s.edps, 0)}</td><td class="n">${num(r.s.ehp, 0)}</td><td class="n">${num(r.s.pm, 1)}초</td></tr>`).join("")}</table>
       ${chipRank.length ? `<p style="margin:8px 0 4px"><b>추천 칩</b></p><div class="row">${chipRank.map(x => `<span class="pill ${chipCls(x.c.rarity)}">${L(x.c.name)}</span>`).join("")}</div>` : ""}`;
     draw();
   };
@@ -830,6 +1190,7 @@ function build(id, preset) {
   $("#bmode").addEventListener("input", e => { st.mode = e.target.value; draw(); });
   $("#bobj").addEventListener("input", e => { st.obj = e.target.value; });
   $("#bbest").addEventListener("click", best);
+  $("#bgo").addEventListener("click", () => $("#bbestbox").scrollIntoView({block: "start"}));
   $("#bcondall").addEventListener("input", e => { st.condAll = e.target.checked; });
   $("#bcond").addEventListener("input", e => { const k = e.target.dataset.ck; if (!k) return; st.cond[k] = e.target.checked; draw(); });
   t.slots.forEach((s, i) => $("#bs" + i).addEventListener("input", e => { st.slots[i] = +e.target.value; draw(); }));
@@ -848,44 +1209,55 @@ const FACT = new Set(["CritChance","CritDamageMultiplier","MainGunDamageFactor",
 // ---------- 비교 ----------
 function compare(ids) {
   let sel = (ids || "").split(",").map(Number).filter(i => TANK[i]);
-  if (!sel.length) sel = [20006, 20018, 20007];
+  // 주소에 탱크가 없을 때: 폰은 2대, 넓은 화면은 3대로 시작
+  if (!sel.length) sel = (NARROW() ? [20006, 20018] : [20006, 20018, 20007]).filter(i => TANK[i]);
   while (sel.length < 2) sel.push(D.tanks.find(t => !sel.includes(t.id)).id);
-  let lv = MAXLV;
+  let lv = MAXLV, full = !NARROW();   // 폰은 핵심 6행만 먼저 보인다
   const options = cur => D.tanks.map(t => `<option value="${t.id}" ${t.id===cur?"selected":""}>${strip(tname(t))} (${esc(t.model)})</option>`).join("");
+  // 앞의 5행(+ 파워 무브)이 기본으로 보이는 핵심 행
   const ROWS = [
-    ["내구도", t => lvRow(t,lv).hp, 1], ["장갑", t => lvRow(t,lv).ar, 1], ["기본 피해", t => lvRow(t,lv).dmg, 1], ["추정 DPS", t => Math.round(dps(t,lv)), 1],
-    ["재장전(초)", t => t.fire.ClipReloadTime, -1], ["탄창", t => t.fire.MagazineCapacity, 1], ["기본 분산", t => t.fire.Dispersion, -1],
+    [G("내구도"), t => lvRow(t,lv).hp, 1], [G("장갑"), t => lvRow(t,lv).ar, 1], ["1발 피해", t => lvRow(t,lv).dmg, 1],
+    ["재장전(초)", t => t.fire.ClipReloadTime, -1], [G("초당 피해(추정)"), t => Math.round(dps(t,lv)), 1],
+    ["탄창", t => t.fire.MagazineCapacity, 1], [G("분산", "기본 분산"), t => t.fire.Dispersion, -1],
     ["조준 수렴", t => t.fire.AimingSpeedFactor, 1], ["이동 중 분산", t => t.fire.ChassisMoveDispersionFactor, -1], ["포탑 회전(°/s)", t => t.fire.TurretRotationSpeed, 1],
-    ["최대 피해 거리(m)", t => t.fire.FullDamageRange/100, 1], ["포탄 초속(m/s)", t => (t.proj?.InitialSpeed||0)/100, 1], ["치명타 배율", t => t.proj?.CritDamageMultiplier, 1],
+    ["최대 피해 거리(m)", t => t.fire.FullDamageRange/100, 1], ["포탄 초속(m/s)", t => (t.proj?.InitialSpeed||0)/100, 1], [G("치명타", "치명타 배율"), t => t.proj?.CritDamageMultiplier, 1],
     ["초치명 확률(%)", t => (t.proj?.SuperCritChance||0)*100, 1], ["타격당 에너지", t => t.energy.EnergyPerHit, 1], ["초당 에너지", t => t.energy.EnergyPerSecond, 1],
     ["파워 무브 비용", t => t.energy.AbilityEnergyCost, -1], ["질량(kg)", t => t.move.OverrideVehicleMass, 0], ["선회(°/s)", t => t.move.SteeringAngularSpeed, 1],
     ["충돌 강도", t => t.energy && t.body.RammingStrength, 1],
   ];
+  const BASIC = 5;
   const draw = () => {
     const ts = sel.map(i => TANK[i]);
-    $("#cmp").innerHTML = `<table class="tbl"><tr><th></th>${ts.map(t => `<th style="color:${RC[t.rarity]}">${t.imgS ? `<div style="width:110px;height:110px">${IMG(t.imgS, tname(t), "shot")}</div>` : ""}<a href="#t/${t.id}">${tname(t)}</a><div class="small muted">${rolename(t.role)} · ${typename(t.type)}</div></th>`).join("")}</tr>
-      <tr><td class="muted nw">파워 무브</td>${ts.map(t => `<td>${L(t.skill.name)}</td>`).join("")}</tr>
-      <tr><td class="muted nw">고유 특성</td>${ts.map(t => `<td>${L(t.trait.name)}</td>`).join("")}</tr>
-      ${ROWS.map(([lab, f, dir]) => { const vs = ts.map(f); const best = dir ? (dir > 0 ? Math.max(...vs.filter(v=>v!=null)) : Math.min(...vs.filter(v=>v!=null))) : null;
-        return `<tr><td class="muted nw">${lab}</td>${vs.map(v => `<td class="${dir && v === best && new Set(vs).size > 1 ? "best" : ""}">${num(v)}</td>`).join("")}</tr>`; }).join("")}</table>`;
+    const row = ([lab, f, dir]) => { const vs = ts.map(f); const best = dir ? (dir > 0 ? Math.max(...vs.filter(v=>v!=null)) : Math.min(...vs.filter(v=>v!=null))) : null;
+      return `<tr><td class="muted nw">${lab}</td>${vs.map(v => `<td class="${dir && v === best && new Set(vs).size > 1 ? "best" : ""}">${num(v)}</td>`).join("")}</tr>`; };
+    $("#cmp").innerHTML = `<table class="tbl cmp"><tr><th></th>${ts.map(t => `<th style="color:${RC[t.rarity]}">${t.imgS ? `<div class="cmpimg">${IMG(t.imgS, tname(t), "shot")}</div>` : ""}<a href="#t/${t.id}">${tname(t)}</a><div class="small muted">${rolename(t.role)} · ${typename(t.type)}</div></th>`).join("")}</tr>
+      <tr><td class="muted nw">${G("파워 무브")}</td>${ts.map(t => `<td>${L(t.skill.name)}</td>`).join("")}</tr>
+      ${ROWS.slice(0, BASIC).map(row).join("")}
+      ${full ? `<tr><td class="muted nw">${G("고유 특성")}</td>${ts.map(t => `<td>${L(t.trait.name)}</td>`).join("")}</tr>${ROWS.slice(BASIC).map(row).join("")}` : ""}</table>`;
+    $("#cfull").textContent = full ? "간단히 보기" : `자세히 보기 (${ROWS.length - BASIC + 1}행 더)`;
+    $("#cfull").setAttribute("aria-expanded", full);
     history.replaceState(null, "", "#compare/" + sel.join(","));
   };
   app.innerHTML = `<h1>탱크 비교</h1>
+  <p class="note-top">초록색이 더 좋은 값입니다.</p>
   <div class="filters" id="pick">${sel.map((id, i) => `<select data-i="${i}" aria-label="탱크 ${i+1}">${options(id)}</select>`).join("")}
     ${sel.length < 4 ? `<button type="button" id="add" class="pill" style="cursor:pointer;background:none;padding:6px 12px">탱크 추가</button>` : ""}
     <label class="row small">레벨 <input type="range" id="clv" min="1" max="${MAXLV}" value="${lv}" style="accent-color:var(--hazard)"> <output id="clvo">${lv}</output></label></div>
-  <div class="panel scroll" id="cmp"></div>`;
+  <div class="panel scroll" id="cmp"></div>
+  <button type="button" class="btn ghost morebtn" id="cfull"></button>`;
   app.querySelectorAll("#pick select").forEach(s => s.addEventListener("input", () => { sel[+s.dataset.i] = +s.value; draw(); }));
   $("#add")?.addEventListener("click", () => { sel.push(D.tanks.find(t => !sel.includes(t.id)).id); compare(sel.join(",")); });
   $("#clv").addEventListener("input", e => { lv = +e.target.value; $("#clvo").textContent = lv; draw(); });
+  $("#cfull").addEventListener("click", () => { full = !full; draw(); });
   draw();
 }
 
-// ---------- 스킬·특성 ----------
+// ---------- 파워 무브·특성 ----------
 function skills() {
-  app.innerHTML = `<h1>스킬·특성</h1>
-  <div class="filters"><input type="search" id="q" placeholder="스킬·특성 이름이나 설명 검색" aria-label="검색"><span class="count" id="cnt"></span></div>
-  <nav class="toc" aria-label="바로가기"><button type="button" data-to="sec-el">원소 효과</button><button type="button" data-to="sec-terms">용어</button></nav>
+  app.innerHTML = `<h1>파워 무브·특성</h1>
+  <p class="note-top">${G("파워 무브")}: ${esc(glossText("파워 무브"))} ${G("고유 특성")}: ${esc(glossText("고유 특성"))}</p>
+  <div class="filters"><input type="search" id="q" placeholder="파워 무브·특성 이름이나 설명 검색" aria-label="검색"><span class="count" id="cnt"></span></div>
+  <nav class="toc" aria-label="바로가기"><button type="button" data-to="sec-el">원소 효과</button><a href="#glossary">용어 풀이</a></nav>
   <div class="grid g-2" id="list"></div>`;
   app.querySelector(".toc").addEventListener("click", ev => { const b = ev.target.closest("[data-to]"); if (b) document.getElementById(b.dataset.to)?.scrollIntoView({block: "start"}); });
   const draw = () => {
@@ -894,19 +1266,17 @@ function skills() {
     $("#cnt").textContent = ts.length + "대";
     $("#list").innerHTML = ts.map(t => `<section class="panel" style="--rc:${RC[t.rarity]}"><div class="row" style="justify-content:space-between"><a href="#t/${t.id}" class="row" style="font:20px var(--display);text-decoration:none">${IMG(t.imgQ, "", "ico", 'width="44" height="44"')}${tname(t)}</a><span class="row">${rPill(t.rarity)}<span class="pill">${rolename(t.role)}</span>${stPill(t)}</span></div>
       <div class="ability" style="margin-top:10px"><div class="ttl">${IMG(t.skillIcon, L(t.skill.name))}<span class="pill">파워 무브</span><b>${L(t.skill.name)}</b></div><p class="small">${L(t.skill.desc)}</p></div>
-      <div class="ability" style="margin-bottom:0"><div class="ttl">${IMG(t.traitIcon, L(t.trait.name))}<span class="pill">특성</span><b>${L(t.trait.name)}</b></div><p class="small">${L(t.trait.desc)}</p></div></section>`).join("");
+      <div class="ability" style="margin-bottom:0"><div class="ttl">${IMG(t.traitIcon, L(t.trait.name))}<span class="pill">고유 특성</span><b>${L(t.trait.name)}</b></div><p class="small">${L(t.trait.desc)}</p></div></section>`).join("") || '<div class="empty">결과 없음</div>';
   };
   $("#q").addEventListener("input", draw); draw();
-  const EL = {Fire: "FireElement", Electric: "ElectricElement", Frost: "FrostElement", Plasma: "PlasmaElement"};
-  const TERM = Object.fromEntries((D.terms || []).map(x => [x.id, x]));
   const els = [];
   (D.elements || []).forEach(e => { if (!els.some(x => x.type === e.type)) els.push(e); });
   app.insertAdjacentHTML("beforeend", `<h2 id="sec-el">원소 효과</h2>
-  <div class="panel scroll"><table class="tbl"><tr><th>원소</th><th class="n">가득 참</th><th class="n">감소 시작</th><th class="n">초당 감소</th><th class="n">가득 차면 피해</th><th>설명</th></tr>${els.map(e => { const tm = TERM[EL[e.type]];
+  <p class="small muted">${G("원소 누적")}: ${esc(glossText("원소 누적"))}</p>
+  <div class="panel scroll"><table class="tbl"><tr><th>원소</th><th class="n">가득 참</th><th class="n">감소 시작</th><th class="n">초당 감소</th><th class="n">가득 차면 피해</th><th>설명</th></tr>${els.map(e => { const tm = TERMBY[ELTERM[e.type]];
     return `<tr><td><b>${tm ? esc(L(tm.name)) : esc(e.type)}</b></td><td class="n">${num(e.max)}</td><td class="n">${num(e.recDelay)}초 뒤</td><td class="n">${num(e.recSpeed)}</td><td class="n">${e.fullHp ? "최대 체력 " + num(e.fullHp * 100) + "%" : "–"}</td><td class="small">${tm ? esc(L(tm.desc)) : ""}</td></tr>`; }).join("")}</table></div>
   <p class="small muted">누적은 마지막으로 맞은 뒤 '감소 시작' 시간이 지나면 초당 감소량만큼 줄어듭니다. 예: 플라스마는 4초 동안 안 맞으면 초당 4씩 줄어듭니다.</p>
-  <h2 id="sec-terms">용어</h2>
-  <div class="grid g-2">${(D.terms || []).map(x => `<section class="panel"><h3 style="margin:0 0 4px">${esc(L(x.name))}</h3><p class="small" style="margin:0">${esc(L(x.desc)) || '<span class="muted">설명 없음</span>'}</p></section>`).join("")}</div>`);
+  <p style="margin-top:18px"><a href="#glossary">용어 풀이 전체 보기</a> <span class="small muted">· 치명타·임시 장갑·화재 같은 낱말 풀이는 용어 풀이 화면으로 옮겼습니다.</span></p>`);
 }
 
 // ---------- 부품 ----------
@@ -921,22 +1291,30 @@ function parts() {
   const groups = {};
   Object.values(D.parts).forEach(p => (groups[partGroup(p)] ||= []).push(p));
   const gname = g => g === "gear" ? "공용 장비(기어)" : g === "etc" ? "기타" : g[0] === "t" ? (TANK[g.slice(1)] ? strip(tname(TANK[g.slice(1)])) + " 전용" : g.slice(1)) : (D.manu[g.slice(1)] ? strip(manuname(g.slice(1))) + " 제조사" : g.slice(1));
-  const order = Object.keys(groups).sort((a,b) => (a==="gear"?-1:0) - (b==="gear"?-1:0) || a.localeCompare(b));
+  // 이름이 번역된 부품이 절반도 안 되는 묶음(출시 예정 탱크용 등)은 맨 뒤 '아직 번역되지 않은 부품'으로 모은다
+  const untr = g => groups[g].filter(p => named(p.name)).length * 2 < groups[g].length;
+  const all = Object.keys(groups).sort((a,b) => (a==="gear"?-1:0) - (b==="gear"?-1:0) || a.localeCompare(b));
+  const order = [...all.filter(g => !untr(g)), ...all.filter(untr)];
   app.innerHTML = `<h1>부품</h1>
-  <div class="filters"><input type="search" id="q" placeholder="부품 이름·효과 검색" aria-label="검색"><select id="tk" aria-label="탱크"><option value="">탱크: 전체</option>${D.tanks.filter(t => (t.slots || []).some(sl => sl.length)).slice().sort((a, b) => strip(tname(a)).localeCompare(strip(tname(b)), "ko")).map(t => `<option value="${t.id}">${esc(strip(tname(t)))}</option>`).join("")}</select><select id="g" aria-label="분류"><option value="">분류: 전체</option>${order.map(g => `<option value="${g}">${esc(gname(g))}</option>`).join("")}</select><span class="count" id="cnt"></span></div><div id="list"></div>`;
+  <p class="note-top">${esc(glossText("부품"))} 묶음 제목을 누르면 펼쳐집니다.</p>
+  <div class="filters"><input type="search" id="q" placeholder="부품 이름·효과 검색" aria-label="검색"><select id="tk" aria-label="탱크"><option value="">탱크: 전체</option>${D.tanks.filter(t => (t.slots || []).some(sl => sl.length)).slice().sort((a, b) => strip(tname(a)).localeCompare(strip(tname(b)), "ko")).map(t => `<option value="${t.id}">${esc(strip(tname(t)))}</option>`).join("")}</select><select id="g" aria-label="분류"><option value="">분류: 전체</option>${order.map(g => `<option value="${g}">${esc(gname(g))}</option>`).join("")}</select><span class="count" id="cnt"></span></div><div id="list" class="secs"></div>`;
   const draw = () => {
     const q = $("#q").value.trim().toLowerCase(), gs = $("#g").value, tk = $("#tk").value; let n = 0;
+    const filt = !!(q || gs || tk);   // 찾는 중이면 묶음을 펼쳐서 보여 준다
     // 탱크를 고르면 그 탱크 장착 칸에 들어 있는 부품 전부(전용 + 제조사 공용 + 공용 장비)
     const can = tk && TANK[tk] ? new Set(TANK[tk].slots.flat().map(String)) : null;
-    $("#list").innerHTML = order.filter(g => !gs || g === gs).map(g => {
+    const block = g => {
       const hit = groups[g].filter(p => (!can || can.has(String(p.id))) && (!q || strip(L(p.name) + " " + L(p.desc)).toLowerCase().includes(q)));
       // 탱크마다 따로 들어 있는 같은 부품(이름·설명·비용이 같음)은 한 장으로 합친다
       const uniq = new Map();
       hit.forEach(p => { const k = L(p.name) + "|" + L(p.desc) + "|" + JSON.stringify(p.cost); const u = uniq.get(k); u ? u.n++ : uniq.set(k, {p, n: 1}); });
       const items = [...uniq.values()]; n += items.length;
-      if (!items.length) return "";
-      return `<h2 style="font-size:21px">${esc(gname(g))} <span class="small muted">${items.length}</span></h2><div class="grid g-3">${items.map(({p, n: c}) => `<div class="panel">${IMG(p.icon, L(p.name), "ico lg")}<h3>${L(p.name) || `<span class="muted">${esc(p.key)}</span>`}</h3><p class="small">${L(p.desc)}</p><p class="small muted" style="margin:0">${costs(p.cost)}${c > 1 ? ` · 같은 부품 ${c}개` : ""}</p></div>`).join("")}</div>`;
-    }).join("") || '<div class="empty">결과 없음</div>';
+      return {g, n: items.length, html: `<div class="grid g-3">${items.map(({p, n: c}) => `<div class="panel">${IMG(p.icon, L(p.name), "ico lg")}<h3>${L(p.name) || '<span class="muted">이름 없음(미번역)</span>'}</h3><p class="small">${L(p.desc)}</p><p class="small muted" style="margin:0">${costs(p.cost)}${c > 1 ? ` · 같은 부품 ${c}개` : ""}</p></div>`).join("")}</div>`};
+    };
+    const show = order.filter(g => !gs || g === gs).map(block).filter(b => b.n);
+    const ok = show.filter(b => !untr(b.g)), no = show.filter(b => untr(b.g));
+    $("#list").innerHTML = (ok.map(b => `<details class="sec grp"${filt ? " open" : ""}><summary>${esc(gname(b.g))} <small>${b.n}개</small></summary><div class="body">${b.html}</div></details>`).join("") +
+      (no.length ? `<details class="sec grp"${filt ? " open" : ""}><summary>아직 번역되지 않은 부품 <small>${no.reduce((a, b) => a + b.n, 0)}개</small></summary><div class="body"><p class="small muted">게임 파일에 한국어 이름이 아직 없는 부품입니다. 영문이나 원문 그대로 보입니다.</p>${no.map(b => `<h3>${esc(gname(b.g))} <span class="small muted">${b.n}개</span></h3>${b.html}`).join("")}</div></details>` : "")) || '<div class="empty">결과 없음</div>';
     $("#cnt").textContent = n + "개";
   };
   $("#q").addEventListener("input", draw); $("#g").addEventListener("input", draw); $("#tk").addEventListener("input", draw); draw();
@@ -945,12 +1323,15 @@ function parts() {
 // ---------- 칩 ----------
 function chips(focus) {
   const list = Object.values(D.chips);
-  const tags = [...new Set(list.flatMap(c => c.tags))].sort();
-  const tagname = tg => D.chipTags[tg] ? strip(L(D.chipTags[tg].name)) : tg.replace("ChipAbility.", "");
+  // 태그 이름: 번역이 있으면 그 이름, 없으면(게임 파일에 중국어 원문만 있음) 영문 내부 이름을 띄어 써서 보인다
+  const tagname = tg => { const o = D.chipTags[tg]; return o && named(o.name) ? strip(L(o.name)) : tg.replace("ChipAbility.", "").replace(/([a-z])([A-Z])/g, "$1 $2"); };
+  const tags = [...new Set(list.flatMap(c => c.tags))].sort((a, b) => tagname(a).localeCompare(tagname(b)));
+  const tagsKo = tags.some(tg => D.chipTags[tg] && named(D.chipTags[tg].name));
   app.innerHTML = `<h1>칩</h1>
+  <p class="note-top">탱크에 끼워 추가 효과를 얻는 아이템입니다. 아래에서 효과를 확인하세요.</p>
   <div class="filters"><input type="search" id="q" placeholder="칩 이름·효과 검색" aria-label="검색">
   <select id="r" aria-label="등급"><option value="">등급: 전체</option>${Object.entries(CHIPR).map(([k,v]) => `<option value="${k}">${v}</option>`).join("")}</select>
-  <select id="tg" aria-label="태그"><option value="">태그: 전체</option>${tags.map(t => `<option value="${esc(t)}">${esc(tagname(t))}</option>`).join("")}</select><span class="count" id="cnt"></span></div><div class="grid g-3" id="list"></div>`;
+  <select id="tg" aria-label="태그"><option value="">태그${tagsKo ? "" : "(영문)"}: 전체</option>${tags.map(t => `<option value="${esc(t)}">${esc(tagname(t))}</option>`).join("")}</select><span class="count" id="cnt"></span></div><div class="grid g-3" id="list"></div>`;
   const draw = () => {
     const q = $("#q").value.trim().toLowerCase(), r = $("#r").value, tg = $("#tg").value;
     const ls = list.filter(c => (!r || c.rarity === r) && (!tg || c.tags.includes(tg)) && (!q || strip(L(c.name) + " " + L(c.desc)).toLowerCase().includes(q))).sort((a,b) => a.id - b.id);
@@ -958,7 +1339,7 @@ function chips(focus) {
     $("#list").innerHTML = ls.map(c => `<div class="panel" id="chip-${c.id}" ${String(c.id)===focus?'style="outline:2px solid var(--hazard)"':""}><div class="row" style="justify-content:space-between"><h3 style="margin:0" class="row">${IMG(c.icon, L(c.name), "ico", 'width="52" height="52"')}${L(c.name) || c.id}</h3>${c.rarity ? `<span class="pill ${chipCls(c.rarity)}">${CHIPR[c.rarity]}</span>` : '<span class="pill st-upcoming">테이블 없음</span>'}</div>
       <p class="small" style="margin-top:6px">${L(c.desc)}</p>
       <div class="row">${c.tags.map(t => `<span class="pill">${esc(tagname(t))}</span>`).join("")}</div>
-      <p class="small muted" style="margin:8px 0 0">${c.tanks.length ? `사용 탱크 ${c.tanks.length}대` : "사용 탱크 없음"}${c.tanks.length && c.tanks.length < 8 ? ": " + c.tanks.map(i => strip(tname(TANK[i]))).join(", ") : ""}</p></div>`).join("");
+      <p class="small muted" style="margin:8px 0 0">${c.tanks.length ? `사용 탱크 ${c.tanks.length}대` : "사용 탱크 없음"}${c.tanks.length && c.tanks.length < 8 ? ": " + c.tanks.map(i => strip(tname(TANK[i]))).join(", ") : ""}</p></div>`).join("") || '<div class="empty">결과 없음</div>';
     if (focus) document.getElementById("chip-" + focus)?.scrollIntoView({block:"center"});
     focus = null;
   };
@@ -968,6 +1349,7 @@ function chips(focus) {
 // ---------- 오퍼레이터 ----------
 function operators() {
   app.innerHTML = `<h1>오퍼레이터</h1>
+  <p class="note-top" style="margin-bottom:16px">${esc(glossText("오퍼레이터"))}</p>
   <div class="grid g-3">${D.operators.sort((a,b)=>a.id-b.id).map(o => `<section class="panel">
     ${o.avatar ? `<div class="stage" style="--rc:var(--r2);cursor:zoom-in" data-zoom="${esc(o.avatar)}" data-cap="${esc(strip(L(o.full)))}">${IMG(o.avatar, L(o.name), "op-av")}</div>` : ""}
     ${o.story ? `<button type="button" class="pill" style="cursor:zoom-in;background:none;margin-top:8px" data-zoom="${esc(o.story)}" data-cap="${esc(strip(L(o.name)))} 스토리 사진">스토리 사진 보기</button>` : ""}
@@ -984,66 +1366,107 @@ function operators() {
 function skins() {
   const all = Object.values(D.skins);
   app.innerHTML = `<h1>스킨</h1>
+  <p class="note-top">탱크 이름을 누르면 그 탱크의 스킨이 펼쳐집니다. 스킨을 누르면 크게 봅니다.</p>
   <div class="filters"><input type="search" id="q" placeholder="스킨 이름 검색" aria-label="검색">
   <select id="tk" aria-label="탱크"><option value="">탱크: 전체</option>${D.tanks.map(t => `<option value="${t.id}">${strip(tname(t))}</option>`).join("")}</select>
   <select id="kd" aria-label="종류"><option value="">종류: 전체</option>${Object.entries(SKINKIND).map(([k,v]) => `<option value="${k}">${v}</option>`).join("")}</select>
-  <select id="hd" aria-label="노출"><option value="">노출: 전체</option><option value="1">숨김만</option><option value="0">노출만</option></select><span class="count" id="cnt"></span></div><div id="list"></div>`;
+  <select id="hd" aria-label="노출"><option value="">노출: 전체</option><option value="1">숨김만</option><option value="0">노출만</option></select><span class="count" id="cnt"></span></div><div id="list" class="secs"></div>`;
   const draw = () => {
     const q = $("#q").value.trim().toLowerCase(), tk = $("#tk").value, kd = $("#kd").value, hd = $("#hd").value;
+    const filt = !!(q || tk || kd || hd);   // 찾는 중이면 묶음을 펼쳐서 보여 준다
     const ls = all.filter(s => (!tk || s.tank == tk) && (!kd || s.kind === kd) && (!hd || String(+s.hidden) === hd) && (!q || strip(L(s.name) + " " + L(s.desc)).toLowerCase().includes(q))).sort((a,b) => a.tank - b.tank || a.order - b.order);
     $("#cnt").textContent = ls.length + "개";
     const byTank = {}; ls.forEach(s => (byTank[s.tank] ||= []).push(s));
-    $("#list").innerHTML = Object.entries(byTank).map(([tid, ss]) => `<h2 style="font-size:21px">${TANK[tid] ? `<a href="#t/${tid}" style="text-decoration:none">${tname(TANK[tid])}</a> <span class="small muted">${esc(TANK[tid].model)}</span>` : tid} <span class="small muted">${ss.length}</span></h2><div class="skins">${ss.map(skinCard).join("")}</div>`).join("") || '<div class="empty">결과 없음</div>';
+    $("#list").innerHTML = Object.entries(byTank).map(([tid, ss]) => `<details class="sec grp"${filt ? " open" : ""}><summary>${TANK[tid] ? tname(TANK[tid]) : esc(tid)} <small>${TANK[tid] && strip(tname(TANK[tid])) !== TANK[tid].model ? esc(TANK[tid].model) + " · " : ""}${ss.length}개</small></summary>
+      <div class="body">${TANK[tid] ? `<p class="small" style="margin:0 0 10px"><a href="#t/${tid}">${tname(TANK[tid])} 상세 보기</a></p>` : ""}<div class="skins">${ss.map(skinCard).join("")}</div></div></details>`).join("") || '<div class="empty">결과 없음</div>';
   };
   ["q","tk","kd","hd"].forEach(i => $("#" + i).addEventListener("input", draw)); draw();
 }
 
 // ---------- 모드·맵 ----------
 function modes() {
-  const named = D.modes.filter(m => m.name || m.unreleased), other = D.modes.filter(m => !m.name && !m.unreleased);
+  // 한국어 이름이 있는 모드만 먼저 보인다. 이름이 번역 전인 정식 모드와 내부·시험용 설정(Test-, Chip-, Rental …)은 접어 둔다
+  const koNamed = m => HANGUL.test(m.name?.ko || "");
+  const main = D.modes.filter(koNamed);
+  const untr = D.modes.filter(m => !koNamed(m) && (m.name?.k || (m.id >= 1000 && m.id < 1100)));
+  const inner = D.modes.filter(m => !koNamed(m) && !untr.includes(m));
+  const card = m => `<section class="panel">${m.bg ? `<img src="img/${encodeURIComponent(m.bg)}.webp" alt="" loading="lazy" style="width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:6px;margin-bottom:10px;display:block">` : ""}<div class="row" style="justify-content:space-between"><h3 style="margin:0" class="row">${IMG(m.icon, L(m.name), "ico", 'width="36" height="36"')}${L(m.name) || "이름 없음"}</h3>${m.unreleased ? '<span class="pill st-upcoming">미공개</span>' : ""}</div>
+    ${(m.desc || []).map(d => `<p class="small" style="margin:8px 0 0">${L(d)}</p>`).join("")}</section>`;
+  const maps = D.maps;
   app.innerHTML = `<h1>모드·맵</h1>
-  <h2>게임 모드</h2><div class="grid g-2">${named.map(m => `<section class="panel">${m.bg ? `<img src="img/${encodeURIComponent(m.bg)}.webp" alt="" loading="lazy" style="width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:6px;margin-bottom:10px;display:block">` : ""}<div class="row" style="justify-content:space-between"><h3 style="margin:0" class="row">${IMG(m.icon, L(m.name), "ico", 'width="36" height="36"')}${L(m.name) || esc(m.type)}</h3><span class="row">${m.unreleased ? '<span class="pill st-upcoming">미공개</span>' : ""}<span class="pill">${esc(m.modeType)}</span></span></div>
-    <p class="small muted">${esc(m.type)} · 설정 ${m.id}</p>${m.desc.map(d => `<p class="small">${L(d)}</p>`).join("")}</section>`).join("")}</div>
-  <details style="margin-top:16px"><summary>이름 없는 모드 설정 ${other.length}개</summary><div class="panel scroll"><table class="tbl"><tr><th class="n">ID</th><th>유형</th><th>분류</th><th>게임모드 클래스</th></tr>${other.map(m => `<tr><td class="n">${m.id}</td><td>${esc(m.type)}</td><td>${esc(m.modeType)}</td><td class="mono">${esc(m.cls)}</td></tr>`).join("")}</table></div></details>
+  <h2>게임 모드 <span class="small muted">${main.length}개</span></h2><div class="grid g-2">${main.map(card).join("")}</div>
+  <div class="secs">
+  ${untr.length ? `<details class="sec grp"><summary>이름이 아직 번역되지 않은 모드 <small>${untr.length}개</small></summary><div class="body"><div class="grid g-2">${untr.map(card).join("")}</div></div></details>` : ""}
+  ${inner.length ? `<details class="sec grp"><summary>내부·시험용 <small>${inner.length}개</small></summary><div class="body"><p class="small muted">게임 파일에 들어 있는 시험·변형 설정으로 보입니다(추정).</p><div class="grid g-2">${inner.map(card).join("")}</div></div></details>` : ""}
+  </div>
+  <p style="margin-top:14px"><a href="#score">모드별 점수 규칙 보기</a></p>
   <h2>미니맵</h2>
-  <div class="grid g-3">${D.maps.filter((m, i, arr) => m.mini && /minimap/i.test(m.mini) && m.name && arr.findIndex(x => x.mini === m.mini && x.name) === i).map(m => `<button type="button" class="mapcard" style="padding:0;cursor:zoom-in;text-align:left;font:inherit;color:inherit" data-zoom="${esc(m.mini)}" data-cap="${esc(strip(L(m.name) || m.path))}">
-    <div class="row" style="gap:0;flex-wrap:nowrap"><img src="img/${encodeURIComponent(m.mini)}.webp" alt="${esc(strip(L(m.name) || m.path))} 미니맵" loading="lazy" style="width:50%;aspect-ratio:1;object-fit:contain;background:#0e1820">${m.bg ? `<img src="img/${encodeURIComponent(m.bg)}.webp" alt="" loading="lazy" style="width:50%;aspect-ratio:1;object-fit:cover">` : ""}</div>
-    <div class="in"><b>${L(m.name) || esc(m.path)}</b><div class="small muted mono">${esc(m.path)}</div></div></button>`).join("")}</div>
-  <h2>맵 목록</h2><div class="grid g-3">${D.maps.map(m => `<div class="mapcard">${m.bg ? `<img src="img/${encodeURIComponent(m.bg)}.webp" alt="${esc(strip(L(m.name)))}" loading="lazy" data-zoom="${esc(m.bg)}" data-cap="${esc(strip(L(m.name) || m.path))}" style="cursor:zoom-in">` : `<div style="aspect-ratio:16/9;background:var(--steel)"></div>`}
-    <div class="in"><div class="row" style="justify-content:space-between"><b>${L(m.name) || '<span class="muted">이름 없음</span>'}</b>${m.mini ? `<button type="button" class="pill" style="cursor:zoom-in;background:none" data-zoom="${esc(m.mini)}" data-cap="${esc(strip(L(m.name) || m.path))} 미니맵">미니맵</button>` : ""}</div>
-    <div class="small muted">${m.id} · <span class="mono">${esc(m.path)}</span></div>
-    <div class="row" style="margin-top:4px">${m.disabled ? '<span class="pill hid">비활성</span>' : ""}${!m.name && /NewMode|Stadium|Gym/.test(m.path) ? '<span class="pill st-upcoming">미공개</span>' : ""}${!m.name && !/NewMode|Stadium|Gym/.test(m.path) ? '<span class="pill">변형</span>' : ""}</div></div></div>`).join("")}</div>
-  <h2>점수 계수</h2>
-  <div class="panel scroll">${objTable(D.scoreFactors)}</div>`;
+  <div class="grid g-3">${maps.filter((m, i, arr) => m.mini && /minimap/i.test(m.mini) && m.name && arr.findIndex(x => x.mini === m.mini && x.name) === i).map(m => `<button type="button" class="mapcard" style="padding:0;cursor:zoom-in;text-align:left;font:inherit;color:inherit" data-zoom="${esc(m.mini)}" data-cap="${esc(strip(L(m.name)))}">
+    <div class="row" style="gap:0;flex-wrap:nowrap"><img src="img/${encodeURIComponent(m.mini)}.webp" alt="${esc(strip(L(m.name)))} 미니맵" loading="lazy" style="width:50%;aspect-ratio:1;object-fit:contain;background:#0e1820">${m.bg ? `<img src="img/${encodeURIComponent(m.bg)}.webp" alt="" loading="lazy" style="width:50%;aspect-ratio:1;object-fit:cover">` : ""}</div>
+    <div class="in"><b>${L(m.name)}</b></div></button>`).join("")}</div>
+  <div class="secs"><details class="sec"${NARROW() ? "" : " open"}><summary>맵 목록 <small>${maps.length}개</small></summary><div class="body"><div class="grid g-3">${maps.map(m => { const cap = strip(L(m.name)) || "이름 없음"; return `<div class="mapcard">${m.bg ? `<img src="img/${encodeURIComponent(m.bg)}.webp" alt="${esc(cap)}" loading="lazy" data-zoom="${esc(m.bg)}" data-cap="${esc(cap)}" style="cursor:zoom-in">` : ""}
+    <div class="in"><div class="row" style="justify-content:space-between"><b>${L(m.name) || '<span class="muted">이름 없음</span>'}</b>${m.mini ? `<button type="button" class="pill" style="cursor:zoom-in;background:none" data-zoom="${esc(m.mini)}" data-cap="${esc(cap)} 미니맵">미니맵</button>` : ""}</div>
+    <div class="row" style="margin-top:4px">${m.disabled ? '<span class="pill hid">비활성</span>' : ""}${!m.name && /NewMode|Stadium|Gym/.test(m.path) ? '<span class="pill st-upcoming">미공개</span>' : ""}${!m.name && !/NewMode|Stadium|Gym/.test(m.path) ? '<span class="pill">변형</span>' : ""}${!m.bg ? '<span class="small muted">그림 없음</span>' : ""}</div></div></div>`; }).join("")}</div></div></details>
+  <details class="sec"><summary>개발 데이터</summary><div class="body"><p class="small muted">${DEVNOTE}</p>
+    <h3>모드 설정 ${D.modes.length}개</h3>
+    <div class="panel scroll"><table class="tbl nw"><tr><th class="n">설정</th><th>이름</th><th>유형</th><th>분류</th><th>게임모드 클래스</th></tr>${D.modes.map(m => `<tr><td class="n">${m.id}</td><td>${L(m.name) || "–"}</td><td>${esc(m.type)}</td><td>${esc(m.modeType)}</td><td class="mono">${esc(m.cls || "–")}</td></tr>`).join("")}</table></div>
+    <h3>맵 ${maps.length}개</h3>
+    <div class="panel scroll"><table class="tbl nw"><tr><th class="n">번호</th><th>이름</th><th>경로</th></tr>${maps.map(m => `<tr><td class="n">${m.id}</td><td>${L(m.name) || "–"}</td><td class="mono">${esc(m.path)}</td></tr>`).join("")}</table></div>
+    <h3>점수 계수(원본 표)</h3>
+    <div class="panel scroll">${objTable(D.scoreFactors)}</div>
+  </div></details>
+  </div>`;
 }
 function objTable(rows) {
   const keys = [...new Set(Object.values(rows).flatMap(r => Object.keys(r)))];
   return `<table class="tbl"><tr><th>행</th>${keys.map(k => `<th class="n">${esc(k)}</th>`).join("")}</tr>${Object.entries(rows).map(([k, r]) => `<tr><td>${esc(k)}</td>${keys.map(c => `<td class="n">${typeof r[c] === "object" ? esc(JSON.stringify(r[c])) : num(r[c])}</td>`).join("")}</tr>`).join("")}</table>`;
 }
 
-// ---------- 성장·보상 ----------
+// ---------- 제조사·보상 ----------
 function growth() {
   const M = ["ARES","BASALTIC","IMPACT","UNION"];
-  app.innerHTML = `<h1>성장·보상</h1>
+  const equipNamed = D.equip.some(e => strip(L(e.name))) || D.suits.some(s => strip(L(s.name)));
+  const equipHtml = `<div class="grid g-2"><div class="panel scroll"><table class="tbl"><tr><th>장비</th><th>등급</th><th>보정</th></tr>${D.equip.map(e => `<tr><td>${e.icon ? `<img class="cell" src="img/${encodeURIComponent(e.icon)}.webp" alt="" loading="lazy"> ` : ""}${L(e.name) || `<span class="muted">#${e.id}</span>`}</td><td>${esc(e.rarity)}</td><td class="small">${e.mods.map(m => D.modifiers[m] ? L(D.modifiers[m].name) || m : m).join(", ")}</td></tr>`).join("")}</table></div>
+    <div class="panel">${D.suits.map(s => `<div class="small" style="padding:6px 0;border-top:1px dashed var(--line)"><b>${L(s.name) || `세트 #${s.id}`}</b> <span class="muted">${esc(s.type)}</span>${s.desc ? `<br>${L(s.desc)}` : ""}<br><span class="muted">${s.sets.map(x => `${x.n}세트: ${modText(x.mod) || "–"}`).join(" / ")}</span></div>`).join("")}</div></div>`;
+  app.innerHTML = `<h1>제조사·보상</h1>
+  <p class="note-top">${G("제조사")}: ${esc(glossText("제조사"))}</p>
   <h2>제조사</h2><div class="grid g-2">${M.map(m => `<section class="panel">${D.manu[m].logo ? `<img src="img/${encodeURIComponent(D.manu[m].logo)}.webp" alt="" loading="lazy" style="height:34px;max-width:100%;display:block;margin-bottom:8px">` : ""}<span class="row" style="font:24px var(--display)">${IMG(D.manu[m].tab, "", "ico", 'width="36" height="36"')}${manuname(m)}</span><p class="small">${L(D.manu[m].desc)}</p>
     <p class="small muted">소속 탱크 ${D.tanks.filter(t => t.manu === m).length}대: ${D.tanks.filter(t => t.manu === m).map(t => `<a href="#t/${t.id}">${tname(t)}</a>`).join(", ")}</p>
     <details><summary>기술 노드 ${D.tech.filter(x => x.manu === m).length}개</summary>${D.tech.filter(x => x.manu === m).sort((a,b) => a.tier-b.tier || a.sort-b.sort).map(x => `<div class="small" style="padding:6px 0;border-top:1px dashed var(--line)">${IMG(x.icon, L(x.name), "ico", 'width="34" height="34" style="float:left;margin-right:8px"')}<b>${L(x.name)}</b> <span class="muted">${x.tier+1}티어${x.needLv ? ` · 제조사 Lv${x.needLv}` : ""}${x.needTanks ? ` · 탱크 ${x.needTanks}대` : ""}</span><br>${L(x.desc)}<br><span class="muted">${x.levels.map((l,i) => `${i+1}단계(${l.tp}TP): ${modText(l.mod)}`).join(" / ")}</span></div>`).join("")}</details>
     <details><summary>평판 레벨 ${D.manuLevels[m].length}단계</summary><div class="scroll"><table class="tbl"><tr><th>Lv</th><th class="n">필요 경험치</th><th>보상</th><th>해제 스킬</th></tr>${D.manuLevels[m].map(l => `<tr><td>${l.lv}${l.key ? " ★" : ""}</td><td class="n">${num(l.exp)}</td><td>${l.reward ? costs(l.reward) : "–"}</td><td>${l.skill || "–"}</td></tr>`).join("")}</table></div></details>
   </section>`).join("")}
-  <section class="panel" style="border-style:dashed"><div class="row"><span style="font:24px var(--display)">스피어</span><span class="pill st-upcoming">미공개</span></div><p class="small muted">EManufacturerType::SPHERE · 평판 테이블·소속 탱크 없음</p></section></div>
+  ${(() => { const cm = D.tech.filter(x => x.manu === "NONE").sort((a,b) => a.tier-b.tier || a.sort-b.sort); return cm.length ? `<section class="panel"><span class="row" style="font:24px var(--display)">공용 기술</span><p class="small">제조사와 관계없이 모든 탱크에 적용되는 기술입니다. 슬래시(/)로 나뉜 값은 단계별 수치입니다.</p>
+    <details><summary>기술 노드 ${cm.length}개</summary>${cm.map(x => `<div class="small" style="padding:6px 0;border-top:1px dashed var(--line)">${IMG(x.icon, L(x.name), "ico", 'width="34" height="34" style="float:left;margin-right:8px"')}<b>${L(x.name)}</b> <span class="muted">${x.levels.length}단계 · 단계별 ${x.levels.map(l => l.tp).join("/")}TP</span><br>${L(x.desc)}</div>`).join("")}</details></section>` : ""; })()}
+  <section class="panel" style="border-style:dashed"><div class="row"><span style="font:24px var(--display)">스피어</span><span class="pill st-upcoming">미공개</span></div><p class="small muted" style="margin:6px 0 0">평판 테이블·소속 탱크 없음</p></section></div>
 
   <h2>리그 등급</h2><div class="row">${D.league.map(l => `<span class="pill" style="${l.icon ? "padding-left:3px" : ""}">${IMG(l.icon, "", "ico", 'width="26" height="26"')}${L(l.name) || l.id}${l.sub ? " " + L(l.sub) : ""}</span>`).join("")}</div>
   <h2>플레이어 레벨</h2><div class="panel scroll"><table class="tbl"><tr>${D.playerLevels.slice(0,25).map(l => `<th class="n">${l.lv}</th>`).join("")}</tr><tr>${D.playerLevels.slice(0,25).map(l => `<td class="n">${num(l.exp)}</td>`).join("")}</tr><tr>${D.playerLevels.slice(25).map(l => `<th class="n">${l.lv}</th>`).join("")}</tr><tr>${D.playerLevels.slice(25).map(l => `<td class="n">${num(l.exp)}</td>`).join("")}</tr></table></div>
   <h2>전투 메달 <span class="small muted">${D.medals.length}개</span></h2>
-  <div class="filters"><input type="search" id="mq" placeholder="메달 검색" aria-label="메달 검색"></div><div class="panel scroll"><table class="tbl" id="mlist"></table></div>
-  <h2>장비와 세트</h2><div class="grid g-2"><div class="panel scroll"><table class="tbl"><tr><th>장비</th><th>등급</th><th>보정</th></tr>${D.equip.map(e => `<tr><td>${e.icon ? `<img class="cell" src="img/${encodeURIComponent(e.icon)}.webp" alt="" loading="lazy"> ` : ""}${L(e.name)}</td><td>${esc(e.rarity)}</td><td class="small">${e.mods.map(m => D.modifiers[m] ? L(D.modifiers[m].name) || m : m).join(", ")}</td></tr>`).join("")}</table></div>
-    <div class="panel">${D.suits.map(s => `<div class="small" style="padding:6px 0;border-top:1px dashed var(--line)"><b>${L(s.name)}</b> <span class="muted">${esc(s.type)}</span>${s.desc ? `<br>${L(s.desc)}` : ""}<br><span class="muted">${s.sets.map(x => `${x.n}세트: ${modText(x.mod)}`).join(" / ")}</span></div>`).join("")}</div></div>
+  <div class="filters"><input type="search" id="mq" placeholder="메달 검색" aria-label="메달 검색"><span class="count" id="mcnt"></span></div><div class="panel scroll"><table class="tbl" id="mlist"></table></div>
+  <button type="button" class="btn ghost morebtn" id="mmore" hidden></button>
+  ${equipNamed ? `<h2>장비와 세트</h2>${equipHtml}` : ""}
   <h2>소모품</h2><div class="grid g-3">${D.consumables.map(c => `<div class="panel">${IMG(c.icon, L(c.name), "ico lg")}<h3>${L(c.name)}</h3><p class="small">${L(c.desc)}</p><p class="small muted" style="margin:0">전투당 ${costs(c.cost)}${c.module ? " · " + modText(c.module) : ""}</p></div>`).join("")}</div>
-  <h2>속성 상태이상</h2><div class="panel scroll"><table class="tbl"><tr><th>행</th><th>속성</th><th class="n">단계</th><th class="n">최대 누적</th><th class="n">회복 지연(초)</th><th class="n">회복 속도</th><th class="n">디버프 피해 비율</th></tr>${D.elements.map(e => `<tr><td>${esc(e.id)}</td><td>${esc(e.type)}</td><td class="n">${e.lv}</td><td class="n">${num(e.max)}</td><td class="n">${num(e.recDelay)}</td><td class="n">${num(e.recSpeed)}</td><td class="n">${num(e.debuff*100)}%</td></tr>`).join("")}</table></div>
-  <h2>상품</h2><div class="panel scroll"><table class="tbl"><tr><th class="n">ID</th><th>이름</th><th>분류</th><th>설명</th></tr>${D.goods.map(g => `<tr><td class="n">${g.id}</td><td>${g.icon ? `<img class="cell" src="img/${encodeURIComponent(g.icon)}.webp" alt="" loading="lazy"> ` : ""}${L(g.name) || "–"}</td><td>${esc(g.sub)}</td><td class="small">${L(g.desc)}</td></tr>`).join("")}</table></div>`;
+  <h2>속성 상태이상</h2><div class="panel scroll"><table class="tbl"><tr><th>속성</th><th class="n">단계</th><th class="n">최대 누적</th><th class="n">회복 지연(초)</th><th class="n">회복 속도</th><th class="n">디버프 피해 비율</th></tr>${D.elements.map(e => { const tm = TERMBY[ELTERM[e.type]]; return `<tr><td>${tm ? esc(L(tm.name)) : esc(e.type)}</td><td class="n">${e.lv}</td><td class="n">${num(e.max)}</td><td class="n">${num(e.recDelay)}</td><td class="n">${num(e.recSpeed)}</td><td class="n">${num(e.debuff*100)}%</td></tr>`; }).join("")}</table></div>
+  <div class="secs">
+  <details class="sec"${NARROW() ? "" : " open"}><summary>상품 <small>${D.goods.length}개</small></summary><div class="body"><div class="panel scroll"><table class="tbl"><tr><th class="n">ID</th><th>이름</th><th>분류</th><th>설명</th></tr>${D.goods.map(g => `<tr><td class="n">${g.id}</td><td>${g.icon ? `<img class="cell" src="img/${encodeURIComponent(g.icon)}.webp" alt="" loading="lazy"> ` : ""}${L(g.name) || "–"}</td><td>${esc(g.sub)}</td><td class="small">${L(g.desc)}</td></tr>`).join("")}</table></div></div></details>
+  <details class="sec"><summary>개발 데이터</summary><div class="body"><p class="small muted">${DEVNOTE}</p>
+    <h3>메달 종류·등급(내부 이름)</h3>
+    <div class="panel scroll"><table class="tbl"><tr><th>메달</th><th>종류</th><th>등급</th></tr>${D.medals.map(m => `<tr><td>${L(m.name) || "–"}</td><td>${esc(m.type || "–")}</td><td>${esc(m.grade || "–")}</td></tr>`).join("")}</table></div>
+    ${equipNamed ? "" : `<h3>장비와 세트 <span class="small muted">게임 파일에 이름이 없는 표</span></h3>${equipHtml}`}
+    <h3>속성 상태이상 행 이름</h3><p class="small">${D.elements.map(e => `${esc(e.id)} (${esc(e.type)})`).join(", ")}</p>
+    <h3>미공개 제조사 ‘스피어’</h3><p class="small mono">EManufacturerType::SPHERE</p>
+  </div></details>
+  </div>`;
+  // 메달 표는 20개씩 보인다
+  let mshow = 20;
   const md = () => { const q = $("#mq").value.trim().toLowerCase();
-    $("#mlist").innerHTML = `<tr><th>메달</th><th>종류</th><th>등급</th><th class="n">보너스 점수</th><th>조건</th></tr>` + D.medals.filter(m => !q || strip(L(m.name) + L(m.desc)).toLowerCase().includes(q)).map(m => `<tr><td>${m.icon ? `<img class="cell" src="img/${encodeURIComponent(m.icon)}.webp" alt="" loading="lazy"> ` : ""}<b>${L(m.name) || "–"}</b> ${m.locOnly ? '<span class="pill st-new">텍스트만</span>' : ""}</td><td>${esc(m.type || "–")}</td><td>${esc(m.grade || "–")}</td><td class="n">${num(m.score)}</td><td class="small">${L(m.desc)}</td></tr>`).join(""); };
-  $("#mq").addEventListener("input", md); md();
+    const ls = D.medals.filter(m => !q || strip(L(m.name) + L(m.desc)).toLowerCase().includes(q));
+    $("#mcnt").textContent = ls.length + "개";
+    $("#mlist").innerHTML = `<tr><th>메달</th><th class="n">보너스 점수</th><th>조건</th></tr>` + ls.slice(0, mshow).map(m => `<tr><td><div class="mcell">${m.icon ? `<img class="cell" src="img/${encodeURIComponent(m.icon)}.webp" alt="" loading="lazy">` : ""}<span><b>${L(m.name) || "–"}</b> ${m.locOnly ? '<span class="pill st-new">텍스트만</span>' : ""}</span></div></td><td class="n">${num(m.score)}</td><td class="small">${L(m.desc)}</td></tr>`).join("");
+    $("#mmore").hidden = ls.length <= mshow; $("#mmore").textContent = `더 보기 (남은 ${Math.max(0, ls.length - mshow)}개)`; };
+  $("#mq").addEventListener("input", () => { mshow = 20; md(); });
+  $("#mmore").addEventListener("click", () => { mshow += 20; md(); });
+  md();
 }
 
 // ---------- 미공개 ----------
@@ -1070,29 +1493,32 @@ function hidden(tab) {
     <p class="small muted" style="margin:4px 0 0">${t.why.map(esc).join(", ")} · Lv${MAXLV} 내구도 ${num(lvRow(t,MAXLV).hp)} / 피해 ${num(lvRow(t,MAXLV).dmg)}</p></a>`; };
   const modeCard = x => { const m = D.modes.find(y => y.id === x.id); return `<section class="panel">${m.bg ? `<img src="img/${encodeURIComponent(m.bg)}.webp" alt="" loading="lazy" style="width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:6px;margin-bottom:10px;display:block">` : ""}
     <div class="row" style="justify-content:space-between"><h3 style="margin:0" class="row">${IMG(m.icon, L(m.name), "ico", 'width="32" height="32"')}${L(m.name) || esc(m.type)}</h3>${since(x)}</div>
-    <p class="small muted mono" style="margin:6px 0 0">${esc(m.type)} · 설정 ${m.id}${m.cls ? " · " + esc(m.cls) : ""}</p>${(m.desc || []).map(d => `<p class="small">${L(d)}</p>`).join("")}</section>`; };
+    ${(m.desc || []).map(d => `<p class="small" style="margin:8px 0 0">${L(d)}</p>`).join("")}<details class="vals"><summary>개발 데이터</summary><p class="small muted mono" style="margin:0">${esc(m.type)} · 설정 ${m.id}${m.cls ? " · " + esc(m.cls) : ""}</p></details></section>`; };
   const mapCard = x => { const m = D.maps.find(y => y.id === x.id), cap = strip(L(m.name) || m.path); return `<div class="mapcard">${m.bg ? `<img src="img/${encodeURIComponent(m.bg)}.webp" alt="${esc(cap)}" loading="lazy" data-zoom="${esc(m.bg)}" data-cap="${esc(cap)}" style="cursor:zoom-in">` : ""}
     <div class="in"><div class="row" style="justify-content:space-between"><b>${L(m.name) || esc(m.path)}</b>${m.mini ? `<button type="button" class="pill" style="cursor:zoom-in;background:none" data-zoom="${esc(m.mini)}" data-cap="${esc(cap)} 미니맵">미니맵</button>` : ""}</div>
-    <div class="small muted">${m.id} · <span class="mono">${esc(m.path)}</span></div><div class="row" style="margin-top:4px">${m.disabled ? '<span class="pill hid">비활성</span>' : ""}${since(x)}</div></div></div>`; };
+    <div class="row" style="margin-top:4px">${m.disabled ? '<span class="pill hid">비활성</span>' : ""}${since(x)}</div><details class="vals"><summary>개발 데이터</summary><span class="small muted">${m.id} · <span class="mono">${esc(m.path)}</span></span></details></div></div>`; };
   const skinItem = x => { const sk = D.skins[x.id], t = TANK[sk.tank]; return `<div>${skinCard(sk)}<div class="row small" style="margin-top:4px;gap:4px">${t ? `<a href="#t/${t.id}">${tname(t)}</a>` : ""}${why(x)}${since(x)}</div></div>`; };
-  const partItem = x => { const p = D.parts[x.id]; return `<div class="panel">${IMG(p.icon, L(p.name), "ico lg")}<h3>${L(p.name) || `<span class="muted">${esc(p.key)}</span>`}</h3><p class="small">${L(p.desc)}</p>
+  const partItem = x => { const p = D.parts[x.id]; return `<div class="panel">${IMG(p.icon, L(p.name), "ico lg")}<h3>${L(p.name) || '<span class="muted">이름 없음(미번역)</span>'}</h3><p class="small">${L(p.desc)}</p>
     <div class="row small" style="gap:4px">${why(x)}${since(x)}</div>${x.tanks.length ? `<p class="small muted" style="margin:6px 0 0">장착: ${x.tanks.map(id => `<a href="#t/${id}">${tname(TANK[id])}</a>`).join(", ")}</p>` : ""}</div>`; };
   const chipItem = x => { const c = D.chips[x.id]; return `<div class="panel"><h3><a href="#chips/${x.id}">${L(c.name) || x.id}</a></h3><p class="small">${L(c.desc)}</p><div class="row small" style="gap:4px">${why(x)}${since(x)}</div></div>`; };
   const flat = (k, card, grid) => { const xs = items(k); return xs.length ? `<div class="${grid === "skins" ? "skins" : "grid " + grid}">${xs.map(card).join("")}</div>` : ""; };
   const etc = () => `<div class="grid g-2">
-    <div class="panel"><h3>제조사 ‘스피어’</h3><p class="small">EManufacturerType::SPHERE · 평판 테이블·소속 탱크 없음</p></div>
+    <div class="panel"><h3>제조사 ‘스피어’</h3><p class="small">평판 테이블·소속 탱크 없음</p><details class="vals"><summary>개발 데이터</summary><span class="small muted mono">EManufacturerType::SPHERE</span></details></div>
     <div class="panel"><h3>미사용 무기 유형</h3><p class="small">${H.unusedWeaponTypes.map(esc).join(", ") || "없음"}</p></div>
     <div class="panel"><h3>미구현 메달 ${H.locOnlyMedals.length}개</h3><p class="small"><a href="#growth">메달 보기</a></p></div>
     <div class="panel"><h3>프리즘 등급 칩 ${H.prismaticChips.length}개</h3><p class="small">${H.prismaticChips.map(c => `<a href="#chips/${c}">${L(D.chips[c].name) || c}</a>`).join(", ") || "없음"}</p></div>
   </div>
   <h2>미번역 문구 <span class="small muted">${Object.values(H.untranslated).reduce((a,b)=>a+b.length,0)}개</span></h2>
-  ${Object.entries(H.untranslated).sort((a,b) => b[1].length - a[1].length).map(([g, xs]) => `<details class="panel" style="margin-bottom:8px"><summary><b>${esc(g)}</b> <span class="muted">${xs.length}</span></summary><table class="tbl">${xs.map(x => `<tr><td class="mono" style="width:40%">${esc(x.k)}</td><td class="small">${x.en}</td></tr>`).join("")}</table></details>`).join("")}`;
+  <p class="small muted">한국어 번역이 아직 없는 게임 문구입니다. 펼치면 왼쪽 칸에 게임 파일 안의 이름이 함께 보입니다.</p>
+  ${Object.entries(H.untranslated).sort((a,b) => b[1].length - a[1].length).map(([g, xs]) => `<details class="panel" style="margin-bottom:8px"><summary><b>${esc(g)}</b> <span class="muted">${xs.length}</span></summary><div class="scroll"><table class="tbl">${xs.map(x => `<tr><td class="mono" style="width:40%">${esc(x.k)}</td><td class="small">${x.en}</td></tr>`).join("")}</table></div></details>`).join("")}`;
   const body = {tanks: () => grouped("tanks", tankCard, "g-2"), modes: () => grouped("modes", modeCard, "g-2"), maps: () => grouped("maps", mapCard, "g-3"),
     skins: () => flat("skins", skinItem, "skins"), parts: () => flat("parts", partItem, "g-3"), chips: () => flat("chips", chipItem, "g-3"), etc}[tab]();
   const cnt = k => { if (k === "etc") return ""; const n = C[k].length, nn = C[k].filter(isNew).length; return ` <span class="muted">${n}</span>${nn ? ` <b class="unew">+${nn}</b>` : ""}`; };
   app.innerHTML = `<h1>미공개·출시 예정</h1>
-  <nav class="row" style="margin:16px 0 10px;gap:6px" aria-label="미공개 분류">${UTABS.map(([k, lab]) => `<a class="pill" href="#hidden/${k}" style="text-decoration:none;padding:4px 12px;${k === tab ? "background:var(--hazard);color:var(--hazard-ink);border-color:var(--hazard)" : ""}"${k === tab ? ' aria-current="true"' : ""}>${lab}${cnt(k)}</a>`).join("")}</nav>
-  ${tab === "etc" ? "" : `<label class="row small" style="gap:6px;margin-bottom:12px;cursor:pointer"><input type="checkbox" id="unew" ${UNEW ? "checked" : ""}>${esc(U.latest)} 업데이트에서 새로 생긴 것만</label>`}
+  <p class="note-top">게임 파일에는 있지만 아직 게임에 나오지 않은 것들입니다. 실제로 안 나오거나 바뀔 수 있습니다(추정).</p>
+  <p class="small muted" style="margin:6px 0 0">출시 예정 = 한국어 이름이 아직 없음 · 신규 = 이번 버전에서 처음 등장 · 숨김 = 게임 안에서 가려 둠</p>
+  <nav class="row utabs" style="margin:16px 0 10px;gap:6px" aria-label="미공개 분류">${UTABS.map(([k, lab]) => `<a class="pill" href="#hidden/${k}"${k === tab ? ' aria-current="true"' : ""}>${lab}${cnt(k)}</a>`).join("")}</nav>
+  ${tab === "etc" ? "" : `<label class="chk small" style="margin-bottom:12px"><input type="checkbox" id="unew" ${UNEW ? "checked" : ""}>${esc(U.latest)} 업데이트에서 새로 생긴 것만</label>`}
   <div class="hazard-box"><div class="tape"></div><div class="in">${body || '<div class="empty">해당 항목 없음</div>'}</div></div>`;
   $("#unew")?.addEventListener("change", e => { UNEW = e.target.checked; hidden(tab); });
 }
@@ -1103,18 +1529,21 @@ function gallery(group) {
   const groups = D.gallery.filter(g => g[2]);
   group = group || groups[0][0];
   app.innerHTML = `<h1>이미지</h1>
-  <nav class="row" style="margin:16px 0" aria-label="이미지 분류">${groups.map(([g, lab, n]) => `<a class="pill" href="#gallery/${g}" style="text-decoration:none;padding:4px 12px;${g === group ? "background:var(--hazard);color:var(--hazard-ink);border-color:var(--hazard)" : ""}">${esc(lab)} ${n}</a>`).join("")}</nav>
-  <div class="filters"><input type="search" id="q" placeholder="이름 검색" aria-label="이미지 검색"><span class="count" id="cnt"></span></div><div class="thumbs" id="list"><div class="empty">불러오는 중…</div></div>`;
+  <nav class="row utabs" style="margin:16px 0" aria-label="이미지 분류">${groups.map(([g, lab, n]) => `<a class="pill" href="#gallery/${g}"${g === group ? ' aria-current="true"' : ""}>${esc(lab)} ${n}</a>`).join("")}</nav>
+  <div class="filters"><input type="search" id="q" placeholder="이름 검색" aria-label="이미지 검색"><span class="count" id="cnt"></span></div><div class="thumbs" id="list"><div class="empty">불러오는 중…</div></div>
+  <button type="button" class="btn ghost morebtn" id="gmore" hidden></button>`;
+  let shown = 60;   // 60장씩 보인다
   const draw = () => {
     const q = $("#q").value.trim().toLowerCase();
     const ls = (GAL[group] || []).filter(([n, c]) => !q || (n + " " + strip(L(c))).toLowerCase().includes(q));
     $("#cnt").textContent = ls.length + "장";
-    $("#list").innerHTML = ls.map(([n, c]) => { const cap = strip(L(c)) || n.replace(/^T_(UI_|HQ_|common_|callingcard_)?/i, "").replace(/_/g, " "); return `<button type="button" class="thumb" data-zoom="${esc(n)}" data-cap="${esc(cap)}"><img src="img/${encodeURIComponent(n)}.webp" alt="${esc(cap)}" loading="lazy" decoding="async"><span>${esc(cap)}</span></button>`; }).join("") || '<div class="empty">결과 없음</div>';
+    $("#list").innerHTML = ls.slice(0, shown).map(([n, c]) => { const cap = strip(L(c)) || n.replace(/^T_(UI_|HQ_|common_|callingcard_)?/i, "").replace(/_/g, " "); return `<button type="button" class="thumb" data-zoom="${esc(n)}" data-cap="${esc(cap)}"><img src="img/${encodeURIComponent(n)}.webp" alt="${esc(cap)}" loading="lazy" decoding="async"><span>${esc(cap)}</span></button>`; }).join("") || '<div class="empty">결과 없음</div>';
+    $("#gmore").hidden = ls.length <= shown; $("#gmore").textContent = `더 보기 (남은 ${Math.max(0, ls.length - shown)}장)`;
   };
-  const go = () => { $("#q").addEventListener("input", draw); draw(); };
+  const go = () => { $("#q").addEventListener("input", () => { shown = 60; draw(); }); $("#gmore").addEventListener("click", () => { shown += 60; draw(); }); draw(); };
   if (GAL) return go();
-  fetch("gallery.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(j => { GAL = j; go(); })
-    .catch(() => { $("#list").innerHTML = '<div class="empty">이미지 목록을 불러오지 못했습니다. 새로고침해 보세요.</div>'; });
+  fetch("gallery.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(j => { GAL = j; if ($("#gmore")) go(); })
+    .catch(() => { if ($("#list")) $("#list").innerHTML = '<div class="empty">이미지 목록을 불러오지 못했습니다. 새로고침해 보세요.</div>'; });
 }
 
 // ---------- 점수·MVP ----------
@@ -1122,8 +1551,8 @@ function score() {
   const F = Object.values(D.scoreFactors || {});
   const COLS = [["kill_factor", "처치"], ["assist_kill_factor", "도움"], ["death_factor", "사망(−)"], ["capture_factor", "점령"], ["capture_time_factor", "점령 유지"],
     ["beacon_factor", "신호기"], ["bounty_factor", "현상금"], ["flag_capture_factor", "깃발"], ["payload_capture_factor", "화물 점령"], ["payload_time_factor", "화물 이동"], ["sentry_takedown_factor", "파수꾼"]];
-  const MODE = {"TDM": "팀 데스매치", "Domination": "점령", "Kill Confirm": "킬 컨펌", "Bounty Hunter": "현상금 사냥", "Flag Strike": "플래그 스트라이크", "Payload": "화물 호송",
-    "Free-for-All": "개인전", "Flag Heist": "깃발 탈취", "Sentry Takedown": "파수꾼 격파"};
+  // 모드 이름은 모드·맵 화면과 같게, 게임 데이터(D.modes)의 이름을 쓴다
+  const modeName = c => { const m = D.modes.find(x => x.id < 1100 && (x.name?.en === c || x.type === c)); return (m && strip(L(m.name))) || c; };
   const medals = (D.medals || []).filter(m => m.score).sort((a, b) => b.score - a.score);
   // 모드마다 실제로 쓰이는 목표물 칸(처치·도움·사망은 모든 모드 공통). 나머지 칸은 데이터에 기본값만 채워진 것이라 흐리게.
   const USED = {"TDM": [], "Free-for-All": [], "Domination": ["capture_factor", "capture_time_factor"], "Kill Confirm": ["beacon_factor"],
@@ -1136,10 +1565,19 @@ function score() {
     <section class="panel"><h3>점수는 어떻게 쌓이나</h3><p class="small">처치·도움·점령 등은 아래 표의 계수만큼, 사망은 그만큼 깎이고, 받은 <b>메달의 보너스 점수</b>가 더해집니다. 피해량도 점수가 되는데, 같은 피해라도 <b>상대 체력이 낮을수록(저레벨 판) 점수가 큽니다</b>.</p><p class="small muted" style="margin:0">관찰: 저레벨 봇 판은 피해 1,000당 약 20점, 20레벨 판은 약 7~8점. 그래서 고레벨일수록 처치·도움 비중이 커집니다(추정).</p></section>
   </div>
   <h2>모드별 점수 계수</h2>
-  <div class="panel scroll"><table class="tbl nw"><tr><th>모드</th>${COLS.filter(([k]) => F.some(f => f[k])).map(([, n]) => `<th class="n">${n}</th>`).join("")}</tr>${F.map(f => `<tr><td><b>${esc(MODE[f.Comment] || f.Comment)}</b></td>${COLS.filter(([k]) => F.some(x => x[k])).map(([k]) => used(f, k) ? `<td class="n"><b>${f[k] ? num(f[k]) : "–"}</b></td>` : `<td class="n unused" title="이 모드에는 해당 목표물이 없어 쓰이지 않는 값">${f[k] ? num(f[k]) : "–"}</td>`).join("")}</tr>`).join("")}</table></div>
-  <p class="small muted">게임 데이터(전투 점수 계수표) 그대로입니다. 처치 점수는 개인전 60 · 팀 데스매치 50 · 나머지 30. <span class="unused">흐린 숫자</span>는 그 모드에 해당 목표물(점령 지점·화물·깃발 등)이 없어 실제로는 받을 수 없는 값으로, 데이터에 기본값만 채워져 있는 것입니다(추정).</p>
+  <div class="panel scroll"><table class="tbl nw"><tr><th>모드</th>${COLS.filter(([k]) => F.some(f => f[k])).map(([, n]) => `<th class="n">${n}</th>`).join("")}</tr>${F.map(f => `<tr><td><b>${esc(modeName(f.Comment))}</b></td>${COLS.filter(([k]) => F.some(x => x[k])).map(([k]) => used(f, k) ? `<td class="n"><b>${f[k] ? num(f[k]) : "–"}</b></td>` : `<td class="n unused" title="이 모드에는 해당 목표물이 없어 쓰이지 않는 값">${f[k] ? num(f[k]) : "–"}</td>`).join("")}</tr>`).join("")}</table></div>
+  <p class="small muted">게임 데이터(전투 점수 계수표) 그대로입니다. 처치 점수는 ${esc(modeName("Free-for-All"))} 60 · ${esc(modeName("TDM"))} 50 · 나머지 30. <span class="unused">흐린 숫자</span>는 그 모드에 해당 목표물(점령 지점·화물·깃발 등)이 없어 실제로는 받을 수 없는 값으로, 데이터에 기본값만 채워져 있는 것입니다(추정).</p>
   <h2>보너스 점수가 큰 메달 <span class="small muted">${medals.length}개</span></h2>
-  <div class="panel scroll"><table class="tbl"><tr><th class="nw">메달</th><th class="n nw">보너스</th><th>조건</th></tr>${medals.map(m => `<tr><td class="nw">${m.icon ? `<img class="cell" src="img/${encodeURIComponent(m.icon)}.webp" alt="" loading="lazy"> ` : ""}<b>${L(m.name) || "–"}</b></td><td class="n nw">+${num(m.score)}</td><td class="small">${L(m.desc) || ""}</td></tr>`).join("")}</table></div>`;
+  <div class="panel scroll"><table class="tbl" id="smed"></table></div>
+  <button type="button" class="btn ghost morebtn" id="smore" hidden></button>`;
+  // 메달 표는 20개씩 보인다
+  let shown = 20;
+  const drawMedals = () => {
+    $("#smed").innerHTML = `<tr><th class="nw">메달</th><th class="n nw">보너스</th><th>조건</th></tr>${medals.slice(0, shown).map(m => `<tr><td><div class="mcell">${m.icon ? `<img class="cell" src="img/${encodeURIComponent(m.icon)}.webp" alt="" loading="lazy">` : ""}<b>${L(m.name) || "–"}</b></div></td><td class="n nw">+${num(m.score)}</td><td class="small">${L(m.desc) || ""}</td></tr>`).join("")}`;
+    $("#smore").hidden = medals.length <= shown; $("#smore").textContent = `더 보기 (남은 ${Math.max(0, medals.length - shown)}개)`;
+  };
+  $("#smore").addEventListener("click", () => { shown += 20; drawMedals(); });
+  drawMedals();
 }
 
 // ---------- 통합 검색 ----------
@@ -1156,15 +1594,23 @@ function find(q0 = "") {
   D.operators.forEach(o => pool.push({k: "오퍼레이터", n: strip(L(o.name)), d: strip(L(o.skill?.desc)), h: "#operators"}));
   D.modes.forEach(m => { const n = strip(L(m.name)); if (n) pool.push({k: "모드", n, d: "", h: "#modes"}); });
   (D.medals || []).forEach(m => { const n = strip(L(m.name)); if (n) pool.push({k: "메달", n, d: strip(L(m.desc)), h: "#growth"}); });
+  GLOSS.forEach(([k]) => pool.push({k: "용어", n: k, d: glossText(k), h: "#glossary"}));
+  // 빈 화면에 보일 예시 검색어: 데이터에 실제로 있는 이름에서 고른다(탱크·부품·칩·용어 하나씩)
+  const top = D.tanks.filter(t => t.status === "released").sort((a, b) => b.rarity - a.rarity)[0];
+  const gear = Object.values(D.parts).find(p => /LOC_Gear/i.test(p.key || "") && named(p.name));
+  const chip = Object.values(D.chips).find(c => named(c.name));
+  const EX = [top && strip(tname(top)), gear && strip(L(gear.name)), chip && strip(L(chip.name)), "치명타"].filter(Boolean);
   const draw = () => {
     const q = $("#fq").value.trim().toLowerCase();
-    if (q.length < 1) { $("#fres").innerHTML = '<p class="muted">찾을 말을 입력하세요.</p>'; $("#fcnt").textContent = ""; return; }
+    if (q.length < 1) { $("#fres").innerHTML = `<p class="muted">찾을 말을 입력하세요. 이렇게 찾아볼 수 있습니다:</p><div class="row">${EX.map(x => `<button type="button" class="pill" data-ex="${esc(x)}" style="cursor:pointer;background:none;padding:4px 12px">${esc(x)}</button>`).join("")}</div>`; $("#fcnt").textContent = ""; return; }
     const hit = pool.filter(x => (x.n + " " + x.d).toLowerCase().includes(q)).sort((a, b) => (b.n.toLowerCase().includes(q)) - (a.n.toLowerCase().includes(q)));
     $("#fcnt").textContent = hit.length + "개";
-    $("#fres").innerHTML = `<div class="hits">${hit.slice(0, 150).map(x => `<a class="hit" href="${x.h}"><span class="k">${x.k}</span><span class="b"><b>${esc(x.n)}</b>${x.d ? `<br><span class="small muted">${esc(x.d.slice(0, 140))}</span>` : ""}</span></a>`).join("")}</div>${hit.length > 150 ? `<p class="small muted">앞 150개만 보여 줍니다. 더 자세히 입력하세요.</p>` : ""}` || '<div class="empty">결과 없음</div>';
+    $("#fres").innerHTML = `<div class="hits">${hit.slice(0, 150).map(x => `<a class="hit" href="${x.h}"><span class="k">${x.k}</span><span class="b"><b>${esc(x.n)}</b>${x.d ? `<br><span class="small muted">${esc(x.d.slice(0, 140))}</span>` : ""}</span></a>`).join("")}</div>${hit.length > 150 ? `<p class="small muted">앞 150개만 보여 줍니다. 더 자세히 입력하세요.</p>` : ""}`;
     if (!hit.length) $("#fres").innerHTML = '<div class="empty">결과 없음</div>';
   };
-  $("#fq").addEventListener("input", draw); draw();
+  $("#fq").addEventListener("input", draw);
+  $("#fres").addEventListener("click", e => { const b = e.target.closest("[data-ex]"); if (!b) return; $("#fq").value = b.dataset.ex; draw(); });
+  draw();
 }
 
 render();
