@@ -1,6 +1,6 @@
 # 탱크어붐 데이터 도감
 
-Tank-a-Boom의 탱크·스킬·특성·부품·칩·스킨·모드와, 게임 화면에서는 볼 수 없는 세부 수치와 출시 예정 콘텐츠를 한곳에 모은 비공식 팬 사이트입니다.
+Tank-a-Boom의 탱크·스킬·특성·부품·칩·스킨·모드와, 게임 화면에서는 볼 수 없는 세부 수치와 출시 예정 콘텐츠를 한곳에 모은 사이트입니다.
 
 - 사이트: https://tankaboom-ts.onrender.com/
 - 예비 주소: https://jinavav15000-star.github.io/tankaboom-ts/
