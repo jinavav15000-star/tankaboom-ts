@@ -398,48 +398,30 @@ details.sec .body h3{margin-top:14px}
 @media (max-width:600px){
   .g-cards .tcard .badges .pill{padding:0 7px}
 }
-/* 조합 실험실 */
-.cx{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-top:16px}
-.cx-col{display:flex;flex-direction:column;gap:12px;min-width:0}
-.cx-col>*{min-width:0}
-.cx-card{background:var(--steel-2);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
-.cx-hd{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
-.cx-hd h3{margin:0}
-.cx-k{font-size:13px;color:var(--ink-2);font-weight:500}
+/* 조합 실험실: 세팅을 열로 나란히 놓는 비교표 */
+.cx-tank{display:flex;align-items:center;gap:12px;margin:14px 0 6px}
+.cx-tank .pic{width:64px;height:64px;flex:none;border-radius:8px;background:radial-gradient(ellipse at 50% 70%,color-mix(in srgb,var(--rc) 28%,transparent),transparent 70%),var(--steel-2)}
+.cx-tank .ctl{flex:1;min-width:0;margin:0;max-width:520px}
+.cx-tank label a{display:inline-flex;align-items:center;min-height:44px;margin-left:8px;color:var(--ink-2)}
 .cx-btn{min-height:44px;padding:0 14px;border-radius:8px;border:1px solid var(--line);background:var(--steel-3);color:var(--ink);cursor:pointer;font-weight:500;white-space:nowrap}
 .cx-btn:hover{border-color:var(--hazard)}
-.cx-btn:disabled,.cx-go:disabled,.cx-step button:disabled{opacity:.5;cursor:default;border-color:var(--line)}
-.cx-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.cx-it{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;align-items:start}
-.cx-it>.ico,.cx-row>.ico,.cx-noimg{background:var(--steel);border-radius:8px}
-.cx-noimg{display:inline-block;flex:none}
-.cx-it b{font-size:15px}
+.cx-btn[aria-pressed=true]{background:var(--hazard);color:var(--hazard-ink);border-color:var(--hazard)}
+.cx-btn:disabled,.cx-go:disabled,.cx-step button:disabled,.cx-menu button:disabled{opacity:.5;cursor:default;border-color:var(--line)}
+.cx-acts{display:flex;flex-wrap:wrap;gap:6px}
+.cx-acts .cx-btn{background:var(--steel-2);font-size:14px}
+.cx-acts .cx-btn[aria-pressed=true]{background:var(--hazard)}
+.cx-noimg{display:inline-block;flex:none;background:var(--steel);border-radius:8px}
 .cx-ds{font-size:13px;color:var(--ink-2);line-height:1.5}
-.cx-hint{margin-top:8px;font-size:13px;padding:6px 10px;border-radius:8px;background:rgba(0,0,0,.2);color:var(--ink-2)}
-.cx-hint.ok{color:var(--ok)}
-.cx-hint.tip{color:var(--hazard)}
-.cx-cond{display:flex;gap:10px;align-items:center;min-height:44px;padding-top:6px;font-size:13px;line-height:1.45;cursor:pointer}
+.cx-cond{display:flex;gap:10px;align-items:center;min-height:44px;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px;line-height:1.45;cursor:pointer}
 .cx-cond input{width:20px;height:20px;flex:none;margin:0;accent-color:var(--hazard)}
 .cx-seg{display:flex;flex-wrap:wrap;gap:6px}
-.cx-seg button{flex:1 1 auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--steel);color:var(--ink-2);cursor:pointer;font-weight:500;white-space:nowrap}
+.cx-seg button{flex:1 1 auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--steel-2);color:var(--ink-2);cursor:pointer;font-weight:500;white-space:nowrap}
 .cx-seg button[aria-pressed=true]{background:var(--hazard);color:var(--hazard-ink);border-color:var(--hazard)}
-.cx-seg .ico{border-radius:50%;background:var(--steel-3)}
-#cxop .cx-seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
-#cxop .cx-seg button{padding:0 8px}
-@media (max-width:440px){#cxop .cx-seg{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .cx-pill{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--steel);color:var(--ink);cursor:pointer;font-size:13px;font-weight:500}
 .cx-pill:hover{border-color:var(--hazard)}
 .cx-pill.r1{border-color:color-mix(in srgb,var(--r1) 60%,transparent)}
 .cx-pill.r3{border-color:color-mix(in srgb,var(--r3) 60%,transparent)}
 .cx-pill.r4{border-color:color-mix(in srgb,var(--r4) 60%,transparent)}
-.cx-ps{margin-top:12px}
-.cx-opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:4px}
-.cx-opt{display:block;text-align:left;min-height:44px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--steel);cursor:pointer;line-height:1.45}
-.cx-opt[aria-pressed=true]{border-color:var(--hazard);background:rgba(242,194,48,.1)}
-.cx-opt>b{display:flex;align-items:center;gap:6px;font-size:14px;margin-bottom:2px}
-.cx-opt>b span{min-width:0}
-.cx-opt .cx-ds,.cx-opt .dl{display:block}
-.cx-opt .dl{font-size:12px;margin-top:3px}
 .cx-ul{margin:0 0 12px;padding-left:18px;color:var(--ink-2)}
 .cx-ul li{margin-bottom:4px}
 .cx-tag{display:inline-block;font-size:12px;font-weight:700;padding:0 7px;border-radius:999px;line-height:1.6;white-space:nowrap;border:1px solid var(--line);color:var(--ink-2);vertical-align:1px}
@@ -449,28 +431,58 @@ b+.cx-tag,.pill+.cx-tag,.cx-tag+.cx-tag{margin-left:6px}
 .cx-dl{display:flex;flex-wrap:wrap;gap:2px 10px;margin-top:4px;font-size:12px;line-height:1.5}
 .cx-dl span{white-space:nowrap}
 .cx-dl span.w{white-space:normal}
-/* 늘 보이는 요약 줄: 넓은 화면은 오른쪽 열 맨 위, 좁은 화면은 아래에 고정 */
-.cx-sum{position:sticky;top:110px;z-index:5;background:var(--steel-3);border:1px solid var(--hazard);border-radius:10px;padding:12px 14px;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.cx-below{margin-top:12px}
+#cx details>summary{padding:12px 0}
+#cx details[open]>summary{margin-bottom:4px}
+/* 열 머리 줄: 표와 따로 두고(세로 스크롤 때 위에 붙음) 가로 스크롤만 표와 맞춘다 */
+.cx-tblw{margin-top:4px}
+.cx-hdw{position:sticky;top:var(--cxtop,0px);z-index:6;overflow:hidden;background:var(--steel-3);border:1px solid var(--line);border-radius:10px 10px 0 0}
+.cx-hd{display:grid}
+.cx-h0,.cx-h{display:flex;flex-direction:column;justify-content:center;gap:2px;min-width:0;min-height:54px;padding:6px 8px;text-align:left;border:0;border-left:1px solid var(--line);background:var(--steel-3);color:var(--ink);font:inherit}
+.cx-h0{position:sticky;left:0;z-index:2;border-left:0;padding-left:10px;font-size:13px;color:var(--ink-3)}
+button.cx-h{cursor:pointer}
+button.cx-h:hover{background:var(--steel-2)}
+.cx-h .nm{display:flex;align-items:center;justify-content:space-between;gap:6px;font-weight:700;font-size:15px}
+.cx-h .nm i{font-style:normal;color:var(--ink-2);font-size:18px;line-height:1}
+.cx-h .sub{display:flex;flex-wrap:wrap;gap:4px;align-items:center;min-height:20px;font-size:12px}
+.cx-h .sub .cx-tag{margin:0}
+.cx-h.ref{box-shadow:inset 0 3px 0 var(--hazard)}
+.cx-bdw{overflow-x:auto;background:var(--steel-2);border:1px solid var(--line);border-top:0;border-radius:0 0 10px 10px}
+.cx-t{width:100%;table-layout:fixed;border-collapse:collapse}
+.cx-t th,.cx-t td{border-bottom:1px solid var(--line);vertical-align:middle;text-align:left}
+.cx-t td{padding:3px 4px;border-left:1px solid rgba(59,86,108,.55);font-size:14px}
+.cx-r>th{position:sticky;left:0;z-index:1;background:var(--steel-2);padding:6px 6px 6px 10px;font-size:13px;font-weight:500;color:var(--ink-2);line-height:1.35}
+.cx-r>th small{display:block;font-size:12px;font-weight:400;color:var(--ink-3)}
+.cx-sec>th{padding:0;background:var(--steel);font-size:13px;font-weight:700;color:var(--ink)}
+.cx-sec>th>span{position:sticky;left:0;display:inline-block;padding:9px 10px}
+.cx-sec small{margin-left:4px;font-size:12px;font-weight:400;color:var(--ink-3)}
+.cx-sec .linkbtn{min-height:44px;margin:-9px 0;font-weight:700}
+.cx-r.res td,.cx-r.stat td{padding:6px 8px}
+.cx-r .v{display:block;font-weight:500}
+.cx-r .pc{display:block;font-size:12px;font-weight:400}
+.cx-r.res .v{font-size:16px;font-weight:700}
+.cx-r.res.obj .v{font-size:19px}
+.cx-r.res.obj>th{color:var(--ink);font-weight:700;background:linear-gradient(rgba(242,194,48,.09),rgba(242,194,48,.09)),var(--steel-2)}
+.cx-r.res.obj td{background:rgba(242,194,48,.09)}
+.cx-r td.best .v{color:var(--ok)}
+.cx-cell{display:flex;align-items:center;gap:6px;width:100%;min-height:44px;padding:4px 6px;border:1px solid rgba(255,255,255,.08);border-radius:8px;background:none;color:var(--ink);font:inherit;font-size:13px;line-height:1.3;text-align:left;cursor:pointer}
+button.cx-cell:hover{border-color:var(--ink-3);background:rgba(255,255,255,.04)}
+.cx-cell.na{border-color:transparent;color:var(--ink-3);cursor:default}
+.cx-cell .tx{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;min-width:0;overflow-wrap:anywhere}
+.cx-cell .ico,.cx-cell .cx-noimg{width:24px;height:24px;flex:none}
+.cx-cell .ico{background:var(--steel);border-radius:6px}
+.cx-r.set td.df .cx-cell{border-color:var(--hazard);background:rgba(242,194,48,.13)}
+.cx-r.same>th,.cx-r.same td{color:var(--ink-3)}
+.cx-r.same .cx-cell{opacity:.6}
+.cx-r.same .v{font-weight:400}
+/* 창 안 요약 */
 .cx-sumv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .cx-m .k{display:block;font-size:12px;color:var(--ink-2)}
-.cx-m b{font-size:22px;line-height:1.25}
-.cx-m .d{font-size:13px;white-space:nowrap}
-.cx-sumc{display:flex;align-items:center;gap:8px;margin-top:8px;font-size:13px;color:var(--ink-2)}
-.cx-sumc select{flex:1;min-width:0;min-height:40px;background:var(--steel);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+.cx-m b{font-size:15px;line-height:1.25}
+.cx-m .d{font-size:12px;white-space:nowrap}
 .cx-mini{margin-top:6px}
-.cx-mini .cx-m b{font-size:15px}
-.cx-mini .cx-m .d{font-size:12px}
-/* 저장·비교·자동 찾기 */
-.cx-save{display:grid;grid-template-columns:auto repeat(3,minmax(0,1fr));gap:6px;align-items:center;margin:8px 0}
-.cx-save .cx-btn{padding:0 6px}
-.cx-sv{display:flex;align-items:center;gap:6px;padding:4px 0;border-top:1px dashed var(--line)}
-.cx-sv .nm{flex:1;min-width:0;font-size:13px}
-.cx-tbl th,.cx-tbl td{white-space:nowrap}
-.cx-tbl td:first-child{white-space:normal;min-width:96px}
-.cx-tbl .pc{display:block;font-size:12px;font-weight:400}
-.cx-df{padding:5px 0;border-top:1px dashed var(--line);line-height:1.7}
-.cx-df:first-child{border-top:0}
 .cx-res{border-top:1px dashed var(--line);padding:10px 0;margin-top:8px}
+.cx-rh{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:4px}
 /* 고르는 창: 좁은 화면은 아래에서 올라오고(하단 탭 위), 넓은 화면은 가운데 */
 .cx-sheet{position:fixed;inset:0;z-index:35;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(8,14,20,.72)}
 .cx-sheet[hidden]{display:none}
@@ -486,38 +498,35 @@ b+.cx-tag,.pill+.cx-tag,.cx-tag+.cx-tag{margin-left:6px}
 .cx-row{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:10px;align-items:start;padding:10px 8px;border:1px solid transparent;border-bottom-color:var(--line);cursor:pointer}
 .cx-row:hover{background:rgba(255,255,255,.03)}
 .cx-row.on{background:rgba(242,194,48,.08);border-color:var(--hazard);border-radius:8px}
+.cx-row>.ico{background:var(--steel);border-radius:8px}
 .cx-row.dim>.ico,.cx-row.dim>.b{opacity:.6}
 .cx-row.tech{grid-template-columns:40px minmax(0,1fr);cursor:default}
 .cx-row .b{min-width:0}
+.cx-big{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:var(--steel);font-weight:700}
 .cx-go{align-self:center;min-width:64px;min-height:44px;padding:0 10px;border-radius:8px;border:1px solid var(--line);background:var(--steel-3);color:var(--ink);cursor:pointer;font-size:13px;font-weight:500;white-space:nowrap}
 .cx-sub{margin:14px 0 2px;font-size:13px;font-weight:700;color:var(--ink-2)}
 .cx-step{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:6px}
 .cx-step button{width:44px;height:44px;border-radius:8px;border:1px solid var(--line);background:var(--steel-3);color:var(--ink);cursor:pointer;font-size:20px;line-height:1}
 .cx-step>span{white-space:nowrap}
-#cxfind .chk{min-height:44px}
-#cx details>summary{padding:12px 0}
-#cx details[open]>summary{margin-bottom:4px}
-#cxfind .chk input{width:20px;height:20px}
-@media (max-width:900px){
-  .cx{grid-template-columns:1fr;padding-bottom:28px}
-  .cx-sum{position:fixed;left:0;right:0;top:auto;bottom:0;z-index:29;display:flex;align-items:center;gap:8px;border:0;border-top:1px solid var(--hazard);border-radius:0;box-shadow:0 -6px 18px rgba(0,0,0,.35);padding:6px max(12px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
-  .cx-sum .cx-sumv{flex:1;min-width:0;gap:6px}
-  .cx-sum .cx-m b{font-size:15px}
-  .cx-sum .cx-m .d{display:block;font-size:12px;line-height:1.3}
-  .cx-sum .cx-m b{display:block;line-height:1.3}
-  .cx-sumc{flex:none;margin:0}
-  .cx-sumc .k{display:none}
-  .cx-sumc select{flex:none;width:96px;min-height:44px;font-size:13px;padding:4px 6px}
-}
-@media (max-width:400px){
-  .cx-save{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .cx-save>span{grid-column:1/-1}
-  .cx-mini .cx-m b,.cx-mini .cx-m .d{display:block;line-height:1.3}
-}
+.cx-menu{display:grid;gap:8px;padding:8px 0}
+.cx-menu button{display:block;min-height:56px;padding:8px 14px;text-align:left;border:1px solid var(--line);border-radius:10px;background:var(--steel-3);color:var(--ink);cursor:pointer;font:inherit}
+.cx-menu button:not(:disabled):hover{border-color:var(--hazard)}
+.cx-menu small{display:block;font-size:12.5px;color:var(--ink-2)}
 @media (max-width:760px){
-  .cx-sum{bottom:calc(57px + env(safe-area-inset-bottom));padding-bottom:6px}
+  .cx-tblw{margin-left:-16px;margin-right:-16px}
+  .cx-hdw,.cx-bdw{border-left:0;border-right:0;border-radius:0}
+  .cx-acts{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px}
+  .cx-acts::-webkit-scrollbar{display:none}
+  .cx-acts .cx-btn{flex:none}
+  .cx-tank .pic{width:52px;height:52px}
+  .cx-r.res .v{font-size:15px}
+  .cx-r.res.obj .v{font-size:17px}
+  .cx-r.res td,.cx-r.stat td{padding:6px}
   .cx-sheet{align-items:flex-end;padding:0;bottom:calc(57px + env(safe-area-inset-bottom))}
   .cx-sheet .in{width:100%;border-radius:14px 14px 0 0;border-bottom:0}
+}
+@media (max-width:400px){
+  .cx-mini .cx-m b,.cx-mini .cx-m .d{display:block;line-height:1.3}
 }
 </style>
 </head>
@@ -1178,8 +1187,7 @@ function scoreOf(s, base, obj) {
   return s.edps / base.edps + s.ehp / base.ehp + base.pm / Math.max(0.1, s.pm);
 }
 // ---------- 조합 실험실(부품·칩·오퍼레이터·특성 공학을 바꿔 끼워 보고 비교) ----------
-const BS = {};    // 탱크별 지금 조합 + 화면 설정
-const LSV = {};   // 탱크별 저장한 조합 A·B·C(localStorage와 같이 둔다. 저장소를 못 써도 화면은 동작)
+const BS = {};    // 탱크별 세팅 묶음 + 화면 설정
 const LABG = {obj: "all", mode: "avg", last: null};   // 탱크를 바꿔도 이어지는 것: 기준, 발동형 계산 방식, 마지막에 본 탱크
 const LOBJ = {edps: "화력", ehp: "생존", pm: "파워 무브", all: "종합"};
 const LOBJD = {edps: "기대 초당 피해가 높을수록 좋게 봅니다.", ehp: "유효 체력이 높을수록 좋게 봅니다.", pm: "파워 무브까지 걸리는 시간이 짧을수록 좋게 봅니다.", all: "화력·생존·파워 무브를 맨몸 대비 배율로 바꿔 더한 점수로 봅니다."};
@@ -1267,52 +1275,79 @@ function labFx(t, c, mode, all, det) {
 const labStats = (t, c, mode = LABG.mode, all = false) => applyFx(baseStats(t, c.lv), labFx(t, c, mode, all));
 // 쓴 기술 점수: 고른 단계까지 단계별 점수를 더한다
 const labTP = (t, c) => labTech(t).reduce((a, x) => a + x.levels.slice(0, c.tech[x.id] || 0).reduce((b, l) => b + (l.tp || 0), 0), 0);
+const labSnap = c => ({lv: c.lv, enh: c.enh, slots: [...c.slots], chips: [...c.chips], op: c.op, perks: [...c.perks], tech: {...c.tech}, cond: {...c.cond}});
+// 세팅 묶음은 탱크별로 자동 저장한다(저장소를 못 써도 화면은 동작). 옛 저장(A·B·C)도 세팅으로 읽는다
 function labLoad(t) {
-  if (LSV[t.id]) return LSV[t.id];
-  const sv = {};
-  try { const raw = JSON.parse(localStorage.getItem("tab-lab-" + t.id) || "{}"); for (const k of "ABC") if (raw && raw[k]) sv[k] = labFix(t, raw[k]); } catch (e) {}
-  return LSV[t.id] = sv;
+  try {
+    const raw = JSON.parse(localStorage.getItem("tab-lab-" + t.id) || "null"); if (!raw || typeof raw !== "object") return null;
+    const sets = (Array.isArray(raw.sets) ? raw.sets : [..."ABC"].map(k => raw[k]).filter(Boolean)).slice(0, 4).map(c => labFix(t, c));
+    if (!sets.length) return null;
+    if (!Array.isArray(raw.sets) && sets.length === 1) sets.push(labSnap(sets[0]));
+    return {sets, ref: Math.min(sets.length - 1, Math.max(0, raw.ref | 0)), bare: !!raw.bare, diffOnly: !!raw.diffOnly};
+  } catch (e) { return null; }
 }
-function labStore(t) { try { localStorage.setItem("tab-lab-" + t.id, JSON.stringify(LSV[t.id])); return true; } catch (e) { return false; } }
-// 주소: #build/<탱크>/<부품,…>[/c칩.칩][/o오퍼레이터.특전.특전.특전.특전][/t노드-단계.…|tmax][/k조건.…]/l레벨/e강화/g기준[/m발동형]
-function labHash(t, c, condKeys) {
-  const seg = ["build", t.id, c.slots.join(",")], tn = labTech(t), te = tn.filter(x => c.tech[x.id]);
-  if (c.chips.length) seg.push("c" + c.chips.join("."));
-  if (c.op) seg.push("o" + [c.op, ...c.perks].join("."));
-  if (te.length) seg.push("t" + (tn.every(x => c.tech[x.id] === x.levels.length) ? "max" : te.map(x => `${x.id}-${c.tech[x.id]}`).join(".")));
-  if (condKeys.length) seg.push("k" + condKeys.map(k => k.replace(":", "").replace(":", "-")).join("."));
-  seg.push("l" + c.lv, "e" + c.enh, "g" + LABG.obj);
-  if (LABG.mode !== "avg") seg.push("m" + LABG.mode);
-  return "#" + seg.join("/");
+function labStore(t, st) { try { localStorage.setItem("tab-lab-" + t.id, JSON.stringify({v: 2, sets: st.sets.map(labSnap), ref: st.ref, bare: st.bare, diffOnly: st.diffOnly})); return true; } catch (e) { return false; } }
+// 켜 둔 조건부 효과 가운데 지금 낀 것에 해당하는 키만
+const labCondOn = (t, c) => { const d = {applied: [], notq: [], cond: []}; labFx(t, c, "avg", false, d); return d.cond.filter(x => c.cond[x.k]).map(x => x.k); };
+// 주소: #build/<탱크>/<세팅 1>~<세팅 2>~…/g기준[/m발동형][/r기준 세팅 번호][/n1]
+//   세팅 1 = <부품,…>[/c칩.칩][/o오퍼레이터.특전.특전.특전.특전][/t노드-단계.…|tmax][/k조건.…]/l레벨/e강화
+//   세팅 2부터는 세팅 1과 다른 조각만 담는다(빈 c·t·k와 o0은 '없음'). ~가 없는 주소는 세팅 하나짜리(옛 형식 포함)
+function labSeg(t, c, base) {
+  const tn = labTech(t), tk = x => tn.map(n => x.tech[n.id] || 0).join(), te = tn.filter(x => c.tech[x.id]), ck = labCondOn(t, c), seg = [];
+  const opk = x => String([x.op, ...(x.op ? x.perks : [])]);
+  if (!base || String(c.slots) !== String(base.slots)) seg.push(c.slots.join(","));
+  if (base ? String(c.chips) !== String(base.chips) : c.chips.length) seg.push("c" + c.chips.join("."));
+  if (base ? opk(c) !== opk(base) : c.op) seg.push("o" + (c.op ? [c.op, ...c.perks].join(".") : 0));
+  if (base ? tk(c) !== tk(base) : te.length) seg.push("t" + (te.length && tn.every(x => c.tech[x.id] === x.levels.length) ? "max" : te.map(x => `${x.id}-${c.tech[x.id]}`).join(".")));
+  if (base ? String(ck) !== String(labCondOn(t, base)) : ck.length) seg.push("k" + ck.map(k => k.replace(":", "").replace(":", "-")).join("."));
+  if (!base || c.lv !== base.lv) seg.push("l" + c.lv);
+  if (!base || c.enh !== base.enh) seg.push("e" + c.enh);
+  return seg.join("/");
+}
+function labHash(t, st) {
+  const s = st.sets;
+  return `#build/${t.id}/${[labSeg(t, s[0]), ...s.slice(1).map(c => labSeg(t, c, s[0]))].join("~")}/g${LABG.obj}` + (LABG.mode !== "avg" ? "/m" + LABG.mode : "") + (st.ref ? "/r" + (st.ref + 1) : "") + (s.length === 1 ? "/n1" : "");
 }
 function labParse(t, segs) {
-  segs = segs.filter(Boolean); if (!segs.length) return null;
-  const c = {}, out = {c, full: false};
-  for (const s of segs) {
-    if (/^\d/.test(s)) { c.slots = s.split(",").map(Number); continue; }   // 옛 주소 형식: 부품만
-    const k = s[0], v = s.slice(1); out.full = true;
+  const c = {}, out = {c};
+  for (const s of segs.filter(Boolean)) {
+    if (/^\d/.test(s)) { c.slots = s.split(",").map(Number); continue; }   // 부품(옛 주소 형식은 이것만 있다)
+    const k = s[0], v = s.slice(1);
     if (k === "c") c.chips = v.split(".").map(Number);
     else if (k === "o") { const a = v.split(".").map(Number); c.op = a[0]; c.perks = a.slice(1); }
     else if (k === "t") { c.tech = {}; if (v === "max") labTech(t).forEach(x => c.tech[x.id] = x.levels.length); else v.split(".").forEach(p => { const [a, b] = p.split("-"); c.tech[a] = +b; }); }
     else if (k === "k") { c.cond = {}; v.split(".").forEach(p => { const m = /^([pcto])(\w+)-(\d+)$/.exec(p); if (m) c.cond[`${m[1]}:${m[2]}:${m[3]}`] = true; }); }
-    else if (k === "l") c.lv = +v; else if (k === "e") c.enh = +v; else if (k === "g") out.obj = v; else if (k === "m") out.mode = v;
+    else if (k === "l") c.lv = +v; else if (k === "e") c.enh = +v;
+    else if (k === "g") out.obj = v; else if (k === "m") out.mode = v; else if (k === "r") out.ref = +v; else if (k === "n") out.n = +v;
   }
+  return out;
+}
+// 주소의 세팅들. 세팅 하나짜리 주소(옛 형식 포함)는 같은 복사본을 세팅 2로 둔다
+function labParseAll(t, segs) {
+  const str = segs.join("/"); if (!str.replace(/[~/]/g, "")) return null;
+  const out = {sets: []}; let one = false;
+  for (const ch of str.split("~").slice(0, 4)) {
+    const pr = labParse(t, ch.split("/"));
+    for (const k of ["obj", "mode", "ref"]) if (pr[k] != null) out[k] = pr[k];
+    if (pr.n === 1) one = true;
+    out.sets.push(labFix(t, {...(out.sets.length ? labSnap(out.sets[0]) : labNew(t)), ...pr.c}));
+  }
+  if (out.sets.length === 1 && !one) out.sets.push(labSnap(out.sets[0]));
   return out;
 }
 function build(id, ...segs) {
   labEsc = null;
   const t = TANK[id] || TANK[LABG.last] || D.tanks.filter(x => x.status === "released").sort((a, b) => b.rarity - a.rarity)[0];
   LABG.last = t.id;
-  const st = BS[t.id] ||= {...labNew(t), cmp: "bare", fOp: true, fTech: false, condAll: false};
-  const pr = TANK[id] ? labParse(t, segs) : null;
-  if (pr) {
-    if (pr.full) Object.assign(st, labFix(t, {...labNew(t), ...pr.c}));   // 새 형식: 주소에 없는 것은 기본값
-    else if (pr.c.slots) st.slots = labFix(t, {...st, slots: st.slots.map((v, i) => t.slots[i].includes(pr.c.slots[i]) ? pr.c.slots[i] : v)}).slots;   // 옛 형식: 부품만 바꾼다
-    if (Object.hasOwn(LOBJ, pr.obj || "")) LABG.obj = pr.obj;
-    if (Object.hasOwn(BUFFMODE, pr.mode || "")) LABG.mode = pr.mode;
+  const st = BS[t.id] ||= (() => { const sv = labLoad(t), d = labNew(t);
+    return {sets: sv?.sets || [d, labSnap(d)], ref: sv?.ref || 0, bare: !!sv?.bare, diffOnly: !!sv?.diffOnly, full: false, fOp: true, fTech: false, condAll: false, fx: 0, hold: false, last: ""}; })();
+  // 주소에 세팅이 담겨 있으면 주소가 먼저다(내가 방금 쓴 주소면 다시 읽지 않는다). 남의 주소를 열어 본 것만으로 내 저장을 덮지 않게, 손대기 전에는 저장하지 않는다
+  const pa = TANK[id] && decodeURIComponent(location.hash) !== st.last ? labParseAll(t, segs) : null;
+  if (pa) {
+    st.sets = pa.sets; st.ref = (pa.ref | 0) - 1; st.hold = true;
+    if (Object.hasOwn(LOBJ, pa.obj || "")) LABG.obj = pa.obj;
+    if (Object.hasOwn(BUFFMODE, pa.mode || "")) LABG.mode = pa.mode;
   }
-  const sv = labLoad(t);
-  if (st.cmp !== "bare" && !sv[st.cmp]) st.cmp = "bare";
   const techAll = labTech(t), maxTech = Object.fromEntries(techAll.map(x => [x.id, x.levels.length]));
   const techGroups = [[`${manuname(t.manu)} 기술`, techAll.filter(x => x.manu !== "NONE")], ["공용 기술", techAll.filter(x => x.manu === "NONE")]]
     .map(([n, ls]) => [n, [...ls].sort((a, b) => a.tier - b.tier || a.sort - b.sort)]).filter(g => g[1].length);
@@ -1320,78 +1355,55 @@ function build(id, ...segs) {
   const ico = (n, w = 44) => IMG(n, "", "ico", `width="${w}" height="${w}"`) || `<span class="cx-noimg" style="width:${w}px;height:${w}px"></span>`;
   const pname = p => esc(strip(L(D.parts[p]?.name)) || String(p));
   const cname = c => esc(strip(L(D.chips[c]?.name)) || String(c));
+  const setName = i => `세팅 ${i + 1}`;
+  const F = NARROW() ? 92 : 150, W = NARROW() ? 112 : 150;   // 첫 열(항목 이름) 폭, 세팅 열의 최소 폭
 
   app.innerHTML = `<div id="cx"><h1>조합 실험실</h1>
-  <p class="note-top">부품·칩·오퍼레이터·특성 공학을 바꿔 끼워 보고, 무엇이 좋은지 숫자로 비교합니다.</p>
-  <div class="cx">
-    <div class="cx-col">
-      <section class="panel" style="--rc:${RC[t.rarity]}">
-        <div class="row" style="gap:12px;margin-bottom:10px;flex-wrap:nowrap">${t.imgS ? `<div style="width:84px;height:84px;flex:none">${IMG(t.imgS, tname(t), "shot")}</div>` : ""}<div style="min-width:0"><div style="font:26px/1.2 var(--display)">${tname(t)}</div><div class="row" style="margin-top:4px">${rPill(t.rarity)}<span class="pill">${rolename(t.role)}</span><span class="pill">${manuname(t.manu)}</span></div></div></div>
-        <div class="ctl"><label for="cxtank">탱크</label><select id="cxtank">${D.tanks.map(x => `<option value="${x.id}" ${x.id === t.id ? "selected" : ""}>${esc(strip(tname(x)))} (${esc(x.model)})${STATUS[x.status] ? " · " + STATUS[x.status] : ""}</option>`).join("")}</select>
-          <a href="#t/${t.id}" class="firstlink small" style="margin-top:0">이 탱크 상세 보기</a></div>
-        <div class="ctl"><label for="cxlv">레벨 <output id="cxlvo">${st.lv}</output></label><input type="range" id="cxlv" min="1" max="${t.levels.length}" value="${st.lv}" style="width:100%;height:44px;margin:0;accent-color:var(--hazard)"></div>
-        <div class="ctl"><label for="cxenh">강화 단계</label><select id="cxenh">${[0, ...t.enh.map(e => e.lv)].map(n => `<option value="${n}">+${n}${n ? " · " + esc(strip(t.enh.filter(e => e.lv <= n).map(e => modText(e.mod)).join(", "))) : ""}</option>`).join("")}</select></div>
-        <div class="ctl" style="margin-bottom:0"><span class="lab">기준 — 아래 추천과 정렬이 이 기준으로 바뀝니다</span>
-          <div class="cx-seg" role="group" aria-label="기준" id="cxobj">${Object.entries(LOBJ).map(([k, v]) => `<button type="button" data-act="obj" data-v="${k}">${v}</button>`).join("")}</div>
-          <div class="note" id="cxobjd"></div></div>
-      </section>
-      <div class="cx-bar"><span class="small" id="cxcn"></span><span class="row" style="flex-wrap:nowrap"><button type="button" class="cx-btn" data-act="condall" data-fk="condall">전부 켜기</button><button type="button" class="cx-btn" data-act="condnone" data-fk="condnone">전부 끄기</button></span></div>
-      <div class="cx-col" id="cxslots"></div>
-      <section class="cx-card" id="cxchips"></section>
-      <section class="cx-card" id="cxop"></section>
-      <section class="cx-card" id="cxtech"></section>
-      <section class="cx-card" id="cxtrait" hidden></section>
-      <details class="cx-card"><summary>고급 설정</summary>
-        <div class="ctl" style="margin:0"><label for="cxmode">발동형 효과(지속 시간·재사용 시간이 있는 효과)를 계산하는 방식</label><select id="cxmode">${Object.entries(BUFFMODE).map(([k, v]) => `<option value="${k}">${v}</option>`).join("")}</select></div></details>
-    </div>
-    <div class="cx-col">
-      <div class="cx-sum" id="cxsum"><div class="cx-sumv" id="cxsumv"></div>
-        <label class="cx-sumc"><span class="k">비교 대상</span><select id="cxcmp" aria-label="비교 대상"></select></label></div>
-      <section class="panel" id="cxsave">
-        <h3>조합 저장과 비교</h3>
-        <p class="small muted">지금 조합을 A·B·C 세 칸에 저장해 두고 나란히 비교합니다. 이 기기의 브라우저에 탱크별로 남습니다.</p>
-        <div class="cx-save"><span class="small">지금 조합을</span>${[..."ABC"].map(k => `<button type="button" class="cx-btn" data-act="save" data-k="${k}" data-fk="save${k}">${k}에 저장</button>`).join("")}</div>
-        <div id="cxsaved"></div>
-        <div class="scroll" style="margin-top:8px"><table class="tbl cmp cx-tbl" id="cxtbl"></table></div>
-        <details><summary>능력치 전부 보기</summary><div class="scroll"><table class="tbl cmp cx-tbl" id="cxfull"></table></div></details>
-        <h3 style="margin-top:12px">구성 차이</h3>
-        <div id="cxdiff" class="small"></div>
-        <details class="small" id="cxsame"><summary></summary><div></div></details>
-        <div class="row" style="margin-top:12px"><button type="button" class="cx-btn" data-act="copy">주소 복사</button><span id="cxcopied" class="small muted" role="status">지금 조합이 주소에 담겨 있어, 복사해서 그대로 다시 열 수 있습니다.</span></div>
-      </section>
-      <section class="panel" id="cxfind">
-        <h3>자동으로 찾기</h3>
-        <p class="small muted">잘 모르겠으면 눌러 보세요. 부품은 끼울 수 있는 모든 조합을 다 따져 봅니다. 칩은 따로 제안합니다.</p>
-        <label class="chk small"><input type="checkbox" id="cxfop" ${st.fOp ? "checked" : ""}> 오퍼레이터와 특전도 함께 찾기</label>
-        <label class="chk small"><input type="checkbox" id="cxftech" ${st.fTech ? "checked" : ""}> 특성 공학을 전부 최대로 가정</label>
-        <label class="chk small"><input type="checkbox" id="cxfcond" ${st.condAll ? "checked" : ""}> 조건부 효과가 늘 맞는다고 가정</label>
-        <button type="button" class="btn" data-act="find" id="cxfbtn" style="margin-top:8px;width:100%"></button>
-        <div id="cxfout" class="small" role="status"></div>
-        <div id="cxsug"></div>
-      </section>
-      <details class="panel" id="cxnote"><summary>계산 방식과 한계</summary>
-        <ul class="small cx-ul">
-          <li>기대 초당 피해·유효 체력·파워 무브까지 시간은 이 사이트가 게임 데이터로 계산한 추정치입니다.</li>
-          <li>수치로 계산되지 않는 효과(특수 동작, 원소 누적 등)는 순위에 들어가지 않습니다. 설명을 함께 읽으세요.</li>
-          <li>조건부 효과는 조건이 늘 맞는다고 가정한 값입니다. 켠 것만 계산합니다. 다만 "치명타 기록 시"처럼 치명타에 달린 효과는 치명타 확률만큼만 반영합니다.</li>
-          <li>맨몸은 같은 레벨에서 강화·부품·칩·오퍼레이터·특성 공학을 모두 뺀 상태입니다.</li>
-          <li>종합 기준은 맨몸 대비 기대 초당 피해 배율, 유효 체력 배율, 파워 무브 회전 배율을 더한 점수입니다.</li>
-          <li>파워 무브까지 시간은 쏜 탄이 모두 맞는다고 가정합니다.</li>
-          <li>지속 시간과 재사용 시간이 있는 효과는 ‘고급 설정’에서 고른 방식으로 계산합니다(기본: 지속 ÷ 재사용 시간만큼만 반영).</li>
-          <li>게임의 칩 칸 수 제한과 기술 점수 한도는 반영하지 않습니다(데이터에 없음).</li>
-        </ul>
-        <h3>적용 효과</h3><div id="cxfx" class="small"></div>
-        <h3 style="margin-top:10px">미반영 효과</h3><div id="cxnofx" class="small muted"></div>
-      </details>
-    </div>
+  <p class="note-top">부품·칩·오퍼레이터·특성 공학을 바꿔 끼운 세팅을 나란히 놓고, 무엇이 달라지는지 숫자로 비교합니다.</p>
+  <div class="cx-tank" style="--rc:${RC[t.rarity]}">${t.imgS ? `<div class="pic">${IMG(t.imgS, tname(t), "shot")}</div>` : ""}
+    <div class="ctl"><label for="cxtank">탱크 <a href="#t/${t.id}">상세 보기</a></label><select id="cxtank">${D.tanks.map(x => `<option value="${x.id}" ${x.id === t.id ? "selected" : ""}>${esc(strip(tname(x)))} (${esc(x.model)})${STATUS[x.status] ? " · " + STATUS[x.status] : ""}</option>`).join("")}</select></div></div>
+  <div class="ctl" style="margin-bottom:8px">
+    <div class="cx-seg" role="group" aria-label="기준" id="cxobj">${Object.entries(LOBJ).map(([k, v]) => `<button type="button" data-act="obj" data-v="${k}">${v}</button>`).join("")}</div>
+    <div class="note" id="cxobjd"></div></div>
+  <div class="cx-acts" role="group" aria-label="표 도구">
+    <button type="button" class="cx-btn" data-act="diffonly" id="cxdiffonly">달라지는 것만 보기</button>
+    <button type="button" class="cx-btn" data-act="bare" id="cxbare">맨몸 열 보기</button>
+    <button type="button" class="cx-btn" data-act="addset" id="cxadd">+ 세팅 추가</button>
+    <button type="button" class="cx-btn" data-act="condall">조건부 효과 전부 켜기</button>
+    <button type="button" class="cx-btn" data-act="condnone">조건부 효과 전부 끄기</button>
+    <button type="button" class="cx-btn" data-act="copy">주소 복사</button>
+    <button type="button" class="cx-btn" data-act="reset" id="cxreset">세팅 초기화</button>
   </div>
+  <p class="small muted" id="cxmsg" role="status" style="margin:8px 0"></p>
+  <div class="cx-tblw"><div class="cx-hdw" id="cxhdw"><div class="cx-hd" id="cxhd"></div></div>
+    <div class="cx-bdw" id="cxbdw"><table class="cx-t" id="cxt"></table></div></div>
+  <details class="panel cx-below"><summary>고급 설정</summary>
+    <div class="ctl" style="margin:0"><label for="cxmode">발동형 효과(지속 시간·재사용 시간이 있는 효과)를 계산하는 방식</label><select id="cxmode">${Object.entries(BUFFMODE).map(([k, v]) => `<option value="${k}">${v}</option>`).join("")}</select></div></details>
+  <details class="panel cx-below" id="cxnote"><summary>계산 방식과 한계</summary>
+    <ul class="small cx-ul">
+      <li>기대 초당 피해·유효 체력·파워 무브까지 시간은 이 사이트가 게임 데이터로 계산한 추정치입니다.</li>
+      <li>수치로 계산되지 않는 효과(특수 동작, 원소 누적 등)는 순위에 들어가지 않습니다. 설명을 함께 읽으세요.</li>
+      <li>조건부 효과는 조건이 늘 맞는다고 가정한 값입니다. 켠 것만 계산합니다. 다만 "치명타 기록 시"처럼 치명타에 달린 효과는 치명타 확률만큼만 반영합니다.</li>
+      <li>맨몸은 같은 레벨에서 강화·부품·칩·오퍼레이터·특성 공학을 모두 뺀 상태입니다(레벨은 기준 세팅의 레벨).</li>
+      <li>종합 기준은 맨몸 대비 기대 초당 피해 배율, 유효 체력 배율, 파워 무브 회전 배율을 더한 점수입니다.</li>
+      <li>파워 무브까지 시간은 쏜 탄이 모두 맞는다고 가정합니다.</li>
+      <li>지속 시간과 재사용 시간이 있는 효과는 ‘고급 설정’에서 고른 방식으로 계산합니다(기본: 지속 ÷ 재사용 시간만큼만 반영).</li>
+      <li>게임의 칩 칸 수 제한과 기술 점수 한도는 반영하지 않습니다(데이터에 없음).</li>
+      <li>세팅은 이 기기의 브라우저에 탱크별로 자동 저장됩니다.</li>
+    </ul>
+    <div class="ctl"><label for="cxfxsel">효과 목록을 볼 세팅</label><select id="cxfxsel"></select></div>
+    <h3>적용 효과</h3><div id="cxfx" class="small"></div>
+    <h3 style="margin-top:10px">미반영 효과</h3><div id="cxnofx" class="small muted"></div>
+  </details>
   <div class="cx-sheet" id="cxsh" hidden><div class="in" role="dialog" aria-modal="true" aria-labelledby="cxsht">
-    <div class="hd"><div class="cx-shr"><h3 id="cxsht"></h3><button type="button" class="cx-btn" data-act="close" id="cxshx">닫기</button></div><div class="cx-sumv cx-mini" id="cxshm"></div></div>
+    <div class="hd"><div class="cx-shr"><h3 id="cxsht"></h3><button type="button" class="cx-btn" data-act="close" id="cxshx">닫기</button></div><div class="cx-sumv cx-mini" id="cxshm"></div><div class="small muted" id="cxshn"></div></div>
     <div class="bd" id="cxshbd"><div id="cxshtools"></div><div id="cxshb"></div></div>
   </div></div></div>`;
 
-  const root = $("#cx"), shEl = $("#cxsh");
-  let bare, cur, det, sh = null, fres = null, fbusy = false, storeOk = true;
+  const root = $("#cx"), shEl = $("#cxsh"), hdw = $("#cxhdw"), bdw = $("#cxbdw");
+  root.style.setProperty("--cxtop", (document.querySelector("header.top")?.offsetHeight || 0) + "px");   // 열 머리 줄이 고정 헤더 바로 아래에 붙게
+  bdw.addEventListener("scroll", () => { hdw.scrollLeft = bdw.scrollLeft; }, {passive: true});
+  let bare, inf, sh = null, storeOk = true, armed = 0, note = "";
   const stat = (c, all) => labStats(t, c, LABG.mode, all);
   const pct = (a, b) => a ? (b - a) / Math.abs(a) * 100 : 0;      // a에서 b로의 변화율(%)
   const sc = s => scoreOf(s, bare, LABG.obj);
@@ -1404,51 +1416,99 @@ function build(id, ...segs) {
     .map(([k, v, dir, u]) => `<span class="${dcl(v * dir)}">${k} ${nz(v) ? sg(v) + u : "–"}</span>`).join("");
   const objTxt = v => !nz(v) ? `${LOBJ[LABG.obj]} 변화 없음` : LABG.obj === "pm" ? `파워 무브 ${num(Math.abs(v), 1)}% ${v > 0 ? "빨라짐" : "느려짐"}` : `${LOBJ[LABG.obj]}${LABG.obj === "all" ? " 점수" : ""} ${sg(v)}%`;
   const objSpan = v => `<span class="${dcl(v)}">${objTxt(v)}</span>`;
-  const condRows = where => det.cond.filter(c => c.where === where).map(c => `<label class="cx-cond"><input type="checkbox" data-ck="${esc(c.k)}" data-fk="ck${esc(c.k)}" ${st.cond[c.k] ? "checked" : ""}><span><b>조건부</b> · ${fxLabel(c.x)}<br><span class="muted">${esc(c.x.label || "")}</span></span></label>`).join("");
-  const dropCond = pre => { for (const k of Object.keys(st.cond)) if (k.startsWith(pre)) delete st.cond[k]; };
-  const snap = c => ({lv: c.lv, enh: c.enh, slots: [...c.slots], chips: [...c.chips], op: c.op, perks: [...c.perks], tech: {...c.tech}, cond: {...c.cond}});
+  const dropCond = (c, pre) => { for (const k of Object.keys(c.cond)) if (k.startsWith(pre)) delete c.cond[k]; };
   const condList = c => { const d = {applied: [], notq: [], cond: []}; labFx(t, c, LABG.mode, false, d); return d.cond; };
-  const condOn = c => condList(c).filter(x => c.cond[x.k]).map(x => x.k).sort();
   const techKey = c => techAll.map(x => c.tech[x.id] || 0).join(",");
-  const comboKey = c => JSON.stringify([c.lv, c.enh, c.slots, [...c.chips].sort((a, b) => a - b), c.op, c.op ? c.perks : [], techKey(c), condOn(c)]);
+  const txt = s => `<span class="tx">${s}</span>`;
+  const row3 = (cls, act, icon, body, btn, dis) => `<div class="cx-row ${cls}" ${act}>${icon}<div class="b">${body}</div><button type="button" class="cx-go" ${dis ? "disabled" : ""}>${btn}</button></div>`;
 
-  // ----- 부품 칸: 다른 칸은 그대로 두고 이 칸만 바꿨을 때
-  const slotInfo = i => {
-    const curP = st.slots[i];
+  // ----- 계산: 세팅마다 능력치와 기준 점수, 등수
+  const calc = () => {
+    st.ref = Math.min(st.sets.length - 1, Math.max(0, st.ref | 0)); st.fx = Math.min(st.sets.length - 1, Math.max(0, st.fx | 0));
+    bare = applyFx(baseStats(t, st.sets[st.ref].lv), []); bare._all = scoreOf(bare, bare, "all");
+    inf = st.sets.map(c => { const det = {applied: [], notq: [], cond: []}, s = applyFx(baseStats(t, c.lv), labFx(t, c, LABG.mode, false, det)); s._all = scoreOf(s, bare, "all");
+      const score = sc(s); return {c, s, det, score, key: Number.isFinite(score) ? +score.toPrecision(10) : -Infinity}; });
+    inf.forEach(x => { x.rank = 1 + inf.filter(y => y.key > x.key).length; });
+    inf.tie = inf.every(x => x.key === inf[0].key);
+  };
+  const cols = () => (st.bare ? 1 : 0) + st.sets.length;
+
+  // ----- 열 머리(스크롤해도 위에 붙는다. 표와 따로 두고 가로 스크롤을 맞춘다)
+  const drawHead = () => {
+    const n = cols(), hd = $("#cxhd");
+    hd.style.cssText = `grid-template-columns:${F}px repeat(${n},minmax(${W}px,1fr));min-width:${F + n * W}px`;
+    const rk = x => st.sets.length < 2 ? "" : inf.tie ? '<span class="muted">동점</span>' : x.rank === 1 ? `<span class="cx-tag rec">${LOBJ[LABG.obj]} 1등</span>` : `<span class="muted">${x.rank}등</span>`;
+    hd.innerHTML = `<div class="cx-h0">항목</div>` + (st.bare ? `<div class="cx-h bare"><span class="nm">맨몸</span><span class="sub"><span class="muted">아무것도 안 낌</span></span></div>` : "")
+      + inf.map((x, i) => `<button type="button" class="cx-h${i === st.ref ? " ref" : ""}" data-act="menu" data-si="${i}" data-fk="menu${i}" aria-label="${setName(i)} 메뉴"><span class="nm">${setName(i)}<i aria-hidden="true">⋯</i></span><span class="sub">${rk(x)}${i === st.ref && st.sets.length > 1 ? '<span class="cx-tag on">기준</span>' : ""}</span></button>`).join("");
+    hdw.scrollLeft = bdw.scrollLeft;
+  };
+
+  // ----- 비교표: 결과 → 세팅(누르면 바꿈) → 능력치 전부
+  const drawTable = () => {
+    const n = cols(), sets = st.sets, multi = sets.length > 1, refS = inf[st.ref].s;
+    const list = [...(st.bare ? [{s: bare, i: -1}] : []), ...inf.map((x, i) => ({s: x.s, i}))];
+    const fmt = (v, d) => d === "%" ? num(v * 100, 1) + "%" : num(v, d);
+    const secRow = html => `<tr class="cx-sec"><th colspan="${n + 1}"><span>${html}</span></th></tr>`;
+    // 숫자 행: 값 + 기준 세팅 대비 변화, 가장 좋은 값 강조. 숨길 행은 null
+    const valRow = ([k, lab, dir, d], cls) => {
+      const vals = list.map(x => x.s[k]); if (vals.some(v => v == null || !Number.isFinite(v))) return "";
+      if (k.startsWith("f") && vals.every(v => !v)) return "";
+      const sv = inf.map(x => x.s[k]), same = sv.every(v => Math.abs(v - sv[0]) < 1e-9), allSame = vals.every(v => Math.abs(v - vals[0]) < 1e-9);
+      const res = cls.startsWith("res");
+      if (!res && st.diffOnly && multi && same) return null;
+      const best = dir > 0 ? Math.max(...vals) : Math.min(...vals), a = refS[k];
+      return `<tr class="cx-r ${cls}${multi && same && !res ? " same" : ""}"><th scope="row">${BGLOSS[k] ? G(BGLOSS[k], lab) : lab}</th>${list.map((x, j) => { const v = vals[j], diff = v - a, isRef = x.i === st.ref;
+        const ch = isRef ? "기준" : d === "%" ? (nz(diff * 100) ? sg(diff * 100) + "%p" : "–") : a ? (nz(pct(a, v)) ? sg(pct(a, v)) + "%" : "–") : (nz(diff) ? sg(diff) : "–");
+        return `<td class="${!allSame && Math.abs(v - best) < 1e-9 ? "best" : ""}"><span class="v">${fmt(v, d)}</span>${list.length > 1 ? `<span class="pc ${isRef || Math.abs(diff) < 1e-9 ? "muted" : dir * diff > 0 ? "up-g" : "dn-r"}">${ch}</span>` : ""}</td>`; }).join("")}</tr>`; };
+    const cellBtn = (si, k, html, na) => na ? `<span class="cx-cell na">${html}</span>` : `<button type="button" class="cx-cell" data-act="cell" data-si="${si}" data-k="${k}" data-fk="cell${si}${k}">${html}</button>`;
+    const nPerk = Math.max(0, ...sets.map(c => OPBY[c.op]?.slots.length || 0));
+    const condTxt = (c, x) => { const tot = x.det.cond.length, on = x.det.cond.filter(y => c.cond[y.k]).length; return tot ? `${tot}개 중 ${on}개 켬` : "해당 없음"; };
+    const SR = [
+      {k: "lv", lab: "레벨", key: c => c.lv, cell: c => txt(`Lv ${c.lv}`)},
+      {k: "enh", lab: "강화", key: c => c.enh, cell: c => txt(`+${c.enh}`)},
+      ...t.slots.map((_, i) => ({k: "s" + i, lab: `${i + 1}번 칸`, sub: SLOTKO[D.slotDef[i]?.type] || "", key: c => c.slots[i], cell: c => ico(D.parts[c.slots[i]]?.icon, 24) + txt(pname(c.slots[i]))})),
+      {k: "chips", lab: "칩", key: c => [...c.chips].sort((a, b) => a - b).join(), na: () => !t.chips.length, cell: c => !t.chips.length ? txt("칩 풀 없음") : c.chips.length ? txt(`<b>${c.chips.length}개</b> ${c.chips.map(cname).join(", ")}`) : txt("없음")},
+      {k: "op", lab: "오퍼레이터", key: c => c.op, cell: c => OPBY[c.op] ? IMG(OPBY[c.op].head, "", "ico", 'width="24" height="24"') + txt(esc(strip(L(OPBY[c.op].name)))) : txt("없음")},
+      ...Array.from({length: nPerk}, (_, i) => ({k: "p" + i, lab: `특전 ${i + 1}칸`, key: c => c.op ? `${c.op}:${c.perks[i] || 0}` : "-", na: c => !OPBY[c.op]?.slots[i],
+        cell: c => { const o = OPBY[c.op]; if (!o?.slots[i]) return txt("–"); const it = o.items.find(x => x.id === c.perks[i]); return it ? ico(it.icon, 24) + txt(esc(strip(L(it.name)) || "이름 없음")) : txt("비움"); }})),
+      {k: "tech", lab: "특성 공학", key: techKey, cell: c => { const m = techAll.filter(x => c.tech[x.id]).length; return txt(m ? `켠 노드 ${m}개 · 기술 점수 ${labTP(t, c)}` : "꺼짐"); }},
+      {k: "cond", lab: "조건부 효과", key: (c, x) => condTxt(c, x) + "|" + x.det.cond.filter(y => c.cond[y.k]).map(y => y.k).sort().join(), na: (c, x) => !x.det.cond.length, cell: (c, x) => txt(condTxt(c, x))},
+    ];
+    // 세팅 행: 세팅끼리 다른 행은 기준 세팅과 다른 셀을 강조, 모두 같은 행은 흐리게
+    const setRow = r => { const keys = inf.map(x => String(r.key(x.c, x))), same = keys.every(k => k === keys[0]);
+      if (st.diffOnly && multi && same) return null;
+      return `<tr class="cx-r set${multi && same ? " same" : ""}"><th scope="row">${r.lab}${r.sub ? `<small>${r.sub}</small>` : ""}</th>${st.bare ? `<td><span class="cx-cell na">${txt(r.k === "lv" ? "Lv " + sets[st.ref].lv : "–")}</span></td>` : ""}${inf.map((x, i) => `<td class="${multi && keys[i] !== keys[st.ref] ? "df" : ""}">${cellBtn(i, r.k, r.cell(x.c, x), r.na?.(x.c, x))}</td>`).join("")}</tr>`; };
+    let hid = 0; const keep = a => a.filter(x => x === null ? (hid++, false) : true).join("");
+    const objK = LABG.obj === "all" ? "_all" : LABG.obj;
+    const RES = [...(LABG.obj === "all" ? [["_all", "종합 점수", 1, 2]] : []), ["edps", "기대 초당 피해", 1, 0], ["ehp", "유효 체력", 1, 0], ["pm", "파워 무브까지(초)", -1, 1]];
+    const body = secRow(`결과${list.length > 1 ? ` <small>± 는 ${setName(st.ref)}(기준) 대비 · 초록이 가장 좋은 값</small>` : ""}`) + RES.map(r => valRow(r, "res" + (r[0] === objK ? " obj" : ""))).join("")
+      + secRow(`세팅 <small>칸을 누르면 바꿉니다${multi ? " · 색 테두리는 기준 세팅과 다른 곳" : ""}</small>`) + keep(SR.map(setRow))
+      + secRow(`<button type="button" class="linkbtn" data-act="full" data-fk="full" aria-expanded="${st.full}">${st.full ? "능력치 전부 접기" : "능력치 전부 보기"}</button>`) + (st.full ? keep(STATROWS.map(r => valRow(r, "stat"))) : "");
+    const tb = $("#cxt"); tb.style.minWidth = F + n * W + "px";
+    tb.innerHTML = `<colgroup><col style="width:${F}px">${"<col>".repeat(n)}</colgroup>` + body + (hid ? secRow(`<small>모든 세팅이 같은 행 ${hid}개를 숨겼습니다.</small>`) : "");
+  };
+
+  // ----- 고르는 창의 내용(c = 바꾸는 세팅, cur = 그 세팅의 능력치)
+  const slotInfo = (c, cur, i) => {
+    const curP = c.slots[i];
     return t.slots[i].map((p, n) => {
-      const pt = D.parts[p], other = st.slots.indexOf(p), cf = condOf(t, "p", p);
-      const x = {p, pt, n, other, cur: p === curP, swap: other >= 0 && other !== i, quant: !!pt?.fx?.length, condq: cf.length > 0, ok: true, slots: st.slots, s: cur, d: 0, dC: 0, hasC: false};
+      const pt = D.parts[p], other = c.slots.indexOf(p), cf = condOf(t, "p", p);
+      const x = {p, pt, n, other, cur: p === curP, swap: other >= 0 && other !== i, quant: !!pt?.fx?.length, condq: cf.length > 0, ok: true, slots: c.slots, s: cur, d: 0, dC: 0, hasC: false};
       if (!x.cur) {
-        const s2 = [...st.slots];
+        const s2 = [...c.slots];
         if (x.swap) { if (!t.slots[other].includes(curP)) { x.ok = false; return x; } s2[other] = curP; }   // 다른 칸에 낀 부품이면 두 칸을 맞바꾼다
-        s2[i] = p; x.slots = s2; x.s = stat({...st, slots: s2}); x.d = scd(cur, x.s);
+        s2[i] = p; x.slots = s2; x.s = stat({...c, slots: s2}); x.d = scd(cur, x.s);
       }
-      if (x.condq && !cf.every((_, k) => st.cond[`p:${p}:${k}`])) {   // 조건부 효과가 꺼져 있으면 '조건이 맞을 때' 값을 따로
-        const cond = {...st.cond}; cf.forEach((_, k) => cond[`p:${p}:${k}`] = true);
-        x.dC = scd(cur, stat({...st, slots: x.slots, cond})); x.hasC = true;
+      if (x.condq && !cf.every((_, k) => c.cond[`p:${p}:${k}`])) {   // 조건부 효과가 꺼져 있으면 '조건이 맞을 때' 값을 따로
+        const cond = {...c.cond}; cf.forEach((_, k) => cond[`p:${p}:${k}`] = true);
+        x.dC = scd(cur, stat({...c, slots: x.slots, cond})); x.hasC = true;
       }
       return x;
     });
   };
-  const slotSort = info => [...info].sort((a, b) => ((b.quant || b.condq) - (a.quant || a.condq)) || (b.d - a.d) || (b.dC - a.dC) || (a.n - b.n));
-  const slotHint = info => {
-    if (!info.some(x => x.quant || x.condq)) return ["", "수치로 비교할 수 없는 칸 — 설명을 읽고 고르세요."];
-    const solo = info.filter(x => !x.swap && x.ok);
-    const top = [...solo].sort((a, b) => b.d - a.d)[0];
-    if (top && !top.cur && nz(top.d) && top.d > 0) return ["tip", `이 칸의 최선: <b>${pname(top.p)}</b> · ${objTxt(top.d)}`];
-    if (solo.some(x => nz(x.d) && x.d < 0)) return ["ok", "✓ 이 칸은 지금이 최선"];
-    const bc = [...solo].filter(x => x.hasC && nz(x.dC) && x.dC > 0).sort((a, b) => b.dC - a.dC)[0];
-    if (bc) return ["", `조건이 맞을 때: <b>${pname(bc.p)}</b> · ${objTxt(bc.dC)}${bc.cur ? " (지금 낀 부품)" : ""}`];
-    return ["", `${LOBJ[LABG.obj]} 기준에서는 무엇을 껴도 차이가 없는 칸`];
-  };
-  const drawSlots = () => {
-    $("#cxslots").innerHTML = t.slots.map((_, i) => { const info = slotInfo(i), p = st.slots[i], pt = D.parts[p], [cls, txt] = slotHint(info);
-      return `<section class="cx-card"><div class="cx-hd"><span class="cx-k">${slotLabel(i, true)}</span><button type="button" class="cx-btn" data-act="pick" data-i="${i}" data-fk="pick${i}">바꾸기</button></div>
-        <div class="cx-it">${ico(pt?.icon)}<div><b>${L(pt?.name) || p}</b><div class="cx-ds">${L(t.pdesc[p] || pt?.desc)}</div></div></div>
-        <div class="cx-hint ${cls}">${txt}</div>${condRows(`p:${p}`)}</section>`; }).join("");
-  };
-  const sheetSlot = () => {
-    const i = sh.i, info = slotSort(slotInfo(i)), q = info.filter(x => x.quant || x.condq), nq = info.filter(x => !(x.quant || x.condq));
+  const sheetSlot = (c, cur) => {
+    const info = [...slotInfo(c, cur, sh.i)].sort((a, b) => ((b.quant || b.condq) - (a.quant || a.condq)) || (b.d - a.d) || (b.dC - a.dC) || (a.n - b.n));
+    const q = info.filter(x => x.quant || x.condq), nq = info.filter(x => !(x.quant || x.condq));
     const rec = q.find(x => x.ok && !x.swap), recOn = rec && info.some(x => x.ok && !x.swap && x.d < rec.d - 0.005);
     const row = x => `<div class="cx-row ${x.cur ? "on" : ""} ${x.swap ? "dim" : ""}" data-act="pickp" data-id="${x.p}">${ico(x.pt?.icon, 40)}
       <div class="b"><div><b>${L(x.pt?.name) || x.p}</b>${x.cur ? '<span class="cx-tag on">장착 중</span>' : ""}${recOn && x === rec ? '<span class="cx-tag rec">추천</span>' : ""}</div>
@@ -1458,23 +1518,15 @@ function build(id, ...segs) {
       <button type="button" class="cx-go" data-fk="pp${x.p}" ${x.cur || !x.ok ? "disabled" : ""}>${x.cur ? "장착 중" : x.swap ? "맞바꾸기" : "끼우기"}</button></div>`;
     return q.map(row).join("") + (nq.length ? `<p class="cx-sub">수치로 계산되지 않는 효과(설명을 읽고 판단)</p>` + nq.map(row).join("") : "");
   };
-
-  // ----- 칩
-  const chipInfo = () => t.chips.map(id => D.chips[id]).filter(Boolean).map(c => {
-    const on = st.chips.includes(c.id), cf = c.cfx || [], withIds = on ? st.chips : [...st.chips, c.id];
-    const a = on ? stat({...st, chips: st.chips.filter(x => x !== c.id)}) : cur, b = on ? cur : stat({...st, chips: withIds});
-    const x = {c, on, quant: !!c.fx?.length, condq: cf.length > 0, a, b, d: scd(a, b), dC: 0, hasC: false};
-    if (x.condq && !cf.every((_, k) => st.cond[`c:${c.id}:${k}`])) { const cond = {...st.cond}; cf.forEach((_, k) => cond[`c:${c.id}:${k}`] = true); x.dC = scd(a, stat({...st, chips: withIds, cond})); x.hasC = true; }
+  const chipInfo = (c, cur) => t.chips.map(id => D.chips[id]).filter(Boolean).map(ch => {
+    const on = c.chips.includes(ch.id), cf = ch.cfx || [], withIds = on ? c.chips : [...c.chips, ch.id];
+    const a = on ? stat({...c, chips: c.chips.filter(x => x !== ch.id)}) : cur, b = on ? cur : stat({...c, chips: withIds});
+    const x = {c: ch, on, quant: !!ch.fx?.length, condq: cf.length > 0, a, b, d: scd(a, b), dC: 0, hasC: false};
+    if (x.condq && !cf.every((_, k) => c.cond[`c:${ch.id}:${k}`])) { const cond = {...c.cond}; cf.forEach((_, k) => cond[`c:${ch.id}:${k}`] = true); x.dC = scd(a, stat({...c, chips: withIds, cond})); x.hasC = true; }
     return x; });
-  const chipOrder = () => chipInfo().sort((a, b) => ((b.quant || b.condq) - (a.quant || a.condq)) || (b.d - a.d) || (b.dC - a.dC) || (a.c.id - b.c.id)).map(x => x.c.id);
-  const drawChips = () => {
-    $("#cxchips").innerHTML = `<div class="cx-hd"><h3>칩 <span class="small muted">${st.chips.length}개 끼움</span></h3>${t.chips.length ? '<button type="button" class="cx-btn" data-act="chips" data-fk="chips">칩 고르기</button>' : ""}</div>
-      ${!t.chips.length ? '<p class="small muted" style="margin:0">이 탱크는 칩 풀이 없습니다.</p>' : st.chips.length ? `<div class="row">${st.chips.map(id => { const c = D.chips[id]; return `<button type="button" class="cx-pill ${chipCls(c.rarity)}" data-act="unchip" data-id="${id}" data-fk="un${id}" aria-label="${cname(id)} 빼기">${ico(c.icon, 24)}${cname(id)}<span aria-hidden="true">✕</span></button>`; }).join("")}</div>` : '<p class="small muted" style="margin:0">끼운 칩이 없습니다.</p>'}
-      ${condRows("c")}
-      ${t.chips.length ? '<p class="small muted" style="margin:8px 0 0">게임의 칩 칸 수 제한은 반영하지 않습니다(데이터에 없음).</p>' : ""}`;
-  };
-  const sheetChips = () => {
-    const by = Object.fromEntries(chipInfo().map(x => [x.c.id, x])), q = sh.q.trim().toLowerCase();
+  const chipOrder = (c, cur) => chipInfo(c, cur).sort((a, b) => ((b.quant || b.condq) - (a.quant || a.condq)) || (b.d - a.d) || (b.dC - a.dC) || (a.c.id - b.c.id)).map(x => x.c.id);
+  const sheetChips = (c, cur) => {
+    const by = Object.fromEntries(chipInfo(c, cur).map(x => [x.c.id, x])), q = sh.q.trim().toLowerCase();
     const ls = sh.order.map(id => by[id]).filter(x => x && (!sh.rar || x.c.rarity === sh.rar) && (!sh.onlyQ || x.quant || x.condq) && (!q || strip(L(x.c.name) + " " + L(x.c.desc)).toLowerCase().includes(q)));
     const rec = sh.order.map(id => by[id]).find(x => x && !x.on && nz(x.d) && x.d > 0);
     const row = x => `<div class="cx-row ${x.on ? "on" : ""}" data-act="chip" data-id="${x.c.id}">${ico(x.c.icon, 40)}
@@ -1486,248 +1538,234 @@ function build(id, ...segs) {
     const a = ls.filter(x => x.quant || x.condq), b = ls.filter(x => !(x.quant || x.condq));
     return (ls.length ? "" : '<p class="empty">맞는 칩이 없습니다.</p>') + a.map(row).join("") + (b.length ? `<p class="cx-sub">수치로 계산되지 않는 효과(설명을 읽고 판단)</p>` + b.map(row).join("") : "");
   };
-
-  // ----- 오퍼레이터: 한 명만, 스킬은 늘 적용, 특전은 칸마다 하나
-  const drawOp = () => {
-    const o = OPBY[st.op], sk = o?.items[0];
-    $("#cxop").innerHTML = `<div class="cx-hd"><h3>오퍼레이터</h3></div>
-      <div class="cx-seg" role="group" aria-label="오퍼레이터">${[null, ...ops].map(x => `<button type="button" data-act="op" data-id="${x ? x.id : 0}" data-fk="op${x ? x.id : 0}" aria-pressed="${st.op === (x ? x.id : 0)}">${x ? IMG(x.head, "", "ico", 'width="30" height="30"') + esc(strip(L(x.name))) : "없음"}</button>`).join("")}</div>
-      ${o ? `<div class="cx-it" style="margin-top:12px">${ico(sk?.icon)}<div><b>${L(o.skill.name)}</b> <span class="pill">스킬 · 늘 적용</span><div class="cx-ds">${L(o.skill.desc)}</div></div></div>${condRows("o:skill")}
-        ${o.slots.map((cands, i) => { const off = stat({...st, perks: st.perks.map((v, k) => k === i ? 0 : v)});
-          return `<div class="cx-ps"><div class="cx-k">특전 ${i + 1}칸${cands.length > 1 ? " · 둘 중 하나" : ""}</div><div class="cx-opts">${cands.map(pid => { const it = o.items.find(x => x.id === pid); if (!it) return "";
-            const on = st.perks[i] === pid, cf = it.cfx || [], withP = st.perks.map((v, k) => k === i ? pid : v), d = scd(off, stat({...st, perks: withP}));
-            let note;
-            if (!it.fx?.length && !cf.length) note = '<span class="muted">수치로 계산되지 않음</span>';
-            else if (nz(d) || !cf.length || cf.every((_, k) => st.cond[`o:${pid}:${k}`])) note = objSpan(d);
-            else { const cond = {...st.cond}; cf.forEach((_, k) => cond[`o:${pid}:${k}`] = true); note = `<span class="muted">조건이 맞을 때:</span> ${objSpan(scd(off, stat({...st, perks: withP, cond})))}`; }
-            return `<button type="button" class="cx-opt" data-act="perk" data-i="${i}" data-id="${pid}" data-fk="pk${pid}" aria-pressed="${on}"><b>${ico(it.icon, 26)}<span>${L(it.name) || "이름 없음"}</span></b><span class="cx-ds">${L(it.desc)}</span><span class="dl">${note}</span></button>`; }).join("")}</div>${condRows(`o:${st.perks[i]}`)}</div>`; }).join("")}
-        <p class="small muted" style="margin:8px 0 0">고른 특전을 다시 누르면 그 칸을 비웁니다. 특전의 숫자는 그 칸을 비웠을 때와 비교한 값입니다.</p>` : '<p class="small muted" style="margin:8px 0 0">오퍼레이터를 고르면 스킬과 특전 칸 4개가 나옵니다.</p>'}`;
-  };
-
-  // ----- 특성 공학
-  const drawTech = () => {
-    const n = techAll.filter(x => st.tech[x.id]).length;
-    $("#cxtech").innerHTML = `<div class="cx-hd"><h3>특성 공학</h3><button type="button" class="cx-btn" data-act="tech" data-fk="tech">고르기</button></div>
-      <p style="margin:0 0 8px">켠 노드 <b>${n}</b>개 · 기술 점수 <b>${num(labTP(t, st))}</b> 사용 <span class="small muted">(노드 ${techAll.length}개)</span></p>
-      <div class="row"><button type="button" class="cx-btn" data-act="techmax" data-fk="techmax">전부 최대</button><button type="button" class="cx-btn" data-act="techoff" data-fk="techoff">전부 끄기</button></div>
-      <p class="small muted" style="margin:8px 0 0">기술 점수 한도는 반영하지 않습니다(데이터에 없음).</p>`;
-  };
-  const sheetTech = () => techGroups.map(([gn, ls]) => `<p class="cx-sub">${esc(gn)} ${ls.length}개</p>` + ls.map(x => {
-    const n = st.tech[x.id] || 0, max = x.levels.length, quant = x.levels.some(l => l.mod?.fx?.length);
+  const sheetTech = (c, cur) => techGroups.map(([gn, ls]) => `<p class="cx-sub">${esc(gn)} ${ls.length}개</p>` + ls.map(x => {
+    const n = c.tech[x.id] || 0, max = x.levels.length, quant = x.levels.some(l => l.mod?.fx?.length);
     const tp = x.levels.slice(0, n).reduce((a, l) => a + (l.tp || 0), 0), tpMax = x.levels.reduce((a, l) => a + (l.tp || 0), 0);
     const nm = esc(strip(L(x.name)));
     return `<div class="cx-row tech ${n ? "on" : ""}">${ico(x.icon, 40)}
       <div class="b"><div><b>${L(x.name)}</b></div><div class="cx-ds">${L(x.desc)}</div>
-        <div class="cx-dl">${quant ? `<span class="muted">최대 단계면</span>${d3(stat({...st, tech: {...st.tech, [x.id]: 0}}), stat({...st, tech: {...st.tech, [x.id]: max}}))}` : '<span class="muted w">수치로 계산되지 않는 효과 — 기술 점수 합계에만 들어갑니다</span>'}</div>
+        <div class="cx-dl">${quant ? `<span class="muted">최대 단계면</span>${d3(stat({...c, tech: {...c.tech, [x.id]: 0}}), stat({...c, tech: {...c.tech, [x.id]: max}}))}` : '<span class="muted w">수치로 계산되지 않는 효과 — 기술 점수 합계에만 들어갑니다</span>'}</div>
         <div class="cx-step"><button type="button" data-act="tdec" data-id="${x.id}" data-fk="td${x.id}" aria-label="${nm} 단계 내리기" ${n ? "" : "disabled"}>−</button><span><b>${n}</b> / ${max}단계</span><button type="button" data-act="tinc" data-id="${x.id}" data-fk="ti${x.id}" aria-label="${nm} 단계 올리기" ${n < max ? "" : "disabled"}>+</button><span class="small muted">기술 점수 ${tp} / ${tpMax}</span></div></div></div>`; }).join("")).join("");
+  const sheetEnh = (c, cur) => [0, ...t.enh.map(e => e.lv)].map(n => { const on = c.enh === n, e = t.enh.find(x => x.lv === n);
+    return row3(on ? "on" : "", `data-act="enh" data-id="${n}"`, `<span class="cx-big">+${n}</span>`, `<div><b>${n ? `강화 +${n}` : "강화 없음"}</b>${on ? '<span class="cx-tag on">선택 중</span>' : ""}</div>
+      <div class="cx-ds">${e ? `이 단계에서 더해지는 효과: ${modText(e.mod)}` : "강화 효과를 모두 뺍니다."}</div>
+      <div class="cx-dl">${on ? '<span class="muted">지금 단계</span>' : `<span class="muted">이 단계로 바꾸면</span>${d3(cur, stat({...c, enh: n}))}`}</div>`, on ? "선택 중" : "고르기", on); }).join("");
+  // 오퍼레이터: 한 명만, 스킬은 늘 적용. 고르면 특전은 칸마다 첫 번째로 채운다
+  const opPerks = o => o ? o.slots.map(s => s[0]) : [];
+  const sheetOp = (c, cur) => [null, ...ops].map(o => { const id = o ? o.id : 0, on = c.op === id, cond = {...c.cond}; for (const k of Object.keys(cond)) if (k.startsWith("o:")) delete cond[k];
+    return row3(on ? "on" : "", `data-act="op" data-id="${id}"`, o ? IMG(o.head, "", "ico", 'width="40" height="40"') : `<span class="cx-noimg" style="width:40px;height:40px"></span>`,
+      `<div><b>${o ? esc(strip(L(o.name))) : "없음"}</b>${on ? '<span class="cx-tag on">선택 중</span>' : ""}</div>
+      <div class="cx-ds">${o ? `<b>${L(o.skill.name)}</b> (스킬 · 늘 적용) ${L(o.skill.desc)}` : "오퍼레이터의 스킬과 특전을 모두 뺍니다."}</div>
+      <div class="cx-dl">${on ? '<span class="muted">지금 오퍼레이터</span>' : `<span class="muted">${o ? "고르면(특전은 칸마다 첫 번째)" : "빼면"}</span>${d3(cur, stat({...c, op: id, perks: opPerks(o), cond}))}`}</div>`, on ? "선택 중" : "고르기", on); }).join("");
+  // 특전: 칸마다 하나만(비울 수도 있다). 숫자는 그 칸을 비웠을 때와 견준 값
+  const sheetPerk = (c, cur) => { const o = OPBY[c.op], i = sh.i; if (!o?.slots[i]) return '<p class="empty">오퍼레이터를 먼저 고르세요.</p>';
+    const off = stat({...c, perks: c.perks.map((v, k) => k === i ? 0 : v)});
+    return o.slots[i].map(pid => { const it = o.items.find(x => x.id === pid); if (!it) return "";
+      const on = c.perks[i] === pid, cf = it.cfx || [], withP = c.perks.map((v, k) => k === i ? pid : v), d = scd(off, stat({...c, perks: withP}));
+      let nt;
+      if (!it.fx?.length && !cf.length) nt = '<span class="muted w">수치로 계산되지 않는 효과(설명을 읽고 판단)</span>';
+      else if (nz(d) || !cf.length || cf.every((_, k) => c.cond[`o:${pid}:${k}`])) nt = `<span class="muted">빈 칸 대비</span>${objSpan(d)}`;
+      else { const cond = {...c.cond}; cf.forEach((_, k) => cond[`o:${pid}:${k}`] = true); nt = `<span class="muted">조건이 맞을 때:</span>${objSpan(scd(off, stat({...c, perks: withP, cond})))}`; }
+      return row3(on ? "on" : "", `data-act="perk" data-id="${pid}"`, ico(it.icon, 40), `<div><b>${L(it.name) || "이름 없음"}</b>${on ? '<span class="cx-tag on">선택 중</span>' : ""}</div><div class="cx-ds">${L(it.desc)}</div><div class="cx-dl">${nt}</div>`, on ? "선택 중" : "고르기", on); }).join("")
+      + row3(c.perks[i] ? "" : "on", `data-act="perk" data-id="0"`, `<span class="cx-noimg" style="width:40px;height:40px"></span>`, `<div><b>비움</b>${c.perks[i] ? "" : '<span class="cx-tag on">선택 중</span>'}</div><div class="cx-ds">이 칸의 특전을 뺍니다.</div>`, c.perks[i] ? "비우기" : "선택 중", !c.perks[i]);
+  };
+  const sheetCond = (c, cur, det) => det.cond.length ? det.cond.map(x => `<label class="cx-cond"><input type="checkbox" data-ck="${esc(x.k)}" data-fk="ck${esc(x.k)}" ${c.cond[x.k] ? "checked" : ""}><span><b>${esc(x.title)}</b> · ${fxLabel(x.x)}<br><span class="muted">${esc(x.x.label || "")}</span></span></label>`).join("") : '<p class="empty">이 세팅에 낀 것에는 조건부 효과가 없습니다.</p>';
+  const sheetMenu = () => { const i = sh.si, n = st.sets.length;
+    return `<div class="cx-menu">
+      <button type="button" data-act="setref" ${i === st.ref ? "disabled" : ""}><b>${i === st.ref ? "지금 기준 세팅입니다" : "이 세팅을 기준으로"}</b><small>결과의 ±% 를 이 세팅과 견줍니다.</small></button>
+      <button type="button" data-act="dup" ${n >= 4 ? "disabled" : ""}><b>복제</b><small>같은 내용으로 새 세팅을 만듭니다${n >= 4 ? "(세팅은 4개까지)" : ""}.</small></button>
+      <button type="button" data-act="best"><b>가장 좋은 조합으로 채우기</b><small>${LOBJ[LABG.obj]} 기준으로 찾은 상위 5개 가운데 골라 이 세팅에 넣습니다.</small></button>
+      <button type="button" data-act="delset" ${n <= 1 ? "disabled" : ""}><b>삭제</b><small>${n <= 1 ? "세팅이 하나뿐이라 지울 수 없습니다." : "이 세팅을 표에서 뺍니다."}</small></button></div>`; };
+  // 가장 좋은 조합: 부품 전 조합 × 오퍼레이터(없음 + 각 오퍼레이터의 특전 조합). 칩은 탐색에 넣지 않고 따로 제안
+  const runFind = () => {
+    if (!sh || sh.kind !== "best") return;
+    const my = sh, c = st.sets[my.si], obj = LABG.obj, all = st.condAll, tech = st.fTech ? maxTech : c.tech, tok = my.tok = (my.tok || 0) + 1;
+    const pcs = [];
+    (function rec(i, picked) { if (i === t.slots.length) { pcs.push([...picked]); return; } for (const p of t.slots[i]) { if (picked.includes(p)) continue; picked.push(p); rec(i + 1, picked); picked.pop(); } })(0, []);
+    const opc = st.fOp ? [{op: 0, perks: []}] : [{op: c.op, perks: c.perks}];
+    if (st.fOp) for (const o of ops) { let ps = [[]]; for (const s of o.slots) ps = ps.flatMap(a => s.map(x => [...a, x])); ps.forEach(perks => opc.push({op: o.id, perks})); }
+    const total = pcs.length * opc.length, res = [];
+    const noOp = {}; for (const k of Object.keys(c.cond)) if (!k.startsWith("o:")) noOp[k] = c.cond[k];   // 다른 오퍼레이터에는 지금 오퍼레이터의 조건 선택을 옮기지 않는다
+    my.res = null; my.busy = total ? `조합 ${num(total)}개를 계산하는 중…` : "따져 볼 조합이 없습니다."; drawSheet();
+    if (!total) return;
+    let n = 0;
+    const step = () => {
+      if (sh !== my || my.tok !== tok) return;
+      for (const end = Math.min(total, n + 1500); n < end; n++) { const pc = pcs[n % pcs.length], o = opc[(n / pcs.length) | 0];
+        const s = labStats(t, {...c, tech, slots: pc, op: o.op, perks: o.perks, cond: o.op === c.op ? c.cond : noOp}, LABG.mode, all), score = scoreOf(s, bare, obj);
+        if (Number.isFinite(score)) res.push({slots: pc, op: o.op, perks: o.perks, s, score, key: +score.toPrecision(10), n}); }
+      if (n < total) { my.busy = `조합 ${num(total)}개 중 ${num(n)}개 계산…`; drawSheet(); setTimeout(step, 0); return; }
+      const far = r => r.slots.filter((p, i) => p !== c.slots[i]).length + (r.op !== c.op ? 1 : 0) + r.perks.filter((p, i) => p !== c.perks[i]).length;   // 점수가 같으면 지금 세팅과 가까운 것 먼저
+      res.sort((a, b) => b.key - a.key || far(a) - far(b) || a.n - b.n);
+      const rows = [];
+      for (const r of res) { const g = rows[rows.length - 1]; if (g && g.key === r.key) { g.same++; continue; } if (rows.length === 5) break; rows.push({...r, same: 0}); }
+      my.busy = ""; my.res = {total, obj, all, tech: st.fTech, op: st.fOp, rows}; drawSheet();
+    };
+    setTimeout(step, 20);
+  };
+  const sheetBest = (c, cur) => {
+    const fr = sh.res; let html = sh.busy ? `<p style="margin:10px 0">${sh.busy}</p>` : "";
+    if (fr) {
+      const mine = scoreOf(labStats(t, {...c, tech: fr.tech ? maxTech : c.tech}, LABG.mode, fr.all), bare, fr.obj), conds = condList(c);
+      html += `<p class="small" style="margin:8px 0 0"><b>${LOBJ[fr.obj]} 기준</b> · 조합 ${num(fr.total)}개를 따져 봤습니다${fr.tech ? " · 특성 공학 전부 최대 가정" : ""}${fr.all ? " · 조건부 효과 충족 가정" : ""}</p>
+        <p class="small muted" style="margin:0">${fr.rows.length ? "굵은 글씨는 이 세팅의 지금 조합과 다른 곳입니다." : "계산할 수 있는 조합이 없습니다."}</p>` + fr.rows.map((r, i) => {
+        const o = OPBY[r.op], d = pct(mine, r.score);
+        const same = r.slots.every((p, k) => p === c.slots[k]) && (!fr.op || (r.op === c.op && r.perks.every((p, k) => p === c.perks[k])))
+          && (!fr.tech || techKey(c) === techKey({tech: maxTech})) && (!fr.all || conds.every(x => c.cond[x.k]));
+        const mark = (s, diff) => diff ? `<b>${s}</b>` : s;
+        return `<div class="cx-res small"><div class="cx-rh"><b>${i + 1}위</b><button type="button" class="cx-btn" data-act="apply" data-n="${i}" data-fk="ap${i}" ${same ? "disabled" : ""}>${same ? "지금 조합" : "이 조합 적용"}</button></div>
+          <div>${r.slots.map((p, k) => mark(pname(p), p !== c.slots[k])).join(" / ")}</div>
+          ${fr.op ? `<div>${o ? `${mark("오퍼레이터 " + esc(strip(L(o.name))), r.op !== c.op)}: ${r.perks.map((p, k) => mark(esc(strip(L(o.items.find(x => x.id === p)?.name)) || "이름 없음"), r.op !== c.op || p !== c.perks[k])).join(" / ")}` : mark("오퍼레이터 없음", c.op !== 0)}</div>` : ""}
+          <div class="cx-dl"><span>기대 초당 피해 <b>${num(r.s.edps, 0)}</b></span><span>유효 체력 <b>${num(r.s.ehp, 0)}</b></span><span>파워 무브 <b>${num(r.s.pm, 1)}초</b></span></div>
+          <div class="cx-dl">${same || !nz(d) ? '<span class="muted">지금 조합과 점수가 같음</span>' : `<span class="muted">지금보다</span>${objSpan(d)}`}${r.same ? `<span class="muted w">점수가 같은 조합 ${num(r.same)}개 더 있음</span>` : ""}</div></div>`; }).join("");
+    }
+    if (t.chips.length && !sh.busy) {   // 추천 칩: 이 세팅에 하나 더했을 때 기준 점수가 오르는 것
+      const ls = t.chips.filter(id => D.chips[id] && !c.chips.includes(id)).map(id => { const ch = D.chips[id], cf = ch.cfx || []; if (!ch.fx?.length && !(st.condAll && cf.length)) return null;
+        const cond = {...c.cond}; if (st.condAll) cf.forEach((_, k) => cond[`c:${id}:${k}`] = true);
+        return {c: ch, d: scd(cur, stat({...c, chips: [...c.chips, id], cond}))}; }).filter(x => x && nz(x.d) && x.d > 0).sort((a, b) => b.d - a.d).slice(0, 6);
+      html += `<p class="cx-sub">추가하면 좋은 칩 <span class="small muted" style="font-weight:400">${LOBJ[LABG.obj]} 기준 · 누르면 끼웁니다</span></p>` + (ls.length ? `<div class="row">${ls.map(x => `<button type="button" class="cx-pill ${chipCls(x.c.rarity)}" data-act="addchip" data-id="${x.c.id}" data-fk="add${x.c.id}">${ico(x.c.icon, 24)}${cname(x.c.id)} <span class="up-g">${LABG.obj === "pm" ? num(x.d, 1) + "% 빨라짐" : sg(x.d) + "%"}</span></button>`).join("")}</div>` : '<p class="small muted" style="margin:0">이 기준에서 수치가 오르는 칩이 없습니다.</p>');
+    }
+    return html;
+  };
 
   // ----- 고르는 창
   const sumCells = (s, ref) => [["기대 초당 피해", "초당 피해", num(s.edps, 0), pct(ref.edps, s.edps), 1], ["유효 체력", "유효 체력", num(s.ehp, 0), pct(ref.ehp, s.ehp), 1], ["파워 무브까지", "파워 무브", num(s.pm, 1) + "초", pct(ref.pm, s.pm), -1]]
     .map(([f, short, v, d, dir]) => `<div class="cx-m"><span class="k"><span class="lfull">${f}</span><span class="lshort">${short}</span></span><b>${v}</b> <span class="d ${dcl(d * dir)}">${nz(d) ? sg(d) + "%" : "–"}</span></div>`).join("");
+  const KIND = {lv: "레벨", enh: "강화 단계", chips: "칩 고르기", op: "오퍼레이터 고르기", tech: "특성 공학 고르기", cond: "조건부 효과", best: "가장 좋은 조합으로 채우기", menu: ""};
   const drawSheet = () => {
     if (!sh) return;
-    const bd = $("#cxshbd"), y = bd.scrollTop;
-    $("#cxshm").innerHTML = sumCells(cur, refStats());
-    $("#cxshb").innerHTML = sh.kind === "slot" ? sheetSlot() : sh.kind === "chips" ? sheetChips() : sheetTech();
+    if (sh.si >= st.sets.length) return closeSheet();
+    const c = st.sets[sh.si], x = inf[sh.si], bd = $("#cxshbd"), y = bd.scrollTop, k = sh.kind, isRef = sh.si === st.ref;
+    $("#cxsht").textContent = setName(sh.si) + (k === "menu" ? "" : " · " + (k === "slot" ? `${slotLabel(sh.i)} 바꾸기` : k === "perk" ? `특전 ${sh.i + 1}칸` : KIND[k]));
+    $("#cxshm").innerHTML = sumCells(x.s, isRef ? bare : inf[st.ref].s);
+    $("#cxshn").textContent = `${setName(sh.si)}의 결과 · ± 는 ${isRef ? "맨몸" : setName(st.ref) + "(기준)"} 대비`;
+    if (k === "lv") { $("#cxlv").value = c.lv; $("#cxlvo").textContent = c.lv; }
+    $("#cxshb").innerHTML = k === "slot" ? sheetSlot(c, x.s) : k === "chips" ? sheetChips(c, x.s) : k === "tech" ? sheetTech(c, x.s) : k === "enh" ? sheetEnh(c, x.s) : k === "op" ? sheetOp(c, x.s)
+      : k === "perk" ? sheetPerk(c, x.s) : k === "cond" ? sheetCond(c, x.s, x.det) : k === "best" ? sheetBest(c, x.s) : k === "menu" ? sheetMenu() : "";
     bd.scrollTop = y;
   };
-  const openSheet = (kind, i, opener) => {
-    sh = {kind, i, fk: opener?.dataset.fk, q: "", rar: "", onlyQ: false, order: kind === "chips" ? chipOrder() : null};
-    $("#cxsht").innerHTML = kind === "slot" ? `${slotLabel(i)} 바꾸기` : kind === "chips" ? "칩 고르기" : "특성 공학 고르기";
+  const openSheet = (kind, si, i, fk) => {
+    const keep = sh?.fk;
+    sh = {kind, si, i, fk: fk ?? keep, q: "", rar: "", onlyQ: false, order: kind === "chips" ? chipOrder(st.sets[si], inf[si].s) : null};
+    const c = st.sets[si], ob = `${LOBJ[LABG.obj]} 기준으로 좋은 순서입니다.`;
     $("#cxshtools").innerHTML = kind === "chips" ? `<div class="cx-tools"><input type="search" id="cxq" placeholder="칩 이름·설명으로 찾기" aria-label="칩 검색">
         <div class="cx-seg" role="group" aria-label="등급 거르기">${[["", "전체"], ["Silver", "실버"], ["Golden", "골드"], ["Prismatic", "프리즘"]].map(([k, v]) => `<button type="button" data-act="rar" data-v="${k}" aria-pressed="${k === ""}">${v}</button>`).join("")}</div>
         <label class="chk small"><input type="checkbox" id="cxonlyq"> 수치 효과 있는 것만</label>
-        <p class="small muted" style="margin:0">누르면 바로 끼우거나 뺍니다. ${LOBJ[LABG.obj]} 기준으로 좋은 순서입니다.</p></div>`
+        <p class="small muted" style="margin:0">누르면 바로 끼우거나 뺍니다. ${ob} 게임의 칩 칸 수 제한은 반영하지 않습니다(데이터에 없음).</p></div>`
       : kind === "tech" ? `<div class="cx-tools"><div class="row"><button type="button" class="cx-btn" data-act="techmax">전부 최대</button><button type="button" class="cx-btn" data-act="techoff">전부 끄기</button></div>
         <p class="small muted" style="margin:0">− / + 로 단계를 고릅니다. 기술 점수 한도는 반영하지 않습니다(데이터에 없음).</p></div>`
-      : `<p class="small muted" style="margin:4px 0">누르면 바로 바뀌고 숫자가 새로 계산됩니다. ${LOBJ[LABG.obj]} 기준으로 좋은 순서입니다.</p>`;
+      : kind === "cond" ? `<div class="cx-tools"><div class="row"><button type="button" class="cx-btn" data-act="condall1">이 세팅 전부 켜기</button><button type="button" class="cx-btn" data-act="condnone1">이 세팅 전부 끄기</button></div>
+        <p class="small muted" style="margin:0">켠 것만 계산합니다. 조건이 늘 맞는다고 가정한 값입니다.</p></div>`
+      : kind === "lv" ? `<div class="cx-tools"><div class="cx-step"><button type="button" data-act="lvdec" aria-label="레벨 내리기">−</button><span>레벨 <b id="cxlvo">${c.lv}</b> / ${t.levels.length}</span><button type="button" data-act="lvinc" aria-label="레벨 올리기">+</button></div>
+        <input type="range" id="cxlv" min="1" max="${t.levels.length}" value="${c.lv}" aria-label="레벨" style="width:100%;height:44px;margin:0;accent-color:var(--hazard)"></div>`
+      : kind === "best" ? `<div class="cx-tools" style="gap:0"><label class="chk small"><input type="checkbox" id="cxfop" ${st.fOp ? "checked" : ""}> 오퍼레이터와 특전도 함께 찾기</label>
+        <label class="chk small"><input type="checkbox" id="cxftech" ${st.fTech ? "checked" : ""}> 특성 공학을 전부 최대로 가정</label>
+        <label class="chk small"><input type="checkbox" id="cxfcond" ${st.condAll ? "checked" : ""}> 조건부 효과가 늘 맞는다고 가정</label>
+        <p class="small muted" style="margin:4px 0 0">부품은 끼울 수 있는 모든 조합을 다 따져 봅니다. 고르면 ${setName(si)}에 들어갑니다.</p></div>`
+      : kind === "slot" ? `<p class="small muted" style="margin:4px 0">누르면 바로 바뀌고 표가 새로 계산됩니다. ${ob}</p>`
+      : kind === "op" ? `<p class="small muted" style="margin:4px 0">한 명만 고릅니다. 특전은 표의 특전 칸을 눌러 바꿉니다.</p>`
+      : kind === "perk" ? `<p class="small muted" style="margin:4px 0">칸마다 하나만 고릅니다.</p>` : "";
     shEl.hidden = false; labEsc = closeSheet; drawSheet(); $("#cxshbd").scrollTop = 0; $("#cxshx").focus();
+    if (kind === "best") runFind();
   };
   const closeSheet = () => { if (!sh) return; const fk = sh.fk; sh = null; labEsc = null; shEl.hidden = true; if (fk) root.querySelector(`[data-fk="${fk}"]`)?.focus(); };
 
-  // ----- 요약, 저장, 비교 표, 구성 차이
-  const refStats = () => st.cmp !== "bare" && sv[st.cmp] ? stat(sv[st.cmp]) : bare;
-  const drawSum = () => {
-    const saved = [..."ABC"].filter(k => sv[k]);
-    $("#cxcmp").innerHTML = `<option value="bare">맨몸 대비</option>` + saved.map(k => `<option value="${k}">${k} 대비</option>`).join("");
-    $("#cxcmp").value = st.cmp;
-    $("#cxsumv").innerHTML = sumCells(cur, refStats());
-  };
-  const drawCmp = () => {
-    const saved = [..."ABC"].filter(k => sv[k]), ck = comboKey(st), eq = saved.filter(k => comboKey(sv[k]) === ck);
-    $("#cxsaved").innerHTML = (saved.length ? saved.map(k => `<div class="cx-sv"><span class="nm"><span class="cx-tag on">${k}</span> 저장됨${eq.includes(k) ? " · 지금 조합과 같음" : ""}</span><button type="button" class="cx-btn" data-act="load" data-k="${k}" data-fk="load${k}">불러오기</button><button type="button" class="cx-btn" data-act="del" data-k="${k}" data-fk="del${k}">지우기</button></div>`).join("") : '<p class="small muted" style="margin:0">아직 저장한 조합이 없습니다. 저장하면 아래 표에 열이 생깁니다.</p>')
-      + (storeOk ? "" : '<p class="small" style="color:var(--danger);margin:6px 0 0">이 브라우저에서는 저장소를 쓸 수 없어, 새로고침하면 저장한 조합이 사라집니다.</p>');
-    const cols = [{k: "맨몸", s: bare}, ...saved.map(k => ({k, s: stat(sv[k]), c: sv[k]})), {k: eq.length ? `지금 (= ${eq[0]})` : "지금", s: cur, c: st}];
-    const fmt = (v, d) => d === "%" ? num(v * 100, 1) + "%" : num(v, d);
-    const head = `<tr><th>항목</th>${cols.map(c => `<th class="n">${c.k}</th>`).join("")}</tr>`;
-    const row = ([k, lab, dir, d]) => {
-      const vals = cols.map(c => c.s[k]); if (vals.some(v => v == null || !Number.isFinite(v))) return "";
-      if (k.startsWith("f") && vals.every(v => !v)) return "";
-      const best = dir > 0 ? Math.max(...vals) : Math.min(...vals), same = vals.every(v => Math.abs(v - vals[0]) < 1e-9);
-      return `<tr><td>${BGLOSS[k] ? G(BGLOSS[k], lab) : lab}</td>${vals.map((v, i) => { const a = vals[0], diff = v - a;
-        const ch = !i ? "" : d === "%" ? (nz(diff * 100) ? sg(diff * 100) + "%p" : "–") : a ? (nz(pct(a, v)) ? sg(pct(a, v)) + "%" : "–") : (nz(diff) ? sg(diff) : "–");
-        return `<td class="n${!same && Math.abs(v - best) < 1e-9 ? " best" : ""}">${fmt(v, d)}${i ? `<span class="pc ${Math.abs(diff) < 1e-9 ? "muted" : dir * diff > 0 ? "up-g" : "dn-r"}">${ch}</span>` : ""}</td>`; }).join("")}</tr>`; };
-    $("#cxtbl").innerHTML = head + [["edps", "기대 초당 피해", 1, 0], ["ehp", "유효 체력", 1, 0], ["pm", "파워 무브까지(초)", -1, 1]].map(row).join("");
-    $("#cxfull").innerHTML = head + STATROWS.map(row).join("");
-    // 구성 차이: 조합끼리 다른 곳만 한 줄씩, 같은 곳은 접는다
-    const cs = cols.filter(c => c.c), nPerk = Math.max(0, ...cs.map(c => OPBY[c.c.op]?.slots.length || 0));
-    const techTxt = c => { const n = techAll.filter(x => c.tech[x.id]).length; return n ? `노드 ${n}개 · 기술 점수 ${labTP(t, c)}` : "꺼짐"; };
-    const rows = [["레벨", c => "Lv " + c.lv], ["강화", c => "+" + c.enh], ...t.slots.map((_, i) => [`${i + 1}번 칸`, c => pname(c.slots[i])]),
-      ["칩", c => c.chips.length ? [...c.chips].sort((a, b) => a - b).map(cname).join(", ") : "없음"],
-      ["오퍼레이터", c => OPBY[c.op] ? esc(strip(L(OPBY[c.op].name))) : "없음"],
-      ...Array.from({length: nPerk}, (_, i) => [`특전 ${i + 1}칸`, c => { const o = OPBY[c.op]; if (!o) return "–"; const it = o.items.find(x => x.id === c.perks[i]); return it ? esc(strip(L(it.name)) || "이름 없음") : "비움"; }, c => `${c.op}:${c.perks[i] || 0}`]),
-      ["특성 공학", techTxt, techKey],
-      ["조건부 효과", c => { const n = condOn(c).length; return n ? `${n}개 켬` : "모두 끔"; }, c => condOn(c).join()]];
-    const diff = [], same = [];
-    for (const [lab, txt, key] of rows) { const ks = cs.map(c => (key || txt)(c.c)), ts = cs.map(c => txt(c.c));
-      if (ks.every(k => k === ks[0])) same.push(`<div><b>${lab}</b>: ${ts[0]}</div>`);
-      else diff.push(`<div class="cx-df"><b>${lab}</b>: ${cs.map((c, i) => `<span class="cx-tag">${c.k.replace(/ \(.*/, "")}</span> ${ts[i]}`).join(" / ")}${ts.every(x => x === ts[0]) ? ' <span class="muted">(세부 구성이 다름)</span>' : ""}</div>`); }
-    $("#cxdiff").innerHTML = cs.length < 2 ? '<span class="muted">조합을 저장하면 지금 조합과 다른 곳을 여기에 한 줄씩 보여 줍니다.</span>' : diff.length ? diff.join("") : '<span class="muted">저장한 조합과 지금 조합이 모두 같습니다.</span>';
-    const sm = $("#cxsame"); sm.hidden = cs.length < 2 || !same.length;
-    sm.querySelector("summary").textContent = `같은 곳 ${same.length}개 보기`; sm.querySelector("div").innerHTML = same.join("");
-  };
-
-  // ----- 자동으로 찾기: 부품 전 조합 × 오퍼레이터(없음 + 각 오퍼레이터의 특전 조합)
-  const fkey = () => JSON.stringify([st.lv, st.enh, st.chips, st.fTech ? 1 : techKey(st), st.condAll ? 1 : Object.keys(st.cond).filter(k => st.cond[k] && !(st.fOp && k.startsWith("o:"))).sort(), LABG.obj, LABG.mode, st.fOp ? 1 : [st.op, st.perks]]);
-  const find = () => {
-    if (fbusy) return;
-    const out = $("#cxfout"), obj = LABG.obj, all = st.condAll, tech = st.fTech ? maxTech : st.tech, key = fkey();
-    const pcs = [];
-    (function rec(i, picked) { if (i === t.slots.length) { pcs.push([...picked]); return; } for (const p of t.slots[i]) { if (picked.includes(p)) continue; picked.push(p); rec(i + 1, picked); picked.pop(); } })(0, []);
-    const opc = st.fOp ? [{op: 0, perks: []}] : [{op: st.op, perks: st.perks}];
-    if (st.fOp) for (const o of ops) { let ps = [[]]; for (const s of o.slots) ps = ps.flatMap(a => s.map(x => [...a, x])); ps.forEach(perks => opc.push({op: o.id, perks})); }
-    const total = pcs.length * opc.length, res = [], b0 = applyFx(baseStats(t, st.lv), []);
-    const noOp = {}; for (const k of Object.keys(st.cond)) if (!k.startsWith("o:")) noOp[k] = st.cond[k];   // 다른 오퍼레이터에는 지금 오퍼레이터의 조건 선택을 옮기지 않는다
-    if (!total) { out.textContent = "따져 볼 조합이 없습니다."; return; }
-    fbusy = true; fres = null; out.textContent = `조합 ${num(total)}개를 계산하는 중…`;
-    let n = 0;
-    const step = () => {
-      if (!out.isConnected) { fbusy = false; return; }
-      for (const end = Math.min(total, n + 1500); n < end; n++) { const pc = pcs[n % pcs.length], o = opc[(n / pcs.length) | 0];
-        const s = labStats(t, {...st, tech, slots: pc, op: o.op, perks: o.perks, cond: o.op === st.op ? st.cond : noOp}, LABG.mode, all), score = scoreOf(s, b0, obj);
-        if (Number.isFinite(score)) res.push({slots: pc, op: o.op, perks: o.perks, s, score, key: +score.toPrecision(10), n}); }
-      if (n < total) { out.textContent = `조합 ${num(total)}개 중 ${num(n)}개 계산…`; setTimeout(step, 0); return; }
-      const far = r => r.slots.filter((p, i) => p !== st.slots[i]).length + (r.op !== st.op ? 1 : 0) + r.perks.filter((p, i) => p !== st.perks[i]).length;   // 점수가 같으면 지금 조합과 가까운 것 먼저
-      res.sort((a, b) => b.key - a.key || far(a) - far(b) || a.n - b.n);
-      const rows = [];
-      for (const r of res) { const g = rows[rows.length - 1]; if (g && g.key === r.key) { g.same++; continue; } if (rows.length === 5) break; rows.push({...r, same: 0}); }
-      fbusy = false; fres = {key, total, obj, all, tech: st.fTech, op: st.fOp, rows}; drawFind();
-    };
-    setTimeout(step, 20);
-  };
-  const drawFind = () => {
-    $("#cxfbtn").textContent = `${LOBJ[LABG.obj]} 기준에서 가장 좋은 조합 찾기`;
-    const out = $("#cxfout");
-    if (fbusy || !fres) return;
-    if (fres.key !== fkey()) { fres = null; out.innerHTML = '<p class="muted" style="margin:8px 0 0">조합이나 기준이 바뀌었습니다. 다시 찾으려면 버튼을 누르세요.</p>'; return; }
-    const mine = scoreOf(labStats(t, {...st, tech: fres.tech ? maxTech : st.tech}, LABG.mode, fres.all), bare, fres.obj);
-    const conds = condList(st);
-    out.innerHTML = `<p style="margin:10px 0 0"><b>${LOBJ[fres.obj]} 기준</b> · 조합 ${num(fres.total)}개를 따져 봤습니다${fres.tech ? " · 특성 공학 전부 최대 가정" : ""}${fres.all ? " · 조건부 효과 충족 가정" : ""}</p>
-      <p class="muted" style="margin:0">${fres.rows.length ? "굵은 글씨는 지금 조합과 다른 곳입니다." : "계산할 수 있는 조합이 없습니다."}</p>` + fres.rows.map((r, i) => {
-      const o = OPBY[r.op], d = pct(mine, r.score);
-      const same = r.slots.every((p, k) => p === st.slots[k]) && (!fres.op || (r.op === st.op && r.perks.every((p, k) => p === st.perks[k])))
-        && (!fres.tech || techKey(st) === techKey({tech: maxTech})) && (!fres.all || conds.every(c => st.cond[c.k]));
-      const mark = (txt, diff) => diff ? `<b>${txt}</b>` : txt;
-      return `<div class="cx-res"><div class="cx-hd" style="margin-bottom:4px"><b>${i + 1}위</b><button type="button" class="cx-btn" data-act="apply" data-n="${i}" data-fk="ap${i}" ${same ? "disabled" : ""}>${same ? "지금 조합" : "이 조합 적용"}</button></div>
-        <div>${r.slots.map((p, k) => mark(pname(p), p !== st.slots[k])).join(" / ")}</div>
-        ${fres.op ? `<div>${o ? `${mark("오퍼레이터 " + esc(strip(L(o.name))), r.op !== st.op)}: ${r.perks.map((p, k) => mark(esc(strip(L(o.items.find(x => x.id === p)?.name)) || "이름 없음"), r.op !== st.op || p !== st.perks[k])).join(" / ")}` : mark("오퍼레이터 없음", st.op !== 0)}</div>` : ""}
-        <div class="cx-dl"><span>기대 초당 피해 <b>${num(r.s.edps, 0)}</b></span><span>유효 체력 <b>${num(r.s.ehp, 0)}</b></span><span>파워 무브 <b>${num(r.s.pm, 1)}초</b></span></div>
-        <div class="cx-dl">${same || !nz(d) ? '<span class="muted">지금 조합과 점수가 같음</span>' : `<span class="muted">지금보다</span>${objSpan(d)}`}${r.same ? `<span class="muted w">점수가 같은 조합 ${num(r.same)}개 더 있음</span>` : ""}</div></div>`; }).join("");
-  };
-  const apply = n => {
-    const r = fres?.rows[n]; if (!r) return;
-    st.slots = [...r.slots];
-    if (fres.op) { if (r.op !== st.op) dropCond("o:"); st.op = r.op; st.perks = [...r.perks]; }
-    if (fres.tech) st.tech = {...maxTech};
-    if (fres.all) condList(st).forEach(c => st.cond[c.k] = true);
-    fres.key = fkey(); draw();
-  };
-  // 칩은 탐색에 넣지 않고, 지금 조합에 하나 더했을 때 기준 점수가 오르는 것을 따로 제안
-  const drawSug = () => {
-    const el = $("#cxsug"); if (!t.chips.length) { el.innerHTML = ""; return; }
-    const ls = t.chips.filter(id => D.chips[id] && !st.chips.includes(id)).map(id => { const c = D.chips[id], cf = c.cfx || []; if (!c.fx?.length && !(st.condAll && cf.length)) return null;
-      const cond = {...st.cond}; if (st.condAll) cf.forEach((_, k) => cond[`c:${id}:${k}`] = true);
-      return {c, d: scd(cur, stat({...st, chips: [...st.chips, id], cond}))}; }).filter(x => x && nz(x.d) && x.d > 0).sort((a, b) => b.d - a.d).slice(0, 6);
-    el.innerHTML = `<h3 style="margin-top:14px">지금 조합에 추가하면 좋은 칩 <span class="small muted">${LOBJ[LABG.obj]} 기준</span></h3>` + (ls.length ? `<div class="row">${ls.map(x => `<button type="button" class="cx-pill ${chipCls(x.c.rarity)}" data-act="addchip" data-id="${x.c.id}" data-fk="add${x.c.id}">${ico(x.c.icon, 24)}${cname(x.c.id)} <span class="up-g">${LABG.obj === "pm" ? num(x.d, 1) + "% 빨라짐" : sg(x.d) + "%"}</span></button>`).join("")}</div><p class="small muted" style="margin:6px 0 0">누르면 그 칩을 끼웁니다.</p>` : '<p class="small muted" style="margin:0">이 기준에서 수치가 오르는 칩이 없습니다.</p>');
-  };
-
   const draw = () => {
     const fk = document.activeElement?.dataset?.fk;
-    bare = applyFx(baseStats(t, st.lv), []);
-    det = {applied: [], notq: [], cond: []};
-    cur = applyFx(baseStats(t, st.lv), labFx(t, st, LABG.mode, false, det));
-    $("#cxlv").value = st.lv; $("#cxlvo").textContent = st.lv; $("#cxenh").value = st.enh; $("#cxmode").value = LABG.mode;
+    calc();
+    $("#cxmode").value = LABG.mode;
     document.querySelectorAll("#cxobj button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === LABG.obj));
-    $("#cxobjd").textContent = LOBJD[LABG.obj];
-    const nOn = det.cond.filter(c => st.cond[c.k]).length;
-    $("#cxcn").innerHTML = det.cond.length ? `<b>조건부 효과</b> ${det.cond.length}개 중 ${nOn}개 켬 <span class="muted">— 켠 것만 계산합니다</span>` : '<b>조건부 효과</b> <span class="muted">지금 낀 것에는 없습니다</span>';
-    root.querySelectorAll('[data-act="condall"],[data-act="condnone"]').forEach(b => b.disabled = !det.cond.length);
-    drawSlots(); drawChips(); drawOp(); drawTech();
-    const tr = $("#cxtrait"), tc = condRows("t"); tr.hidden = !tc; tr.innerHTML = tc ? `<div class="cx-hd"><h3>특성 · ${L(t.trait.name)}</h3></div><div class="cx-ds">${L(t.trait.desc)}</div>${tc}` : "";
-    drawSum(); drawCmp(); drawFind(); drawSug();
+    $("#cxobjd").textContent = `기준: ${LOBJD[LABG.obj]} 등수와 추천이 이 기준으로 바뀝니다.`;
+    $("#cxdiffonly").setAttribute("aria-pressed", st.diffOnly); $("#cxbare").setAttribute("aria-pressed", st.bare);
+    $("#cxadd").disabled = st.sets.length >= 4;
+    const anyCond = inf.some(x => x.det.cond.length);
+    root.querySelectorAll('[data-act="condall"],[data-act="condnone"]').forEach(b => b.disabled = !anyCond);
+    drawHead(); drawTable();
+    const fs = $("#cxfxsel"); fs.innerHTML = st.sets.map((_, i) => `<option value="${i}">${setName(i)}</option>`).join(""); fs.value = st.fx;
+    const det = inf[st.fx].det;
     $("#cxfx").innerHTML = det.applied.length ? det.applied.map(x => `<div>${x}</div>`).join("") : '<span class="muted">없음</span>';
     $("#cxnofx").innerHTML = det.notq.length ? det.notq.map(x => `<div style="margin-bottom:4px">${x}</div>`).join("") : "없음";
     drawSheet();
-    try { history.replaceState(null, "", curHash()); } catch (e) {}   // 브라우저가 잦은 주소 변경을 막을 때가 있다(막혀도 화면은 계속 동작)
+    st.last = labHash(t, st);
+    try { history.replaceState(null, "", st.last); } catch (e) {}   // 브라우저가 잦은 주소 변경을 막을 때가 있다(막혀도 화면은 계속 동작)
     lastRoute = decodeURIComponent(location.hash.slice(1));   // 주소만 바뀐 것이라 다시 그릴 때 맨 위로 튀지 않게
+    if (!st.hold) storeOk = labStore(t, st);
+    $("#cxmsg").innerHTML = note || (storeOk ? "" : '<span style="color:var(--danger)">이 브라우저에서는 저장소를 쓸 수 없어, 새로고침하면 세팅이 사라집니다. </span>')
+      + (st.sets.length > 1 ? `${setName(st.sets.length > 1 && st.ref === 1 ? 0 : 1)}의 칸을 눌러 바꿔 보세요. 달라진 곳과 결과 차이가 바로 표시됩니다.` : "‘+ 세팅 추가’를 누르면 세팅을 나란히 놓고 비교합니다.");
+    note = "";
     if (fk && document.activeElement?.dataset?.fk !== fk) root.querySelector(`[data-fk="${fk}"]`)?.focus({preventScroll: true});
     if (sh && !shEl.contains(document.activeElement)) $("#cxshx").focus({preventScroll: true});   // 누른 단추가 '장착 중'으로 바뀌어 초점이 사라지면 창 안에 둔다
   };
-  const curHash = () => labHash(t, st, det.cond.filter(c => st.cond[c.k]).map(c => c.k));
-  const save = () => { storeOk = labStore(t); };
   const copy = async () => {
-    const u = location.origin + location.pathname + location.search + curHash(); let ok = false;
+    const u = location.origin + location.pathname + location.search + labHash(t, st); let ok = false;
     try { await navigator.clipboard.writeText(u); ok = true; }
     catch (e) { try { const ta = document.createElement("textarea"); ta.value = u; ta.setAttribute("readonly", ""); ta.style.cssText = "position:fixed;top:0;left:0;opacity:0"; document.body.append(ta); ta.select(); ok = document.execCommand("copy"); ta.remove(); } catch (e2) {} }
-    const el = $("#cxcopied"); if (el) el.textContent = ok ? "주소를 복사했습니다." : "복사하지 못했습니다. 주소창의 주소를 직접 복사하세요.";
+    const el = $("#cxmsg"); if (el) el.textContent = ok ? `주소를 복사했습니다. 세팅 ${st.sets.length}개가 모두 담겨 있습니다.` : "복사하지 못했습니다. 주소창의 주소를 직접 복사하세요.";
   };
 
   root.addEventListener("click", e => {
     if (e.target.closest("abbr.term, .ph, [data-g]")) return;   // 용어 풀이 낱말을 누른 것은 풀이만 띄운다
     if (e.target === shEl) { closeSheet(); return; }
     const b = e.target.closest("[data-act]"); if (!b || b.disabled) return;
-    const a = b.dataset.act, id = +b.dataset.id, i = +b.dataset.i, k = b.dataset.k;
+    const a = b.dataset.act, id = +b.dataset.id, c = sh ? st.sets[sh.si] : null;
+    if (a !== "reset" && armed) { armed = 0; $("#cxreset").textContent = "세팅 초기화"; }
     if (a === "close") return closeSheet();
-    if (a === "pick") return openSheet("slot", i, b);
-    if (a === "chips") return openSheet("chips", 0, b);
-    if (a === "tech") return openSheet("tech", 0, b);
     if (a === "copy") return void copy();
-    if (a === "find") return find();
-    if (a === "apply") return apply(+b.dataset.n);
-    if (a === "obj") { LABG.obj = b.dataset.v; if (sh?.kind === "chips") sh.order = chipOrder(); }
-    else if (a === "pickp") { if (!sh || sh.kind !== "slot") return; const x = slotInfo(sh.i).find(y => y.p === id); if (!x || x.cur || !x.ok) return; st.slots = x.slots; }
-    else if (a === "chip") st.chips = st.chips.includes(id) ? st.chips.filter(x => x !== id) : [...st.chips, id];
-    else if (a === "unchip") st.chips = st.chips.filter(x => x !== id);
-    else if (a === "addchip") { if (!st.chips.includes(id)) st.chips = [...st.chips, id]; if (st.condAll) (D.chips[id]?.cfx || []).forEach((_, n) => st.cond[`c:${id}:${n}`] = true); }
-    else if (a === "rar") { if (!sh) return; sh.rar = b.dataset.v; shEl.querySelectorAll('[data-act="rar"]').forEach(x => x.setAttribute("aria-pressed", x === b)); drawSheet(); $("#cxshbd").scrollTop = 0; return; }
-    else if (a === "op") { if (st.op === id) return; dropCond("o:"); st.op = id; st.perks = OPBY[id] ? OPBY[id].slots.map(s => s[0]) : []; }
-    else if (a === "perk") { const old = st.perks[i]; if (old) dropCond(`o:${old}:`); st.perks[i] = old === id ? 0 : id; }
-    else if (a === "techmax") st.tech = {...maxTech};
-    else if (a === "techoff") st.tech = {};
-    else if (a === "tinc" || a === "tdec") { const x = techAll.find(y => y.id === id); if (!x) return; const n = Math.max(0, Math.min(x.levels.length, (st.tech[id] || 0) + (a === "tinc" ? 1 : -1))); if (n) st.tech[id] = n; else delete st.tech[id]; }
-    else if (a === "condall") det.cond.forEach(c => st.cond[c.k] = true);
-    else if (a === "condnone") det.cond.forEach(c => delete st.cond[c.k]);
-    else if (a === "save") { sv[k] = snap(labFix(t, st)); save(); }
-    else if (a === "del") { delete sv[k]; if (st.cmp === k) st.cmp = "bare"; save(); }
-    else if (a === "load") { if (!sv[k]) return; Object.assign(st, snap(sv[k])); }
+    if (a === "menu") return openSheet("menu", +b.dataset.si, 0, b.dataset.fk);
+    if (a === "cell") { const k = b.dataset.k, si = +b.dataset.si; return openSheet(/^[sp]\d/.test(k) ? (k[0] === "s" ? "slot" : "perk") : k, si, +k.slice(1) || 0, b.dataset.fk); }
+    if (a === "best") return openSheet("best", sh ? sh.si : st.ref, 0);
+    if (a === "rar") { if (!sh) return; sh.rar = b.dataset.v; shEl.querySelectorAll('[data-act="rar"]').forEach(x => x.setAttribute("aria-pressed", x === b)); drawSheet(); $("#cxshbd").scrollTop = 0; return; }
+    st.hold = false;
+    if (a === "obj") { LABG.obj = b.dataset.v; if (sh?.kind === "chips") { calc(); sh.order = chipOrder(st.sets[sh.si], inf[sh.si].s); } }
+    else if (a === "diffonly") st.diffOnly = !st.diffOnly;
+    else if (a === "bare") st.bare = !st.bare;
+    else if (a === "full") st.full = !st.full;
+    else if (a === "addset") { if (st.sets.length >= 4) return; st.sets.push(labSnap(st.sets[st.ref])); note = `${setName(st.sets.length - 1)} 추가 — ${setName(st.ref)}의 복사본입니다. `; }
+    else if (a === "reset") {   // 실수로 지우지 않게 두 번 눌러야 한다
+      if (!armed) { armed = setTimeout(() => { armed = 0; const r = $("#cxreset"); if (r) r.textContent = "세팅 초기화"; }, 4000); b.textContent = "한 번 더 누르면 초기화"; return; }
+      clearTimeout(armed); armed = 0; b.textContent = "세팅 초기화"; const d = labNew(t); st.sets = [d, labSnap(d)]; st.ref = 0; st.fx = 0; note = "세팅을 처음 상태로 되돌렸습니다. "; }
+    else if (a === "condall") inf.forEach(x => x.det.cond.forEach(y => x.c.cond[y.k] = true));
+    else if (a === "condnone") inf.forEach(x => x.det.cond.forEach(y => delete x.c.cond[y.k]));
+    else if (!c) return;
+    else if (a === "setref") { st.ref = sh.si; closeSheet(); }
+    else if (a === "dup") { if (st.sets.length >= 4) return; st.sets.splice(sh.si + 1, 0, labSnap(c)); if (st.ref > sh.si) st.ref++; note = `${setName(sh.si)} 복제 — ${setName(sh.si + 1)} 자리에 넣었습니다. `; closeSheet(); }
+    else if (a === "delset") { if (st.sets.length <= 1) return; const i = sh.si; st.sets.splice(i, 1); st.ref = st.ref === i ? 0 : st.ref > i ? st.ref - 1 : st.ref; note = `${setName(i)} 삭제${i < st.sets.length ? " — 뒤 세팅의 번호가 하나씩 당겨졌습니다" : ""}. `; closeSheet(); }
+    else if (a === "pickp") { if (sh.kind !== "slot") return; const x = slotInfo(c, inf[sh.si].s, sh.i).find(y => y.p === id); if (!x || x.cur || !x.ok) return; c.slots = x.slots; }
+    else if (a === "chip") c.chips = c.chips.includes(id) ? c.chips.filter(x => x !== id) : [...c.chips, id];
+    else if (a === "addchip") { if (!c.chips.includes(id)) c.chips = [...c.chips, id]; if (st.condAll) (D.chips[id]?.cfx || []).forEach((_, n) => c.cond[`c:${id}:${n}`] = true); }
+    else if (a === "enh") c.enh = id;
+    else if (a === "op") { if (c.op === id) return; dropCond(c, "o:"); c.op = id; c.perks = opPerks(OPBY[id]); }
+    else if (a === "perk") { const old = c.perks[sh.i]; if (old === id) return; if (old) dropCond(c, `o:${old}:`); c.perks[sh.i] = id; }
+    else if (a === "techmax") c.tech = {...maxTech};
+    else if (a === "techoff") c.tech = {};
+    else if (a === "tinc" || a === "tdec") { const x = techAll.find(y => y.id === id); if (!x) return; const n = Math.max(0, Math.min(x.levels.length, (c.tech[id] || 0) + (a === "tinc" ? 1 : -1))); if (n) c.tech[id] = n; else delete c.tech[id]; }
+    else if (a === "lvinc" || a === "lvdec") c.lv = Math.max(1, Math.min(t.levels.length, c.lv + (a === "lvinc" ? 1 : -1)));
+    else if (a === "condall1") inf[sh.si].det.cond.forEach(y => c.cond[y.k] = true);
+    else if (a === "condnone1") inf[sh.si].det.cond.forEach(y => delete c.cond[y.k]);
+    else if (a === "apply") { const fr = sh.res, r = fr?.rows[+b.dataset.n]; if (!r) return; c.slots = [...r.slots];
+      if (fr.op) { if (r.op !== c.op) dropCond(c, "o:"); c.op = r.op; c.perks = [...r.perks]; }
+      if (fr.tech) c.tech = {...maxTech};
+      if (fr.all) condList(c).forEach(x => c.cond[x.k] = true); }
     else return;
     draw();
+    if (sh?.kind === "best" && (a === "apply" || a === "addchip" || a === "obj")) runFind();
   });
   root.addEventListener("input", e => {
-    const el = e.target;
-    if (el.dataset.ck) { if (el.checked) st.cond[el.dataset.ck] = true; else delete st.cond[el.dataset.ck]; return draw(); }
+    const el = e.target, c = sh ? st.sets[sh.si] : null;
     if (el.id === "cxtank") { location.hash = "#build/" + el.value; return; }
-    if (el.id === "cxlv") st.lv = +el.value;
-    else if (el.id === "cxenh") st.enh = +el.value;
+    if (el.id === "cxq") { if (sh) { sh.q = el.value; drawSheet(); $("#cxshbd").scrollTop = 0; } return; }
+    if (el.id === "cxonlyq") { if (sh) { sh.onlyQ = el.checked; drawSheet(); $("#cxshbd").scrollTop = 0; } return; }
+    if (el.id === "cxfxsel") { st.fx = +el.value; return draw(); }
+    st.hold = false;
+    if (el.dataset.ck) { if (!c) return; if (el.checked) c.cond[el.dataset.ck] = true; else delete c.cond[el.dataset.ck]; }
+    else if (el.id === "cxlv") { if (!c) return; c.lv = +el.value; }
     else if (el.id === "cxmode") LABG.mode = el.value;
-    else if (el.id === "cxcmp") st.cmp = el.value;
     else if (el.id === "cxfop") st.fOp = el.checked;
     else if (el.id === "cxftech") st.fTech = el.checked;
     else if (el.id === "cxfcond") st.condAll = el.checked;
-    else if (el.id === "cxq") { if (sh) { sh.q = el.value; drawSheet(); $("#cxshbd").scrollTop = 0; } return; }
-    else if (el.id === "cxonlyq") { if (sh) { sh.onlyQ = el.checked; drawSheet(); $("#cxshbd").scrollTop = 0; } return; }
     else return;
     draw();
+    if (sh?.kind === "best") runFind();
   });
   draw();
 }
